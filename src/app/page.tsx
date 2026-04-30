@@ -1,9 +1,13 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import PainPoints from "@/components/PainPoints";
+import ClientLogos from "@/components/ClientLogos";
+import Problems from "@/components/Problems";
+import WhyYeda from "@/components/WhyYeda";
 import Features from "@/components/Features";
+import AISection from "@/components/AISection";
 import Dashboard from "@/components/Dashboard";
-import Clients from "@/components/Clients";
+import Testimonials from "@/components/Testimonials";
+import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -13,10 +17,14 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <PainPoints />
+        <ClientLogos />
+        <Problems />
+        <WhyYeda />
         <Features />
+        <AISection />
         <Dashboard />
-        <Clients />
+        <Testimonials />
+        <FAQ />
         <Contact />
       </main>
       <Footer />
