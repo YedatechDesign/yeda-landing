@@ -1,17 +1,10 @@
+"use client";
 export default function Clients() {
   const clients = [
-    "Success College",
-    "HackerU",
-    "IPC College",
-    "הפועל ירושלים",
-    "קרן השתלמות",
-    "אמדוקס",
-    "מכון הייצוא",
-    "בנק מזרחי",
-    "עמידר",
-    "בזק",
-    "כללית",
-    "האוניברסיטה הפתוחה",
+    "Success College", "HackerU", "IPC College",
+    "בנק מזרחי", "קרן השתלמות", "אמדוקס",
+    "מכון הייצוא", "בזק", "כללית",
+    "האוניברסיטה הפתוחה", "עמידר", "הפועל ירושלים",
   ];
 
   const testimonials = [
@@ -19,136 +12,148 @@ export default function Clients() {
       quote: "Yeda LMS חסך לנו מעל 60% מזמן ההדרכה של עובדים חדשים. תהליך ה-Onboarding ירד מ-3 שבועות לשבוע אחד.",
       name: "מנהל למידה ופיתוח",
       org: "חברת טכנולוגיה, 800 עובדים",
-      avatar: "👨‍💼",
     },
     {
       quote: "הדאשבורד נתן לנו לראות לראשונה מה באמת קורה עם הידע בארגון. גילינו פערים שלא ידענו שקיימים.",
       name: "מנמ\"ר",
       org: "ארגון פיננסי, 1,200 עובדים",
-      avatar: "👩‍💼",
     },
     {
       quote: "עם Yeda Labs יצרנו 40 לומדות בחודש – מה שלקח לנו 3 חודשים לפני כן. AI שינה הכל.",
       name: "מנהלת תוכן הדרכה",
       org: "קמעונאות, 3,000 עובדים",
-      avatar: "👩‍🏫",
     },
   ];
 
   return (
     <section id="clients" style={{ background: "white", padding: "80px 24px" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-        {/* Clients header */}
+        {/* Label */}
         <p
           style={{
             textAlign: "center",
-            color: "#94A3B8",
-            fontSize: 14,
-            fontWeight: 600,
+            color: "#A1A5C0",
+            fontSize: 13,
+            fontWeight: 700,
             letterSpacing: "0.1em",
             textTransform: "uppercase",
-            marginBottom: 32,
+            marginBottom: 28,
           }}
         >
           מעל 500 ארגונים סומכים עלינו
         </p>
 
-        {/* Logos marquee */}
+        {/* Client logos */}
         <div
           style={{
             display: "flex",
-            gap: 32,
             flexWrap: "wrap",
+            gap: 12,
             justifyContent: "center",
             marginBottom: 72,
           }}
         >
-          {clients.map((client) => (
+          {clients.map((c) => (
             <div
-              key={client}
-              className="client-logo-item"
+              key={c}
               style={{
-                padding: "10px 20px",
-                background: "#F8FAFF",
-                borderRadius: 10,
-                fontSize: 14,
+                padding: "9px 18px",
+                background: "#F0F2F8",
+                borderRadius: 6,
+                fontSize: 13,
                 fontWeight: 700,
-                color: "#334155",
-                border: "1px solid #E2E8F0",
-                whiteSpace: "nowrap",
+                color: "#A1A5C0",
+                border: "1.5px solid #DDE1EF",
+                transition: "all 0.2s",
                 cursor: "default",
               }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLDivElement).style.color = "#000F61";
+                (e.currentTarget as HTMLDivElement).style.borderColor = "#000F61";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLDivElement).style.color = "#A1A5C0";
+                (e.currentTarget as HTMLDivElement).style.borderColor = "#DDE1EF";
+              }}
             >
-              {client}
+              {c}
             </div>
           ))}
         </div>
 
-        {/* Testimonials */}
-        <div style={{ textAlign: "center", marginBottom: 48 }}>
-          <div className="section-badge">לקוחות מספרים</div>
-          <h2 style={{ fontSize: "clamp(24px, 3.5vw, 38px)", fontWeight: 800, color: "#0D2137" }}>
+        {/* Testimonials header */}
+        <div style={{ textAlign: "center", marginBottom: 44 }}>
+          <span className="section-badge-navy">לקוחות מספרים</span>
+          <h2 className="heading-section" style={{ margin: 0 }}>
             מה אומרים הלקוחות שלנו
           </h2>
         </div>
 
+        {/* Testimonial cards */}
         <div
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-            gap: 24,
+            gap: 20,
           }}
         >
-          {testimonials.map((t) => (
+          {testimonials.map((t, i) => (
             <div
               key={t.name}
-              className="card-hover"
               style={{
-                background: "#F8FAFF",
-                borderRadius: 20,
+                background: i === 1 ? "#000F61" : "#F0F2F8",
+                borderRadius: 10,
                 padding: "28px 24px",
-                border: "1px solid #E2E8F0",
+                border: `1.5px solid ${i === 1 ? "transparent" : "#DDE1EF"}`,
                 position: "relative",
               }}
             >
-              {/* Quote mark */}
-              <div
+              {/* Stars */}
+              <div style={{ color: "#F08700", fontSize: 15, marginBottom: 16, letterSpacing: 2 }}>
+                ★★★★★
+              </div>
+              <p
                 style={{
-                  fontSize: 48,
-                  color: "#1A5CFF",
-                  lineHeight: 1,
-                  marginBottom: 16,
-                  opacity: 0.3,
-                  fontFamily: "Georgia, serif",
+                  fontSize: 15,
+                  color: i === 1 ? "rgba(255,255,255,0.85)" : "#1B1B1E",
+                  lineHeight: 1.75,
+                  marginBottom: 24,
+                  fontStyle: "italic",
                 }}
               >
-                "
-              </div>
-              <p style={{ fontSize: 15, color: "#334155", lineHeight: 1.7, marginBottom: 20, fontStyle: "italic" }}>
-                {t.quote}
+                &ldquo;{t.quote}&rdquo;
               </p>
               <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
                 <div
                   style={{
-                    width: 44,
-                    height: 44,
+                    width: 40,
+                    height: 40,
                     borderRadius: "50%",
-                    background: "#EBF3FF",
+                    background: i === 1 ? "rgba(255,255,255,0.15)" : "#DDE1EF",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    fontSize: 22,
+                    fontSize: 18,
+                    flexShrink: 0,
                   }}
                 >
-                  {t.avatar}
+                  👤
                 </div>
                 <div>
-                  <div style={{ fontSize: 14, fontWeight: 700, color: "#0D2137" }}>{t.name}</div>
-                  <div style={{ fontSize: 12, color: "#64748B" }}>{t.org}</div>
+                  <div
+                    style={{
+                      fontSize: 14,
+                      fontWeight: 700,
+                      color: i === 1 ? "white" : "#000F61",
+                    }}
+                  >
+                    {t.name}
+                  </div>
+                  <div style={{ fontSize: 12, color: i === 1 ? "rgba(255,255,255,0.5)" : "#A1A5C0" }}>
+                    {t.org}
+                  </div>
                 </div>
               </div>
-              {/* Stars */}
-              <div style={{ marginTop: 16, color: "#FBBF24", fontSize: 16 }}>★★★★★</div>
             </div>
           ))}
         </div>

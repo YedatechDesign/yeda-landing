@@ -1,7 +1,9 @@
 "use client";
+import YedaLogo from "./YedaLogo";
+
 export default function Footer() {
   return (
-    <footer style={{ background: "#080F1E", color: "rgba(255,255,255,0.6)", padding: "56px 24px 32px" }}>
+    <footer style={{ background: "#000A45", borderTop: "1px solid rgba(255,255,255,0.08)", padding: "56px 24px 32px" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <div
           style={{
@@ -10,78 +12,59 @@ export default function Footer() {
             gap: 40,
             marginBottom: 48,
           }}
-          className="footer-grid"
         >
           {/* Brand */}
           <div>
-            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
-              <div
-                style={{
-                  width: 36,
-                  height: 36,
-                  background: "linear-gradient(135deg, #1A5CFF, #FF6B35)",
-                  borderRadius: 9,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontWeight: 900,
-                  fontSize: 17,
-                  color: "white",
-                }}
-              >
-                Y
-              </div>
-              <span style={{ color: "white", fontWeight: 800, fontSize: 20 }}>
-                Yeda<span style={{ color: "#FF6B35" }}>LMS</span>
-              </span>
+            <div style={{ marginBottom: 16 }}>
+              <YedaLogo color="white" height={28} />
             </div>
-            <p style={{ fontSize: 14, lineHeight: 1.7, maxWidth: 260 }}>
-              הפלטפורמה החכמה לניהול ידע ארגוני, הכשרות והדרכות – עם כלי AI מתקדמים שמאיצים את תהליכי הלמידה בארגון.
+            <p style={{ fontSize: 14, color: "rgba(255,255,255,0.5)", lineHeight: 1.7, maxWidth: 260 }}>
+              הפלטפורמה החכמה לניהול ידע ארגוני, הכשרות והדרכות – עם כלי AI מתקדמים שמאיצים תהליכי למידה בארגון.
             </p>
-            <div style={{ marginTop: 20, display: "flex", gap: 12 }}>
-              {["LinkedIn", "YouTube", "Facebook"].map((s) => (
+            <div style={{ marginTop: 20, display: "flex", gap: 10 }}>
+              {["in", "▶", "f"].map((s, i) => (
                 <a
-                  key={s}
+                  key={i}
                   href="#"
                   style={{
-                    width: 36,
-                    height: 36,
-                    background: "rgba(255,255,255,0.08)",
-                    borderRadius: 8,
+                    width: 34,
+                    height: 34,
+                    background: "rgba(255,255,255,0.07)",
+                    borderRadius: 6,
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    fontSize: 13,
-                    color: "rgba(255,255,255,0.6)",
+                    fontSize: 12,
+                    fontWeight: 700,
+                    color: "rgba(255,255,255,0.5)",
                     textDecoration: "none",
-                    transition: "background 0.2s",
+                    border: "1px solid rgba(255,255,255,0.1)",
+                    transition: "all 0.2s",
                   }}
-                  onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(26,92,255,0.3)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.08)")}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = "#F08700";
+                    e.currentTarget.style.color = "white";
+                    e.currentTarget.style.borderColor = "#F08700";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = "rgba(255,255,255,0.07)";
+                    e.currentTarget.style.color = "rgba(255,255,255,0.5)";
+                    e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)";
+                  }}
                 >
-                  {s[0]}
+                  {s}
                 </a>
               ))}
             </div>
           </div>
 
-          {/* Links */}
           {[
-            {
-              title: "מוצר",
-              links: ["Yeda LMS", "Yeda Labs AI", "דאשבורד", "אינטגרציות", "אבטחה"],
-            },
-            {
-              title: "חברה",
-              links: ["אודות", "לקוחות", "בלוג", "קריירה", "יצירת קשר"],
-            },
-            {
-              title: "תמיכה",
-              links: ["מרכז עזרה", "תיעוד API", "הדרכות", "שאלות נפוצות", "צור קשר"],
-            },
+            { title: "מוצר", links: ["Yeda LMS", "Yeda Labs AI", "דאשבורד", "אינטגרציות", "אבטחה"] },
+            { title: "חברה", links: ["אודות", "לקוחות", "בלוג", "קריירה", "יצירת קשר"] },
+            { title: "תמיכה", links: ["מרכז עזרה", "תיעוד", "הדרכות", "שאלות נפוצות", "צור קשר"] },
           ].map((col) => (
             <div key={col.title}>
-              <h4 style={{ color: "white", fontSize: 14, fontWeight: 700, marginBottom: 16 }}>
+              <h4 style={{ color: "white", fontSize: 13, fontWeight: 800, marginBottom: 16, letterSpacing: "0.05em", textTransform: "uppercase" }}>
                 {col.title}
               </h4>
               <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
@@ -89,14 +72,9 @@ export default function Footer() {
                   <a
                     key={link}
                     href="#"
-                    style={{
-                      color: "rgba(255,255,255,0.5)",
-                      fontSize: 14,
-                      textDecoration: "none",
-                      transition: "color 0.2s",
-                    }}
+                    style={{ color: "rgba(255,255,255,0.45)", fontSize: 14, textDecoration: "none", transition: "color 0.2s" }}
                     onMouseEnter={(e) => (e.currentTarget.style.color = "white")}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.5)")}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.45)")}
                   >
                     {link}
                   </a>
@@ -106,10 +84,9 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Bottom bar */}
         <div
           style={{
-            borderTop: "1px solid rgba(255,255,255,0.08)",
+            borderTop: "1px solid rgba(255,255,255,0.07)",
             paddingTop: 24,
             display: "flex",
             justifyContent: "space-between",
@@ -118,15 +95,17 @@ export default function Footer() {
             gap: 12,
           }}
         >
-          <p style={{ fontSize: 13 }}>© 2025 Yeda LMS | YedaLabs. כל הזכויות שמורות.</p>
+          <p style={{ fontSize: 13, color: "rgba(255,255,255,0.35)" }}>
+            © 2025 Yeda LMS | YedaLabs. כל הזכויות שמורות.
+          </p>
           <div style={{ display: "flex", gap: 20 }}>
             {["מדיניות פרטיות", "תנאי שימוש", "נגישות"].map((item) => (
               <a
                 key={item}
                 href="#"
-                style={{ fontSize: 13, color: "rgba(255,255,255,0.45)", textDecoration: "none" }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.8)")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.45)")}
+                style={{ fontSize: 13, color: "rgba(255,255,255,0.35)", textDecoration: "none", transition: "color 0.2s" }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.7)")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.35)")}
               >
                 {item}
               </a>
@@ -134,19 +113,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @media (max-width: 768px) {
-          .footer-grid {
-            grid-template-columns: 1fr 1fr !important;
-          }
-        }
-        @media (max-width: 480px) {
-          .footer-grid {
-            grid-template-columns: 1fr !important;
-          }
-        }
-      `}</style>
     </footer>
   );
 }

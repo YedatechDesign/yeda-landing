@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { IconPlay } from "./Icons";
 
 export default function Hero() {
   const [videoOpen, setVideoOpen] = useState(false);
@@ -7,88 +8,53 @@ export default function Hero() {
   const stats = [
     { value: "500+", label: "ארגונים משתמשים" },
     { value: "98%", label: "שביעות רצון" },
-    { value: "3x", label: "מהירות הטמעה" },
+    { value: "3×", label: "מהירות הטמעה" },
     { value: "40%", label: "חיסכון בזמן הדרכה" },
   ];
 
   return (
-    <section
-      className="gradient-hero relative overflow-hidden"
-      style={{ minHeight: "100vh", paddingTop: 80 }}
-    >
-      {/* Background decorations */}
+    <section style={{ background: "#000F61", paddingTop: 72 }}>
       <div
         style={{
-          position: "absolute",
-          top: -100,
-          left: -100,
-          width: 500,
-          height: 500,
-          background: "radial-gradient(circle, rgba(26,92,255,0.15) 0%, transparent 70%)",
-          borderRadius: "50%",
-          pointerEvents: "none",
+          maxWidth: 1200,
+          margin: "0 auto",
+          padding: "80px 24px 64px",
         }}
-      />
-      <div
-        style={{
-          position: "absolute",
-          bottom: 0,
-          right: -50,
-          width: 400,
-          height: 400,
-          background: "radial-gradient(circle, rgba(255,107,53,0.08) 0%, transparent 70%)",
-          borderRadius: "50%",
-          pointerEvents: "none",
-        }}
-      />
-
-      <div className="max-w-7xl mx-auto px-6" style={{ paddingTop: 60, paddingBottom: 80 }}>
-        {/* Top badge */}
-        <div className="flex justify-center mb-8">
-          <div
+      >
+        {/* Eyebrow */}
+        <div style={{ marginBottom: 24, textAlign: "center" }}>
+          <span
             style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 8,
-              background: "rgba(26,92,255,0.15)",
-              border: "1px solid rgba(26,92,255,0.3)",
-              borderRadius: 100,
-              padding: "6px 16px",
-              color: "#7EB8FF",
-              fontSize: 13,
-              fontWeight: 600,
+              display: "inline-block",
+              background: "#F08700",
+              color: "white",
+              fontSize: 12,
+              fontWeight: 800,
+              padding: "5px 16px",
+              borderRadius: 3,
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
             }}
           >
-            <span style={{ width: 8, height: 8, background: "#4ADE80", borderRadius: "50%", display: "inline-block" }} />
-            מערכת מס' 1 לניהול ידע ארגוני בישראל
-          </div>
+            מערכת ניהול ידע ארגוני
+          </span>
         </div>
 
-        {/* Main headline */}
-        <div style={{ textAlign: "center", maxWidth: 800, margin: "0 auto 24px" }}>
+        {/* Headline */}
+        <div style={{ textAlign: "center", maxWidth: 780, margin: "0 auto 24px" }}>
           <h1
             style={{
               color: "white",
-              fontSize: "clamp(32px, 5vw, 60px)",
-              fontWeight: 900,
-              lineHeight: 1.15,
-              marginBottom: 8,
+              fontSize: "clamp(36px, 5.5vw, 66px)",
+              fontWeight: 800,
+              lineHeight: 1.1,
+              margin: 0,
             }}
           >
-            הידע הארגוני שלכם
-          </h1>
-          <h1
-            style={{
-              fontSize: "clamp(32px, 5vw, 60px)",
-              fontWeight: 900,
-              lineHeight: 1.15,
-              background: "linear-gradient(90deg, #1A5CFF, #FF6B35)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-            }}
-          >
-            מנוהל, נגיש ואפקטיבי
+            הידע הארגוני שלכם –{" "}
+            <span style={{ background: "#FFE4C2", color: "#000F61", padding: "0 8px", display: "inline" }}>
+              מנוהל ומניב תוצאות
+            </span>
           </h1>
         </div>
 
@@ -97,263 +63,270 @@ export default function Hero() {
             color: "rgba(255,255,255,0.72)",
             fontSize: "clamp(16px, 2vw, 20px)",
             textAlign: "center",
-            maxWidth: 620,
-            margin: "0 auto 40px",
-            lineHeight: 1.7,
+            maxWidth: 600,
+            margin: "0 auto 44px",
+            lineHeight: 1.75,
           }}
         >
-          פלטפורמה All-in-One לבניית הכשרות, ניהול הדרכות וניתוח ביצועי עובדים –
-          עם כלי AI מתקדמים שחוסכים 40% מזמן יצירת התוכן.
+          פלטפורמה All-in-One לבניית הכשרות, ניהול הדרכות ומעקב ביצועי עובדים –
+          עם כלי AI שחוסכים 40% מזמן יצירת תוכן.
         </p>
 
-        {/* CTA buttons */}
-        <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap", marginBottom: 64 }}>
-          <a href="#contact" className="btn-primary" style={{ fontSize: 17, padding: "15px 36px" }}>
-            קבעו דמו חינם →
+        {/* CTAs */}
+        <div
+          style={{
+            display: "flex",
+            gap: 12,
+            justifyContent: "center",
+            flexWrap: "wrap",
+            marginBottom: 72,
+          }}
+        >
+          <a
+            href="#contact"
+            className="btn-primary"
+            style={{ fontSize: 17, padding: "15px 36px" }}
+          >
+            קבעו דמו חינם ←
           </a>
           <button
-            className="btn-secondary"
+            className="btn-outline-white"
             onClick={() => setVideoOpen(true)}
-            style={{ display: "flex", alignItems: "center", gap: 10 }}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 10,
+              fontSize: 16,
+              padding: "15px 30px",
+            }}
           >
             <span
               style={{
-                width: 32,
-                height: 32,
-                background: "rgba(255,255,255,0.2)",
+                width: 30,
+                height: 30,
+                background: "#F08700",
                 borderRadius: "50%",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                fontSize: 12,
+                flexShrink: 0,
               }}
             >
-              ▶
+              <IconPlay size={12} color="white" />
             </span>
             צפו בסרטון הסקירה
           </button>
         </div>
 
-        {/* Video / Platform preview */}
-        <div style={{ maxWidth: 900, margin: "0 auto 64px" }}>
+        {/* Dashboard mockup */}
+        <div
+          style={{
+            maxWidth: 920,
+            margin: "0 auto 72px",
+            borderRadius: 12,
+            overflow: "hidden",
+            border: "1px solid rgba(255,255,255,0.15)",
+            boxShadow: "0 32px 80px rgba(0,0,0,0.4)",
+            cursor: "pointer",
+          }}
+          onClick={() => setVideoOpen(true)}
+        >
+          {/* Browser bar */}
           <div
-            className="video-container"
-            onClick={() => setVideoOpen(true)}
-            style={{ cursor: "pointer", aspectRatio: "16/9", position: "relative" }}
+            style={{
+              background: "#0A1A50",
+              padding: "12px 18px",
+              display: "flex",
+              alignItems: "center",
+              gap: 8,
+            }}
           >
-            {/* Mockup preview image */}
+            <div style={{ width: 11, height: 11, borderRadius: "50%", background: "#FF5F57" }} />
+            <div style={{ width: 11, height: 11, borderRadius: "50%", background: "#FEBC2E" }} />
+            <div style={{ width: 11, height: 11, borderRadius: "50%", background: "#28C840" }} />
             <div
               style={{
-                width: "100%",
-                height: "100%",
-                background: "linear-gradient(135deg, #0E2040 0%, #1A3A7A 50%, #0D4080 100%)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                minHeight: 400,
-              }}
-            >
-              {/* Dashboard mockup */}
-              <div style={{ width: "90%", padding: "20px 0" }}>
-                {/* Fake browser chrome */}
-                <div
-                  style={{
-                    background: "#1E3A5F",
-                    borderRadius: "12px 12px 0 0",
-                    padding: "12px 16px",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 8,
-                  }}
-                >
-                  <div style={{ width: 12, height: 12, borderRadius: "50%", background: "#FF5F57" }} />
-                  <div style={{ width: 12, height: 12, borderRadius: "50%", background: "#FEBC2E" }} />
-                  <div style={{ width: 12, height: 12, borderRadius: "50%", background: "#28C840" }} />
-                  <div
-                    style={{
-                      flex: 1,
-                      marginRight: 16,
-                      background: "#0D2848",
-                      borderRadius: 6,
-                      padding: "4px 12px",
-                      fontSize: 12,
-                      color: "rgba(255,255,255,0.4)",
-                      textAlign: "center",
-                    }}
-                  >
-                    app.yedalms.io/dashboard
-                  </div>
-                </div>
-                {/* Fake dashboard content */}
-                <div
-                  style={{
-                    background: "#F8FAFF",
-                    borderRadius: "0 0 12px 12px",
-                    padding: 16,
-                    display: "grid",
-                    gridTemplateColumns: "1fr 1fr 1fr 1fr",
-                    gap: 10,
-                  }}
-                >
-                  {[
-                    { label: "עובדים פעילים", value: "247", color: "#1A5CFF" },
-                    { label: "הכשרות בתהליך", value: "18", color: "#7C3AED" },
-                    { label: "הושלמו החודש", value: "94%", color: "#10B981" },
-                    { label: "שעות הדרכה", value: "1,240", color: "#FF6B35" },
-                  ].map((s) => (
-                    <div
-                      key={s.label}
-                      style={{
-                        background: "white",
-                        borderRadius: 8,
-                        padding: "12px 10px",
-                        textAlign: "center",
-                        boxShadow: "0 2px 8px rgba(0,0,0,0.06)",
-                      }}
-                    >
-                      <div style={{ fontSize: 20, fontWeight: 800, color: s.color }}>{s.value}</div>
-                      <div style={{ fontSize: 10, color: "#64748B", marginTop: 2 }}>{s.label}</div>
-                    </div>
-                  ))}
-                  {/* Fake chart row */}
-                  <div
-                    style={{
-                      gridColumn: "1 / 3",
-                      background: "white",
-                      borderRadius: 8,
-                      padding: "12px",
-                      boxShadow: "0 2px 8px rgba(0,0,0,0.06)",
-                    }}
-                  >
-                    <div style={{ fontSize: 10, color: "#64748B", marginBottom: 8, fontWeight: 600 }}>התקדמות הדרכות</div>
-                    <div style={{ display: "flex", gap: 4, alignItems: "flex-end", height: 40 }}>
-                      {[65, 80, 45, 90, 70, 85, 75].map((h, i) => (
-                        <div
-                          key={i}
-                          style={{
-                            flex: 1,
-                            height: `${h}%`,
-                            background: `linear-gradient(180deg, #1A5CFF, #7C3AED)`,
-                            borderRadius: "3px 3px 0 0",
-                            opacity: 0.7 + i * 0.04,
-                          }}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                  <div
-                    style={{
-                      gridColumn: "3 / 5",
-                      background: "white",
-                      borderRadius: 8,
-                      padding: "12px",
-                      boxShadow: "0 2px 8px rgba(0,0,0,0.06)",
-                    }}
-                  >
-                    <div style={{ fontSize: 10, color: "#64748B", marginBottom: 6, fontWeight: 600 }}>השלמת הכשרות</div>
-                    {[
-                      { name: "אבטחת מידע", pct: 94 },
-                      { name: "תהליכי עבודה", pct: 78 },
-                      { name: "עמידה ברגולציה", pct: 88 },
-                    ].map((item) => (
-                      <div key={item.name} style={{ marginBottom: 6 }}>
-                        <div style={{ display: "flex", justifyContent: "space-between", fontSize: 9, color: "#64748B" }}>
-                          <span>{item.name}</span>
-                          <span>{item.pct}%</span>
-                        </div>
-                        <div style={{ background: "#E2E8F0", borderRadius: 4, height: 5 }}>
-                          <div
-                            style={{
-                              width: `${item.pct}%`,
-                              height: "100%",
-                              background: "linear-gradient(90deg, #1A5CFF, #7C3AED)",
-                              borderRadius: 4,
-                            }}
-                          />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Play button overlay */}
-            <div
-              style={{
-                position: "absolute",
-                inset: 0,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                background: "rgba(0,0,0,0.25)",
-                transition: "background 0.3s",
-              }}
-            >
-              <div
-                className="play-btn-ring"
-                style={{
-                  position: "relative",
-                  width: 72,
-                  height: 72,
-                  background: "rgba(255,255,255,0.2)",
-                  backdropFilter: "blur(8px)",
-                  border: "2px solid rgba(255,255,255,0.6)",
-                  borderRadius: "50%",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  color: "white",
-                  fontSize: 24,
-                }}
-              >
-                ▶
-              </div>
-            </div>
-            <div
-              style={{
-                position: "absolute",
-                bottom: 16,
-                right: 16,
-                background: "rgba(0,0,0,0.6)",
-                color: "white",
+                flex: 1,
+                marginRight: 14,
+                background: "rgba(255,255,255,0.07)",
+                borderRadius: 5,
+                padding: "4px 14px",
                 fontSize: 12,
-                fontWeight: 600,
-                padding: "4px 10px",
-                borderRadius: 6,
+                color: "rgba(255,255,255,0.4)",
+                textAlign: "center",
               }}
             >
-              2:45 | סקירת המערכת
+              app.yedalms.io/dashboard
             </div>
           </div>
+
+          {/* Content */}
+          <div style={{ background: "#F0F2F8", padding: 20 }}>
+            {/* KPI row */}
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(4, 1fr)",
+                gap: 12,
+                marginBottom: 16,
+              }}
+            >
+              {[
+                { label: "עובדים פעילים", val: "247", color: "#000F61" },
+                { label: "הכשרות פעילות", val: "18", color: "#F08700" },
+                { label: "השלמה החודש", val: "94%", color: "#10B981" },
+                { label: "שעות הדרכה", val: "1,240", color: "#000F61" },
+              ].map((k) => (
+                <div
+                  key={k.label}
+                  style={{
+                    background: "white",
+                    borderRadius: 8,
+                    padding: "14px 12px",
+                    textAlign: "center",
+                    border: "1px solid #DDE1EF",
+                  }}
+                >
+                  <div style={{ fontSize: 22, fontWeight: 800, color: k.color }}>{k.val}</div>
+                  <div style={{ fontSize: 11, color: "#A1A5C0", marginTop: 3 }}>{k.label}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* Chart row */}
+            <div style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 12 }}>
+              <div
+                style={{
+                  background: "white",
+                  borderRadius: 8,
+                  padding: "14px 16px",
+                  border: "1px solid #DDE1EF",
+                }}
+              >
+                <div style={{ fontSize: 11, fontWeight: 700, color: "#A1A5C0", marginBottom: 12 }}>
+                  השלמת הכשרות לפי מחלקה
+                </div>
+                {[
+                  { d: "מכירות", p: 94, c: "#000F61" },
+                  { d: "טכנולוגיה", p: 88, c: "#F08700" },
+                  { d: "שיווק", p: 76, c: "#000F61" },
+                  { d: "תפעול", p: 82, c: "#F08700" },
+                ].map((r) => (
+                  <div key={r.d} style={{ marginBottom: 9 }}>
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        fontSize: 10,
+                        color: "#1B1B1E",
+                        marginBottom: 4,
+                        fontWeight: 600,
+                      }}
+                    >
+                      <span>{r.d}</span>
+                      <span>{r.p}%</span>
+                    </div>
+                    <div style={{ background: "#F0F2F8", borderRadius: 3, height: 6 }}>
+                      <div
+                        style={{
+                          width: `${r.p}%`,
+                          height: "100%",
+                          background: r.c,
+                          borderRadius: 3,
+                        }}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div
+                style={{
+                  background: "white",
+                  borderRadius: 8,
+                  padding: "14px 16px",
+                  border: "1px solid #DDE1EF",
+                }}
+              >
+                <div style={{ fontSize: 11, fontWeight: 700, color: "#A1A5C0", marginBottom: 12 }}>
+                  פעילות שבועית
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "flex-end",
+                    gap: 6,
+                    height: 70,
+                  }}
+                >
+                  {[55, 72, 48, 85, 68, 90, 60].map((h, i) => (
+                    <div
+                      key={i}
+                      style={{
+                        flex: 1,
+                        height: `${h}%`,
+                        background: i === 5 ? "#F08700" : "#000F61",
+                        borderRadius: "3px 3px 0 0",
+                        opacity: i === 5 ? 1 : 0.55,
+                      }}
+                    />
+                  ))}
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    fontSize: 9,
+                    color: "#A1A5C0",
+                    marginTop: 4,
+                  }}
+                >
+                  {["א", "ב", "ג", "ד", "ה", "ו", "ש"].map((d) => (
+                    <span key={d}>{d}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Play overlay */}
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              pointerEvents: "none",
+            }}
+          />
         </div>
 
         {/* Stats */}
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
             gap: 16,
             maxWidth: 700,
             margin: "0 auto",
           }}
         >
-          {stats.map((stat) => (
-            <div key={stat.label} className="stat-card">
-              <div style={{ color: "white", fontSize: 32, fontWeight: 900 }}>{stat.value}</div>
-              <div style={{ color: "rgba(255,255,255,0.6)", fontSize: 13, marginTop: 4 }}>{stat.label}</div>
+          {stats.map((s) => (
+            <div key={s.label} className="stat-box">
+              <div style={{ color: "#F08700", fontSize: 34, fontWeight: 900 }}>{s.value}</div>
+              <div style={{ color: "rgba(255,255,255,0.6)", fontSize: 13, marginTop: 4 }}>{s.label}</div>
             </div>
           ))}
         </div>
+
+        <div style={{ paddingBottom: 80 }} />
       </div>
 
-      {/* Video Modal */}
+      {/* Video modal */}
       {videoOpen && (
         <div
           style={{
             position: "fixed",
             inset: 0,
-            background: "rgba(0,0,0,0.85)",
+            background: "rgba(0,0,0,0.88)",
             zIndex: 1000,
             display: "flex",
             alignItems: "center",
@@ -363,7 +336,7 @@ export default function Hero() {
           onClick={() => setVideoOpen(false)}
         >
           <div
-            style={{ width: "100%", maxWidth: 900, position: "relative" }}
+            style={{ width: "100%", maxWidth: 880, position: "relative" }}
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -375,13 +348,20 @@ export default function Hero() {
                 color: "white",
                 background: "none",
                 border: "none",
-                fontSize: 28,
+                fontSize: 26,
                 cursor: "pointer",
               }}
             >
               ✕
             </button>
-            <div style={{ aspectRatio: "16/9", background: "#000", borderRadius: 12, overflow: "hidden" }}>
+            <div
+              style={{
+                aspectRatio: "16/9",
+                background: "#000",
+                borderRadius: 10,
+                overflow: "hidden",
+              }}
+            >
               <iframe
                 width="100%"
                 height="100%"
