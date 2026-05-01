@@ -1,11 +1,10 @@
 import Header from "@/components/Header";
-import Hero from "@/components/Hero";
+import HeroNew from "@/components/HeroNew";
+import VideoSection from "@/components/VideoSection";
 import ClientLogos from "@/components/ClientLogos";
-import Problems from "@/components/Problems";
-import WhyYeda from "@/components/WhyYeda";
-import Features from "@/components/Features";
-import AISection from "@/components/AISection";
-import Dashboard from "@/components/Dashboard";
+import PainPointsNew from "@/components/PainPointsNew";
+import FeaturesNew from "@/components/FeaturesNew";
+import DashboardSection from "@/components/DashboardSection";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
@@ -16,13 +15,12 @@ export default function Home() {
     <>
       <Header />
       <main>
-        <Hero />
+        <HeroNew />
+        <VideoSection />
         <ClientLogos />
-        <Problems />
-        <WhyYeda />
-        <Features />
-        <AISection />
-        <Dashboard />
+        <PainPointsNew />
+        <FeaturesNew />
+        <DashboardSection />
         <Testimonials />
         <FAQ />
         <Contact />

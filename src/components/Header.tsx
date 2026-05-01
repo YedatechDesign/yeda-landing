@@ -13,10 +13,10 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { label: "פיצ'רים", href: "#features" },
-    { label: "דאשבורד", href: "#dashboard" },
-    { label: "לקוחות", href: "#clients" },
-    { label: "יצירת קשר", href: "#contact" },
+    { label: "פיצ'רים", href: "/#features" },
+    { label: "דאשבורד", href: "/#dashboard" },
+    { label: "אודות", href: "/about" },
+    { label: "יצירת קשר", href: "/#contact" },
   ];
 
   return (

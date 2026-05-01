@@ -1,14 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  --navy: #000F61;
-  --orange: #F08700;
-  --orange-highlight: #FFE4C2;
-  --light-bg: #F0F2F8;
-  --white: #FFFFFF;
-  --dark-text: #1B1B1E;
-  --muted-text: #6B7280;
-  --border: #E0E4F0;
+  --navy:       #000F61;
+  --navy-800:   #0A1575;
+  --blue:       #0A59EB;
+  --blue-500:   #2E72F0;
+  --blue-400:   #6B93F4;
+  --blue-100:   #D6E3FC;
+  --blue-50:    #EBF1FD;
+  --bg:         #F5F7FD;
+  --white:      #FFFFFF;
+  --dark-text:  #1A1F36;
+  --text:       #2D3142;
+  --muted-text: #4B5472;
+  --border:     #E3E7F2;
+  --border-2:   #C7CDE0;
+  --shadow-sm:  0 1px 2px rgba(0,15,97,0.06);
+  --shadow-md:  0 4px 16px rgba(0,15,97,0.08);
+  --shadow-lg:  0 12px 40px rgba(0,15,97,0.12);
 }
 
 * { box-sizing: border-box; }
@@ -19,19 +28,27 @@ html {
 }
 
 body {
-  font-family: 'Segoe UI', 'Arial', sans-serif;
-  background: #fff;
-  color: #1B1B1E;
+  font-family: 'Heebo', 'Segoe UI', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--dark-text);
   direction: rtl;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.72;
+  font-size: 18px;
 }
 
-/* Buttons */
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: normal;
+  font-family: 'Heebo', 'Segoe UI', Arial, sans-serif;
+}
+
+/* ── Buttons ────────────────────────────────── */
 .btn-primary {
-  background: #F08700;
+  background: var(--blue);
   color: white;
   font-weight: 700;
-  padding: 13px 30px;
-  border-radius: 6px;
+  padding: 14px 36px;
+  border-radius: 999px;
   border: none;
   cursor: pointer;
   transition: background 0.2s, transform 0.15s;
@@ -40,31 +57,18 @@ body {
   display: inline-block;
   font-family: inherit;
 }
-.btn-primary:hover { background: #D97700; }
+.btn-primary:hover {
+  background: var(--blue-500);
+  transform: translateY(-1px);
+}
 
 .btn-outline-white {
   background: transparent;
   color: white;
   font-weight: 700;
-  padding: 12px 28px;
-  border-radius: 6px;
-  border: 2px solid white;
-  cursor: pointer;
-  transition: background 0.2s;
-  font-size: 15px;
-  text-decoration: none;
-  display: inline-block;
-  font-family: inherit;
-}
-.btn-outline-white:hover { background: rgba(255,255,255,0.1); }
-
-.btn-outline-navy {
-  background: transparent;
-  color: #000F61;
-  font-weight: 700;
-  padding: 12px 28px;
-  border-radius: 6px;
-  border: 2px solid #000F61;
+  padding: 13px 32px;
+  border-radius: 999px;
+  border: 2px solid rgba(255,255,255,0.5);
   cursor: pointer;
   transition: all 0.2s;
   font-size: 15px;
@@ -72,54 +76,104 @@ body {
   display: inline-block;
   font-family: inherit;
 }
-.btn-outline-navy:hover { background: #000F61; color: white; }
+.btn-outline-white:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: white;
+}
 
-/* Badges */
+.btn-outline-navy {
+  background: transparent;
+  color: var(--navy);
+  font-weight: 700;
+  padding: 13px 32px;
+  border-radius: 999px;
+  border: 2px solid var(--navy);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 15px;
+  text-decoration: none;
+  display: inline-block;
+  font-family: inherit;
+}
+.btn-outline-navy:hover { background: var(--navy); color: white; }
+
+/* ── Eyebrow / Badges ───────────────────────── */
 .section-badge {
   display: inline-block;
-  background: #F08700;
-  color: white;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 800;
-  padding: 4px 12px;
-  border-radius: 3px;
-  margin-bottom: 16px;
+  color: #000F61;
   letter-spacing: 0.07em;
   text-transform: uppercase;
-}
-.section-badge-navy {
-  display: inline-block;
-  background: #000F61;
-  color: white;
-  font-size: 11px;
-  font-weight: 800;
-  padding: 4px 12px;
-  border-radius: 3px;
-  margin-bottom: 16px;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
+  margin-bottom: 18px;
+  background: #EBF1FD;
+  padding: 6px 18px;
+  border-radius: 999px;
+  border: 1px solid #D6E3FC;
 }
 
-/* Tab buttons */
+.section-badge-navy {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 800;
+  color: #000F61;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  background: #EBF1FD;
+  padding: 6px 18px;
+  border-radius: 999px;
+  border: 1px solid #D6E3FC;
+}
+
+/* ── Tab buttons ────────────────────────────── */
 .tab-btn {
   padding: 9px 22px;
-  border-radius: 6px;
-  font-weight: 700;
+  border-radius: 999px;
+  font-weight: 600;
   font-size: 14px;
   cursor: pointer;
   transition: all 0.18s;
-  border: 2px solid transparent;
+  border: 1.5px solid transparent;
   background: transparent;
-  color: #6B7280;
+  color: var(--muted-text);
   font-family: inherit;
 }
-.tab-btn.active { background: #000F61; color: white; border-color: #000F61; }
-.tab-btn:hover:not(.active) { border-color: #000F61; color: #000F61; }
+.tab-btn.active {
+  background: var(--navy);
+  color: white;
+  border-color: var(--navy);
+}
+.tab-btn:hover:not(.active) {
+  border-color: var(--blue);
+  color: var(--blue);
+}
 
-/* Stat box (used on dark bg) */
+/* ── Stat box ───────────────────────────────── */
 .stat-box {
-  border: 1.5px solid rgba(255,255,255,0.2);
-  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 12px;
   padding: 20px 16px;
   text-align: center;
+}
+
+/* ── Scroll animations ──────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.94); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* ── Card hover lift ────────────────────────── */
+.card-lift {
+  transition: transform 0.22s ease, box-shadow 0.22s ease !important;
+  cursor: default;
+}
+.card-lift:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 20px 48px rgba(0,15,97,0.14) !important;
 }

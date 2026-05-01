@@ -3,104 +3,127 @@ import { useState } from "react";
 
 const faqs = [
   {
-    q: "כמה זמן לוקחת ההטמעה?",
-    a: "הטמעה בסיסית – 72 שעות. פורטל מלא עם תוכן ועובדים פעילים – שבוע עד שבועיים. צוות ה-Customer Success שלנו מלווה אתכם בכל שלב.",
+    q: "כמה זמן לוקחת ההטמעה בארגון?",
+    a: "תהליך ההטמעה המלא אורך עד 14 ימי עסקים — כולל עיצוב ממשק מותאם למותג שלכם, הטמעת התכנים הקיימים, ייבוא עובדים ומחלקות והגדרת כל זרימות העבודה. משך הזמן המדויק תלוי בעיקר בקצב העברת הנתונים ואישורים מצידכם — אנחנו נהיה מוכנים.",
   },
   {
-    q: "האם המערכת מתממשקת עם מערכות HR קיימות?",
-    a: "כן. Yeda מתממשקת עם SAP, Priority, Monday, Salesforce, ועשרות מערכות נוספות דרך API פתוח ו-SSO. נבנה עבורכם את האינטגרציה הנדרשת.",
+    q: "איך הנתונים שלנו מאובטחים? מה לגבי GDPR?",
+    a: "המערכת בנויה עם שכבות אבטחה מרובות: הצפנת SSL/TLS על כל התקשורת, הגנת CSRF, מניעת SQL Injection, חומת אש לאפליקציה (WAF) שחוסמת DDoS, ואימות דו-שלבי (2FA). הנתונים מאוחסנים בשרתי Hetzner בגרמניה (SOC2 מוסמך), עם גיבויים מוצפנים אוטומטיים. המערכת עומדת בדרישות GDPR ובחוק הגנת הפרטיות הישראלי, עם ניטור אבטחה רציף ובדיקות חדירה תקופתיות.",
   },
   {
-    q: "מה עם אבטחת מידע ורגולציה ישראלית?",
-    a: "השרתים ממוקמים בישראל. המערכת עומדת בדרישות חוק הגנת הפרטיות, תקן ISO 27001, ומספקת דוחות לרגולציה כמו רשות שוק ההון ומשרד הבריאות.",
+    q: "האם המערכת מתחברת ל-HRIS / ל-CRM הקיים שלנו?",
+    a: "כן — Yeda מתחברת ל-SAP, Priority, Monday, Salesforce, Workday ועוד, דרך API פתוח או קונקטורים מוכנים. סנכרון עובדים, מחלקות ותפקידים קורה אוטומטית — עדכון בצד שלכם מתעדכן אצלנו בזמן אמת.",
   },
   {
-    q: "האם ניתן לנהל הכשרות Zoom ופיזיות גם?",
-    a: "בהחלט. Yeda מנהלת כל סוגי ההדרכה: לומדות דיגיטליות, שידורים חיים ב-Zoom/Teams, ומפגשים פיזיים – לוח שנה אחד, מעקב נוכחות אחד, דוח אחד.",
+    q: "איך הסוכן AI יודע לענות לעובדים שלנו על הנהלים שלנו?",
+    a: "אתם מעלים את חומרי הארגון — נהלים, מדריכים, מסמכי HR, וידאו — והסוכן לומד מהם. הוא עונה בעברית, ערבית, אנגלית וכל שפה אחרת, ומצטט את המקור המדויק לכל תשובה. ניתן להגביל אילו מסמכים זמינים לכל קבוצת עובדים.",
   },
   {
-    q: "כמה עולה המערכת?",
-    a: "המחיר מבוסס על מספר עובדים פעילים. מחיר התחלתי מ-₪8 לעובד לחודש. ארגונים מעל 500 עובדים מקבלים מחיר מותאם. נשמח להציג הצעת מחיר מדויקת בדמו.",
+    q: "האם ניתן להעביר תכנים מהמערכת הקיימת שלנו?",
+    a: "כן. Yeda תומכת בייבוא מ-SCORM, xAPI, Moodle, TalentLMS ועוד. תכנים ב-PowerPoint, PDF, וידאו — מועברים ישירות. הצוות שלנו מבצע את ה-Migration בשבילכם.",
   },
   {
-    q: "מה ההבדל בין Yeda LMS ל-Yeda Labs AI?",
-    a: "Yeda LMS היא מערכת ניהול ההכשרות: פורטל עובדים, מעקב ביצועים, תעודות, לוח שנה. Yeda Labs AI היא מודול יצירת התוכן: הופך חומרי גלם ללומדות, סרטונים ושאלונים. הם עובדים יחד – אבל ניתן לרכוש כל אחד בנפרד.",
+    q: "מה כוללת תמיכת ה-Onboarding והתמיכה השוטפת?",
+    a: "כל לקוח מקבל מנהל הטמעה ייעודי, הדרכות מותאמות לצוות ה-HR, ותמיכה טכנית זמינה בעברית לאורך כל הדרך.",
   },
   {
-    q: "האם יש תמיכה בעברית?",
-    a: "כן – ממשק מלא בעברית, RTL מושלם, תמיכה טלפונית ובוואטסאפ בעברית, ומנהל לקוח ישראלי שמכיר את הצרכים המקומיים.",
+    q: "האם Yeda היא פלטפורמה ישראלית?",
+    a: "כן — Yeda היא מערכת כחול-לבן לכל דבר. פיתחנו את כל המערכת מאפס בישראל, עם צוות מקומי שמבין לעומק את הצרכים של הארגון הישראלי: עברית כשפת ממשק ראשית, תמיכה בפריסות רגולטוריות ישראליות, וזמינות לשיחה בעברית — לא כרטיס תמיכה שנענה מעבר לים.",
   },
   {
-    q: "האם ניתן לנסות לפני שקונים?",
-    a: "כן. בדמו של 30 דקות תראו את המערכת החיה עם הנתונים שלכם. לאחר מכן מציעים פיילוט מוגבל ללא עלות להוכחת ROI לפני חתימה.",
+    q: "מה מייחד את Yeda לעומת פתרונות LMS אחרים בשוק?",
+    a: "רוב פתרונות ה-LMS בשוק דורשים הקמה טכנית מורכבת, ממשק שאינו עברי ותמיכה גלובלית שלא מכירה את הצרכים הישראליים. Yeda פועלת ישר מהקופסה — ממשק מלא בעברית, AI ליצירת תוכן, אינטגרציות לכלים הנפוצים בישראל, ותמיכה מקומית שמדברת את השפה שלכם. ובניגוד לפתרונות מדף — פיתחנו את כל הקוד בעצמנו, כך שאנחנו יכולים להתאים ולבנות כל פיצ'ר שתצטרכו.",
+  },
+  {
+    q: "האם ניתן לייצר תוכן הכשרה עם AI?",
+    a: "זה אחד היתרונות הכי גדולים של Yeda. אתם מעלים מצגת, PDF או וידאו — ה-AI של המערכת הופך אותו ללומדה אינטראקטיבית עם שאלות, פעילויות ותעודה תוך דקות. ארגונים מדווחים על קיצור של עד 75% בזמן יצירת תוכן. אפשר גם לייצר תוכן מאפס עם prompt בעברית.",
   },
 ];
 
 export default function FAQ() {
-  const [open, setOpen] = useState<number | null>(null);
+  const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section style={{ background: "white", padding: "88px 24px" }}>
-      <div style={{ maxWidth: 780, margin: "0 auto" }}>
+    <section style={{ background: "#F5F7FD", padding: "88px 24px" }}>
+      <div style={{ maxWidth: 860, margin: "0 auto" }}>
 
         <div style={{ textAlign: "center", marginBottom: 52 }}>
           <span className="section-badge">שאלות נפוצות</span>
-          <h2 style={{ fontSize: "clamp(24px, 3.5vw, 38px)", fontWeight: 800, color: "#000F61", marginBottom: 14, lineHeight: 1.2 }}>
-            כל מה שרציתם לשאול
+          <h2 style={{ fontSize: "clamp(28px, 3.5vw, 40px)", fontWeight: 800, color: "#000F61", marginBottom: 14, lineHeight: 1.2 }}>
+            כל מה שרציתם לדעת על Yeda
           </h2>
-          <p style={{ fontSize: 16, color: "#6B7280", lineHeight: 1.75 }}>
-            שאלות שעולות בכל שיחת מכירה – עם תשובות ישירות.
+          <p style={{ fontSize: 16, color: "#36405E", maxWidth: 500, margin: "0 auto", lineHeight: 1.75 }}>
+            יש שאלה שלא ענינו עליה?{" "}
+            <a href="#contact" style={{ color: "#0A59EB", fontWeight: 700, textDecoration: "none" }}>דברו איתנו</a>.
           </p>
         </div>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
-          {faqs.map((faq, i) => (
-            <div
-              key={i}
-              style={{ borderBottom: "1px solid #E0E4F0" }}
-            >
-              <button
-                onClick={() => setOpen(open === i ? null : i)}
-                style={{
-                  width: "100%", display: "flex", justifyContent: "space-between",
-                  alignItems: "center", gap: 16, padding: "20px 0",
-                  background: "none", border: "none", cursor: "pointer",
-                  textAlign: "right", fontFamily: "inherit",
-                }}
-              >
-                <span style={{ fontSize: 15, fontWeight: 700, color: "#000F61", lineHeight: 1.4 }}>
-                  {faq.q}
-                </span>
-                <span style={{
-                  width: 28, height: 28, borderRadius: "50%", flexShrink: 0,
-                  background: open === i ? "#000F61" : "#F0F2F8",
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  fontSize: 16, color: open === i ? "white" : "#6B7280",
-                  transition: "all 0.2s",
+        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+          {faqs.map((faq, i) => {
+            const isOpen = open === i;
+            return (
+              <div key={i} style={{
+                background: "white", borderRadius: 16,
+                border: isOpen ? "1px solid #0A59EB" : "1px solid #E3E7F2",
+                boxShadow: isOpen ? "0 4px 20px rgba(10,89,235,0.1)" : "0 1px 4px rgba(0,15,97,0.05)",
+                overflow: "hidden", transition: "border-color 0.25s, box-shadow 0.25s",
+                position: "relative",
+              }}>
+                {/* Blue left accent */}
+                <div style={{
+                  position: "absolute", top: 0, right: 0, bottom: 0, width: 4,
+                  background: "#0A59EB",
+                  transform: isOpen ? "scaleY(1)" : "scaleY(0)",
+                  transformOrigin: "top", transition: "transform 0.25s ease",
+                  borderRadius: "0 16px 16px 0",
+                }} />
+
+                <button
+                  onClick={() => setOpen(isOpen ? null : i)}
+                  style={{
+                    width: "100%", background: isOpen ? "#EBF1FD" : "none",
+                    border: "none", padding: "22px 28px",
+                    display: "flex", alignItems: "center", justifyContent: "space-between",
+                    gap: 16, cursor: "pointer", fontFamily: "inherit",
+                    textAlign: "right", transition: "background 0.2s",
+                  }}
+                >
+                  <span style={{ fontSize: 16, fontWeight: 700, color: isOpen ? "#000F61" : "#1A1F36", flex: 1, textAlign: "right" }}>
+                    {faq.q}
+                  </span>
+                  <div style={{
+                    width: 32, height: 32, borderRadius: 9, flexShrink: 0,
+                    background: isOpen ? "#0A59EB" : "#EEF1F8",
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                    transition: "all 0.25s",
+                  }}>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                      stroke={isOpen ? "white" : "#36405E"} strokeWidth="2.5"
+                      strokeLinecap="round" strokeLinejoin="round"
+                      style={{ transform: isOpen ? "rotate(180deg)" : "rotate(0)", transition: "transform 0.25s" }}>
+                      <path d="M6 9l6 6 6-6" />
+                    </svg>
+                  </div>
+                </button>
+
+                <div style={{
+                  maxHeight: isOpen ? 400 : 0, overflow: "hidden",
+                  transition: "max-height 0.35s cubic-bezier(0.4,0,0.2,1)",
                 }}>
-                  {open === i ? "−" : "+"}
-                </span>
-              </button>
-              {open === i && (
-                <div style={{ paddingBottom: 20 }}>
-                  <p style={{ fontSize: 15, color: "#6B7280", lineHeight: 1.8, margin: 0 }}>
-                    {faq.a}
-                  </p>
+                  <div style={{ padding: "0 28px 24px", borderTop: "1px solid #EBF1FD", paddingTop: 18 }}>
+                    <p style={{ fontSize: 16, color: "#36405E", lineHeight: 1.85, margin: 0 }}>
+                      {faq.a}
+                    </p>
+                  </div>
                 </div>
-              )}
-            </div>
-          ))}
+              </div>
+            );
+          })}
         </div>
 
-        <div style={{ textAlign: "center", marginTop: 48, padding: "36px", background: "#F0F2F8", borderRadius: 10 }}>
-          <p style={{ fontSize: 17, fontWeight: 700, color: "#000F61", marginBottom: 6 }}>
-            יש לכם שאלה שלא ענינו עליה?
-          </p>
-          <p style={{ fontSize: 14, color: "#6B7280", marginBottom: 24 }}>
-            דברו ישירות עם מומחה Yeda – ללא תסריט מכירה, ללא לחץ.
-          </p>
-          <a href="#contact" className="btn-primary">
-            דברו איתנו ←
+        <div style={{ textAlign: "center", marginTop: 48 }}>
+          <a href="#contact" className="btn-primary" style={{ fontSize: 15 }}>
+            שאלות נוספות? דברו איתנו ←
           </a>
         </div>
       </div>

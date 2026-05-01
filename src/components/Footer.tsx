@@ -42,9 +42,9 @@ export default function Footer() {
                     transition: "all 0.2s",
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.background = "#F08700";
+                    e.currentTarget.style.background = "#0A59EB";
                     e.currentTarget.style.color = "white";
-                    e.currentTarget.style.borderColor = "#F08700";
+                    e.currentTarget.style.borderColor = "#0A59EB";
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.background = "rgba(255,255,255,0.07)";

@@ -18,7 +18,7 @@ export default function Contact() {
     border: "1.5px solid #DDE1EF",
     fontSize: 15,
     color: "#1B1B1E",
-    background: "#F0F2F8",
+    background: "#F5F7FD",
     outline: "none",
     transition: "border-color 0.2s, background 0.2s",
     textAlign: "right",
@@ -38,12 +38,13 @@ export default function Contact() {
           left: 0,
           width: 6,
           height: "100%",
-          background: "#F08700",
+          background: "#0A59EB",
         }}
       />
 
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
         <div
+          className="contact-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1.1fr",
@@ -56,7 +57,7 @@ export default function Contact() {
             <span
               style={{
                 display: "inline-block",
-                background: "#F08700",
+                background: "#0A59EB",
                 color: "white",
                 fontSize: 12,
                 fontWeight: 800,
@@ -79,11 +80,11 @@ export default function Contact() {
               }}
             >
               מוכנים לראות את{" "}
-              <span style={{ background: "#FFE4C2", color: "#000F61", padding: "0 8px" }}>
+              <span style={{ background: "#EBF1FD", color: "#000F61", padding: "0 8px" }}>
                 Yeda בפעולה?
               </span>
             </h2>
-            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: 16, lineHeight: 1.75, marginBottom: 36 }}>
+            <p style={{ color: "rgba(255,255,255,0.88)", fontSize: 16, lineHeight: 1.75, marginBottom: 36 }}>
               בדמו של 30 דקות נראה לכם בדיוק איך Yeda LMS עובד עבור ארגון שדומה לשלכם –
               עם דוגמאות רלוונטיות ותשובות לכל שאלה.
             </p>
@@ -101,7 +102,7 @@ export default function Contact() {
                       width: 24,
                       height: 24,
                       borderRadius: "50%",
-                      background: "#F08700",
+                      background: "#0A59EB",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -110,7 +111,7 @@ export default function Contact() {
                   >
                     <IconCheck size={13} color="white" />
                   </div>
-                  <span style={{ color: "rgba(255,255,255,0.82)", fontSize: 15 }}>{item}</span>
+                  <span style={{ color: "rgba(255,255,255,0.95)", fontSize: 15 }}>{item}</span>
                 </div>
               ))}
             </div>
@@ -122,7 +123,7 @@ export default function Contact() {
                 borderTop: "1px solid rgba(255,255,255,0.1)",
               }}
             >
-              <p style={{ color: "rgba(255,255,255,0.45)", fontSize: 13, marginBottom: 12 }}>
+              <p style={{ color: "rgba(255,255,255,0.65)", fontSize: 13, marginBottom: 12 }}>
                 מעדיפים ליצור קשר ישירות?
               </p>
               <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
@@ -130,13 +131,19 @@ export default function Contact() {
                   href="tel:0723385091"
                   style={{ color: "rgba(255,255,255,0.8)", fontSize: 15, textDecoration: "none", display: "flex", alignItems: "center", gap: 8 }}
                 >
-                  <span style={{ color: "#F08700" }}>📞</span> 072-338-5091
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0A59EB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.48 2 2 0 0 1 3.6 1.28h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6 6l.95-.85a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                  </svg>
+                  072-338-5091
                 </a>
                 <a
                   href="mailto:info@yedalms.io"
                   style={{ color: "rgba(255,255,255,0.8)", fontSize: 15, textDecoration: "none", display: "flex", alignItems: "center", gap: 8 }}
                 >
-                  <span style={{ color: "#F08700" }}>✉</span> info@yedalms.io
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0A59EB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z M22 6l-10 7L2 6" />
+                  </svg>
+                  info@yedalms.io
                 </a>
               </div>
             </div>
@@ -158,7 +165,7 @@ export default function Contact() {
                     style={{
                       width: 64,
                       height: 64,
-                      background: "#F08700",
+                      background: "#0A59EB",
                       borderRadius: "50%",
                       display: "flex",
                       alignItems: "center",
@@ -185,7 +192,7 @@ export default function Contact() {
                   </p>
 
                   <form onSubmit={handleSubmit}>
-                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14, marginBottom: 14 }}>
+                    <div className="form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14, marginBottom: 14 }}>
                       <div>
                         <label style={{ display: "block", fontSize: 13, fontWeight: 700, color: "#000F61", marginBottom: 6 }}>
                           שם מלא *
@@ -197,7 +204,7 @@ export default function Contact() {
                           value={form.name}
                           onChange={(e) => setForm({ ...form, name: e.target.value })}
                           onFocus={(e) => { e.target.style.borderColor = "#000F61"; e.target.style.background = "white"; }}
-                          onBlur={(e) => { e.target.style.borderColor = "#DDE1EF"; e.target.style.background = "#F0F2F8"; }}
+                          onBlur={(e) => { e.target.style.borderColor = "#DDE1EF"; e.target.style.background = "#F5F7FD"; }}
                         />
                       </div>
                       <div>
@@ -211,7 +218,7 @@ export default function Contact() {
                           value={form.company}
                           onChange={(e) => setForm({ ...form, company: e.target.value })}
                           onFocus={(e) => { e.target.style.borderColor = "#000F61"; e.target.style.background = "white"; }}
-                          onBlur={(e) => { e.target.style.borderColor = "#DDE1EF"; e.target.style.background = "#F0F2F8"; }}
+                          onBlur={(e) => { e.target.style.borderColor = "#DDE1EF"; e.target.style.background = "#F5F7FD"; }}
                         />
                       </div>
                     </div>
@@ -228,7 +235,7 @@ export default function Contact() {
                         value={form.email}
                         onChange={(e) => setForm({ ...form, email: e.target.value })}
                         onFocus={(e) => { e.target.style.borderColor = "#000F61"; e.target.style.background = "white"; }}
-                        onBlur={(e) => { e.target.style.borderColor = "#DDE1EF"; e.target.style.background = "#F0F2F8"; }}
+                        onBlur={(e) => { e.target.style.borderColor = "#DDE1EF"; e.target.style.background = "#F5F7FD"; }}
                       />
                     </div>
 
@@ -242,7 +249,7 @@ export default function Contact() {
                         value={form.phone}
                         onChange={(e) => setForm({ ...form, phone: e.target.value })}
                         onFocus={(e) => { e.target.style.borderColor = "#000F61"; e.target.style.background = "white"; }}
-                        onBlur={(e) => { e.target.style.borderColor = "#DDE1EF"; e.target.style.background = "#F0F2F8"; }}
+                        onBlur={(e) => { e.target.style.borderColor = "#DDE1EF"; e.target.style.background = "#F5F7FD"; }}
                       />
                     </div>
 
@@ -255,7 +262,7 @@ export default function Contact() {
                         value={form.size}
                         onChange={(e) => setForm({ ...form, size: e.target.value })}
                         onFocus={(e) => { e.target.style.borderColor = "#000F61"; e.target.style.background = "white"; }}
-                        onBlur={(e) => { e.target.style.borderColor = "#DDE1EF"; e.target.style.background = "#F0F2F8"; }}
+                        onBlur={(e) => { e.target.style.borderColor = "#DDE1EF"; e.target.style.background = "#F5F7FD"; }}
                       >
                         <option value="">בחרו טווח</option>
                         <option>10–50 עובדים</option>
@@ -283,6 +290,17 @@ export default function Contact() {
           </div>
         </div>
       </div>
+      <style>{`
+        @media (max-width: 768px) {
+          .contact-grid {
+            grid-template-columns: 1fr !important;
+            gap: 40px !important;
+          }
+          .form-row {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }
