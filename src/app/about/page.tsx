@@ -521,9 +521,6 @@ export default function AboutPage() {
               <a href="/#contact" className="btn-primary" style={{ fontSize: 15, padding: "13px 32px" }}>
                 קבעו דמו חינם ←
               </a>
-              <a href="/team" className="btn-outline-white" style={{ fontSize: 15, padding: "13px 32px" }}>
-                הכירו את הצוות
-              </a>
             </div>
           </div>
         </section>
