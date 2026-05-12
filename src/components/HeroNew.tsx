@@ -32,7 +32,7 @@ export default function HeroNew() {
   }, [isVisible]);
 
   return (
-    <section style={{ background: "#000F61", paddingTop: 72, paddingBottom: 0, overflow: "hidden", position: "relative" }}>
+    <section className="no-pad-bottom" style={{ background: "#000F61", paddingTop: 72, paddingBottom: 0, overflow: "hidden", position: "relative" }}>
 
       {/* Animated background glows */}
       <div style={{ position: "absolute", inset: 0, overflow: "hidden", pointerEvents: "none" }}>
@@ -42,6 +42,7 @@ export default function HeroNew() {
       </div>
 
       <div
+        className="hero-inner"
         style={{
           maxWidth: 1160, margin: "0 auto", padding: "72px 24px 56px",
           textAlign: "center", position: "relative", zIndex: 1,
@@ -85,7 +86,7 @@ export default function HeroNew() {
         </p>
 
         {/* CTAs */}
-        <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap", marginBottom: 60 }}>
+        <div className="hero-ctas" style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap", marginBottom: 60 }}>
           <a href="#contact" className="btn-primary" style={{ fontSize: 16, padding: "14px 36px" }}>
             קבעו דמו חינם ←
           </a>
@@ -98,19 +99,21 @@ export default function HeroNew() {
         <div
           style={{
             display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-            gap: 1, background: "rgba(255,255,255,0.1)", borderRadius: 10,
+            gap: 1, background: "rgba(255,255,255,0.08)", borderRadius: 14,
             overflow: "hidden", maxWidth: 860, marginInline: "auto",
+            border: "1px solid rgba(255,255,255,0.12)",
           }}
         >
           {statTargets.map((s, i) => (
-            <div key={i} style={{ background: "rgba(255,255,255,0.06)", padding: "22px 24px", textAlign: "center" }}>
+            <div key={i} className="hero-stats-cell" style={{ background: "rgba(10,89,235,0.18)", padding: "28px 24px", textAlign: "center" }}>
               <div style={{
-                fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 900, color: "#007aff",
-                lineHeight: 1, marginBottom: 8, transition: "all 0.1s",
+                fontSize: "clamp(34px, 4vw, 48px)", fontWeight: 900, color: "white",
+                lineHeight: 1, marginBottom: 10, transition: "all 0.1s",
+                textShadow: "0 0 32px rgba(255,255,255,0.3)",
               }}>
                 {s.prefix || ""}{counts[i]}{s.suffix || ""}
               </div>
-              <div style={{ fontSize: 13, color: "rgba(255,255,255,0.65)", lineHeight: 1.5 }}>
+              <div style={{ fontSize: 13, color: "rgba(255,255,255,0.82)", lineHeight: 1.5, fontWeight: 500 }}>
                 {s.label}
               </div>
             </div>
@@ -134,6 +137,11 @@ export default function HeroNew() {
         @keyframes badgePulse {
           0%, 100% { box-shadow: 0 0 0 0 rgba(0,122,255,0); }
           50% { box-shadow: 0 0 0 10px rgba(0,122,255,0.18); }
+        }
+        @media (max-width: 768px) {
+          .hero-inner { padding: 40px 20px 32px !important; }
+          .hero-ctas  { margin-bottom: 28px !important; }
+          .hero-stats-cell { padding: 18px 14px !important; }
         }
       `}</style>
     </section>

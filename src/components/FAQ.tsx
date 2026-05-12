@@ -36,7 +36,7 @@ const faqs = [
   },
   {
     q: "האם ניתן לייצר תוכן הכשרה עם AI?",
-    a: "זה אחד היתרונות הכי גדולים של Yeda. אתם מעלים מצגת, PDF או וידאו — ה-AI של המערכת הופך אותו ללומדה אינטראקטיבית עם שאלות, פעילויות ותעודה תוך דקות. ארגונים מדווחים על קיצור של עד 75% בזמן יצירת תוכן. אפשר גם לייצר תוכן מאפס עם prompt בעברית.",
+    a: "זה אחד היתרונות הכי גדולים של Yeda. אתם מעלים מצגת, PDF או וידאו — ה-AI של המערכת הופך אותו להכשרה אינטראקטיבית עם שאלות, פעילויות ותעודה תוך דקות. ארגונים מדווחים על קיצור של עד 75% בזמן יצירת תוכן. אפשר גם לייצר תוכן מאפס עם prompt בעברית.",
   },
 ];
 
@@ -79,6 +79,7 @@ export default function FAQ() {
                 }} />
 
                 <button
+                  className="faq-btn"
                   onClick={() => setOpen(isOpen ? null : i)}
                   style={{
                     width: "100%", background: isOpen ? "#EBF1FD" : "none",
@@ -110,7 +111,7 @@ export default function FAQ() {
                   maxHeight: isOpen ? 400 : 0, overflow: "hidden",
                   transition: "max-height 0.35s cubic-bezier(0.4,0,0.2,1)",
                 }}>
-                  <div style={{ padding: "0 28px 24px", borderTop: "1px solid #EBF1FD", paddingTop: 18 }}>
+                  <div className="faq-body" style={{ padding: "18px 28px 24px", borderTop: "1px solid #EBF1FD" }}>
                     <p style={{ fontSize: 16, color: "#36405E", lineHeight: 1.85, margin: 0 }}>
                       {faq.a}
                     </p>
@@ -127,6 +128,12 @@ export default function FAQ() {
           </a>
         </div>
       </div>
+      <style>{`
+        @media (max-width: 480px) {
+          .faq-btn { padding: 16px 18px !important; }
+          .faq-body { padding: 0 18px 20px !important; }
+        }
+      `}</style>
     </section>
   );
 }

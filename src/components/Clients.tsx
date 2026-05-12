@@ -19,7 +19,7 @@ export default function Clients() {
       org: "ארגון פיננסי, 1,200 עובדים",
     },
     {
-      quote: "עם Yeda Labs יצרנו 40 לומדות בחודש – מה שלקח לנו 3 חודשים לפני כן. AI שינה הכל.",
+      quote: "עם Yeda Labs יצרנו 40 הכשרות בחודש – מה שלקח לנו 3 חודשים לפני כן. AI שינה הכל.",
       name: "מנהלת תוכן הדרכה",
       org: "קמעונאות, 3,000 עובדים",
     },
@@ -32,15 +32,15 @@ export default function Clients() {
         <p
           style={{
             textAlign: "center",
-            color: "#A1A5C0",
-            fontSize: 13,
+            color: "#36405E",
+            fontSize: 14,
             fontWeight: 700,
             letterSpacing: "0.1em",
             textTransform: "uppercase",
             marginBottom: 28,
           }}
         >
-          מעל 500 ארגונים סומכים עלינו
+          בין לקוחותינו
         </p>
 
         {/* Client logos */}
@@ -149,7 +149,7 @@ export default function Clients() {
                   >
                     {t.name}
                   </div>
-                  <div style={{ fontSize: 12, color: i === 1 ? "rgba(255,255,255,0.5)" : "#A1A5C0" }}>
+                  <div style={{ fontSize: 12, color: i === 1 ? "rgba(255,255,255,0.6)" : "#4B5472" }}>
                     {t.org}
                   </div>
                 </div>

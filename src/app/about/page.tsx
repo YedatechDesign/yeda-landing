@@ -86,9 +86,9 @@ export default function AboutPage() {
 
         {/* Hero */}
         <section
+          className="about-hero"
           style={{
             background: "#000F61",
-            paddingTop: 72,
             padding: "120px 24px 80px",
             textAlign: "center",
           }}
@@ -430,7 +430,63 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* Team */}
+        <section style={{ background: "#F5F7FD", padding: "88px 24px" }}>
+          <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+            <div style={{ textAlign: "center", marginBottom: 52 }}>
+              <span className="section-badge">הצוות שלנו</span>
+              <h2 style={{ fontSize: "clamp(22px, 3vw, 36px)", fontWeight: 800, color: "#000F61", marginBottom: 14, lineHeight: 1.2 }}>
+                האנשים שמאחורי Yeda
+              </h2>
+              <p style={{ fontSize: 16, color: "#4B5472", maxWidth: 500, margin: "0 auto", lineHeight: 1.75 }}>
+                צוות של מומחי טכנולוגיה, חינוך ועיצוב — שעובדים יחד כדי להפוך ניהול ידע ארגוני לפשוט וחכם.
+              </p>
+            </div>
+
+            <div className="about-team-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 24 }}>
+              {[
+                { name: "Alexey Kogan",          title: "CEO & Founder",           img: "/team-alexey.png"    },
+                { name: "Ronen Nahmias",          title: "Chairperson",             img: "/team-ronen.png"     },
+                { name: "Seva Konradt",           title: "COO",                     img: "/team-seva.png"      },
+                { name: "Adi Sharon",             title: "Academic Director",       img: "/team-adi.png"       },
+                { name: "Yoav Yelin",             title: "CTO",                     img: "/team-yoav.png"      },
+                { name: "Evgeny Dobryansky",      title: "Development Team Leader", img: "/team-evgeny.png"    },
+                { name: "Alexander Parkhomenko",  title: "DevOps",                  img: "/team-alexander.png" },
+                { name: "Vitalina Rebalsky",      title: "Senior Project Manager",  img: "/team-vitalina.png"  },
+                { name: "Liza Pavlova",           title: "Product Designer",        img: "/team-liza.png"      },
+              ].map((member) => (
+                <div key={member.name} className="card-lift" style={{
+                  background: "white",
+                  borderRadius: 16,
+                  overflow: "hidden",
+                  border: "1px solid #E3E7F2",
+                  boxShadow: "0 2px 12px rgba(0,15,97,0.06)",
+                  textAlign: "center",
+                }}>
+                  <div className="about-member-photo" style={{ background: "#EBF1FD", height: 180, overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    <img
+                      src={member.img}
+                      alt={member.name}
+                      style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }}
+                    />
+                  </div>
+                  <div className="about-member-text" style={{ padding: "16px 12px 20px" }}>
+                    <h3 style={{ fontSize: 15, fontWeight: 800, color: "#1A1F36", marginBottom: 6 }}>{member.name}</h3>
+                    <span style={{
+                      display: "inline-block",
+                      background: "#EBF1FD", color: "#0A59EB",
+                      fontSize: 11, fontWeight: 700,
+                      padding: "4px 10px", borderRadius: 999,
+                    }}>{member.title}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* CTA */}
+
         <section
           style={{
             background: "#000F61",
@@ -472,6 +528,16 @@ export default function AboutPage() {
           </div>
         </section>
 
+      <style>{`
+        /* Hero must clear the fixed header (72px) on all screen sizes */
+        .about-hero { padding-top: 120px !important; }
+        @media (max-width: 768px) {
+          .about-hero { padding-top: 100px !important; padding-bottom: 52px !important; }
+          .about-team-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 14px !important; }
+          .about-member-photo { height: 150px !important; }
+          .about-member-text  { padding: 10px 10px 14px !important; }
+        }
+      `}</style>
       </main>
       <Footer />
     </>

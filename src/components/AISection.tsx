@@ -8,13 +8,13 @@ const ICON_BOX: React.CSSProperties = {
 const steps = [
   { icon: IconZap,          label: "מעלים חומר גלם",    sub: "מצגת, מסמך, הקלטה" },
   { icon: IconBot,          label: "AI מנתח ומארגן",     sub: "תוך שניות" },
-  { icon: IconPresentation, label: "לומדה מוכנה",        sub: "עם שאלות ותעודה" },
+  { icon: IconPresentation, label: "הכשרה מוכנה",        sub: "עם שאלות ותעודה" },
 ];
 
 const capabilities = [
-  { Icon: IconZap,   title: "לומדות אינטראקטיביות",   desc: "מהחומר שלכם ללומדה מלאה עם חידונים ומשימות – תוך דקות." },
+  { Icon: IconZap,   title: "הכשרות אינטראקטיביות",   desc: "מהחומר שלכם להכשרה מלאה עם חידונים ומשימות – תוך דקות." },
   { Icon: IconVideo, title: "סרטוני הסבר AI",          desc: "דוברים דיגיטליים, כתוביות אוטומטיות, תרגום לשפות מרובות." },
-  { Icon: IconMic,   title: "תמלול ווויס-אובר",        desc: "המרת הקלטות ישנות ללומדות חדשות בלחיצת כפתור." },
+  { Icon: IconMic,   title: "תמלול ווויס-אובר",        desc: "המרת הקלטות ישנות להכשרות חדשות בלחיצת כפתור." },
   { Icon: IconStar,  title: "שאלונים ומבחנים AI",      desc: "בניה אוטומטית של שאלות הבנה ומבחני ידע מתוך תוכן קיים." },
   { Icon: IconPresentation, title: "מצגות אינטראקטיביות", desc: "AI שהופך כל מצגת לחוויית למידה עם הפסקות ומשימות." },
   { Icon: IconBot,   title: "סוכן AI אישי לעובד",      desc: "מלווה בתהליך הלמידה, עונה על שאלות ומתאים את הקצב." },
@@ -41,7 +41,7 @@ export default function AISection() {
           </h2>
           <p style={{ fontSize: 17, color: "rgba(255,255,255,0.65)", maxWidth: 560, margin: "0 auto", lineHeight: 1.75 }}>
             שכחו מחודשים של הפקת תוכן. ה-AI של Yeda הופך כל חומר גלם
-            ללומדה מקצועית תוך דקות – לא שבועות.
+            להכשרה מקצועית תוך דקות – לא שבועות.
           </p>
         </div>
 
@@ -89,7 +89,7 @@ export default function AISection() {
         }}>
           <div>
             <p style={{ color: "white", fontSize: 20, fontWeight: 800, marginBottom: 4 }}>
-              קורס שלוקח חודש לבנות – אצלנו לוקח יום אחד.
+              הכשרה שלוקחת חודש לבנות – אצלנו לוקחת יום אחד.
             </p>
             <p style={{ color: "rgba(255,255,255,0.8)", fontSize: 14, margin: 0 }}>
               ארגונים שעברו ל-Yeda Labs חסכו בממוצע 40% מעלויות הפקת התוכן שלהם.

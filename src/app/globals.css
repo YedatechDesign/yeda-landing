@@ -100,9 +100,9 @@ h1, h2, h3, h4, h5, h6 {
 /* ── Eyebrow / Badges ───────────────────────── */
 .section-badge {
   display: inline-block;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 800;
-  color: #000F61;
+  color: #36405E;
   letter-spacing: 0.07em;
   text-transform: uppercase;
   margin-bottom: 18px;
@@ -114,9 +114,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .section-badge-navy {
   display: inline-block;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 800;
-  color: #000F61;
+  color: #36405E;
   letter-spacing: 0.07em;
   text-transform: uppercase;
   margin-bottom: 18px;
@@ -176,4 +176,16 @@ h1, h2, h3, h4, h5, h6 {
 .card-lift:hover {
   transform: translateY(-5px) !important;
   box-shadow: 0 20px 48px rgba(0,15,97,0.14) !important;
+}
+
+/* ── Mobile section spacing ─────────────────── */
+@media (max-width: 768px) {
+  section {
+    padding-top: 52px !important;
+    padding-bottom: 52px !important;
+  }
+  /* Sections that deliberately have 0 top/bottom padding — keep them at 0 */
+  section.no-pad-top    { padding-top: 0 !important; }
+  section.no-pad-bottom { padding-bottom: 0 !important; }
+  section.no-pad        { padding-top: 0 !important; padding-bottom: 0 !important; }
 }

@@ -30,17 +30,11 @@ export default function Contact() {
       id="contact"
       style={{ background: "#000F61", padding: "96px 24px", position: "relative", overflow: "hidden" }}
     >
-      {/* Decorative block */}
-      <div
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: 6,
-          height: "100%",
-          background: "#0A59EB",
-        }}
-      />
+      {/* Background glow */}
+      <div style={{ position: "absolute", inset: 0, overflow: "hidden", pointerEvents: "none" }}>
+        <div style={{ position: "absolute", top: "-20%", right: "-10%", width: 600, height: 600, borderRadius: "50%", background: "radial-gradient(circle, rgba(10,89,235,0.18) 0%, transparent 70%)" }} />
+        <div style={{ position: "absolute", bottom: "-10%", left: "5%", width: 400, height: 400, borderRadius: "50%", background: "radial-gradient(circle, rgba(10,89,235,0.1) 0%, transparent 70%)" }} />
+      </div>
 
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
         <div
@@ -54,33 +48,29 @@ export default function Contact() {
         >
           {/* Left */}
           <div>
-            <span
-              style={{
-                display: "inline-block",
-                background: "#0A59EB",
-                color: "white",
-                fontSize: 12,
-                fontWeight: 800,
-                padding: "5px 14px",
-                borderRadius: 3,
-                marginBottom: 18,
-                letterSpacing: "0.08em",
-                textTransform: "uppercase",
-              }}
-            >
-              30 דקות • ללא התחייבות
-            </span>
+            <div style={{
+              display: "inline-flex", alignItems: "center", gap: 8,
+              background: "rgba(10,89,235,0.3)", border: "1px solid rgba(10,89,235,0.5)",
+              borderRadius: 100, padding: "6px 18px", marginBottom: 22,
+            }}>
+              <div style={{ width: 7, height: 7, borderRadius: "50%", background: "#4CAF50", flexShrink: 0 }} />
+              <span style={{ color: "rgba(255,255,255,0.9)", fontSize: 13, fontWeight: 700 }}>30 דקות • ללא עלות וללא התחייבות</span>
+            </div>
             <h2
               style={{
                 color: "white",
                 fontSize: "clamp(28px, 4vw, 48px)",
-                fontWeight: 800,
-                lineHeight: 1.15,
+                fontWeight: 900,
+                lineHeight: 1.1,
                 marginBottom: 20,
               }}
             >
               מוכנים לראות את{" "}
-              <span style={{ background: "#EBF1FD", color: "#000F61", padding: "0 8px" }}>
+              <span style={{
+                background: "linear-gradient(135deg, #76A4F9, #B4CCFF)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}>
                 Yeda בפעולה?
               </span>
             </h2>
@@ -89,29 +79,29 @@ export default function Contact() {
               עם דוגמאות רלוונטיות ותשובות לכל שאלה.
             </p>
 
-            <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
               {[
                 "הדגמה חיה של כל הפיצ׳רים הרלוונטיים לכם",
                 "ניתוח צרכים בחינם מהמומחים שלנו",
                 "הצעת מחיר מותאמת לגודל הארגון",
-                "תמיכה בשלב ההטמעה ללא עלות נוספת",
+                "הטמעת תוכני הלמידה — מקבלים מערכת מוכנה לעבודה",
               ].map((item) => (
-                <div key={item} style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                <div key={item} style={{
+                  display: "flex", alignItems: "center", gap: 12,
+                  background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)",
+                  borderRadius: 10, padding: "12px 16px",
+                }}>
                   <div
                     style={{
-                      width: 24,
-                      height: 24,
-                      borderRadius: "50%",
-                      background: "#0A59EB",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      flexShrink: 0,
+                      width: 26, height: 26, borderRadius: "50%",
+                      background: "linear-gradient(135deg, #0A59EB, #3B82F6)",
+                      display: "flex", alignItems: "center", justifyContent: "center",
+                      flexShrink: 0, boxShadow: "0 0 12px rgba(10,89,235,0.4)",
                     }}
                   >
                     <IconCheck size={13} color="white" />
                   </div>
-                  <span style={{ color: "rgba(255,255,255,0.95)", fontSize: 15 }}>{item}</span>
+                  <span style={{ color: "rgba(255,255,255,0.95)", fontSize: 15, fontWeight: 500 }}>{item}</span>
                 </div>
               ))}
             </div>
@@ -178,7 +168,7 @@ export default function Contact() {
                   <h3 style={{ fontSize: 22, fontWeight: 800, color: "#000F61", marginBottom: 12 }}>
                     תודה! קיבלנו את הפרטים
                   </h3>
-                  <p style={{ fontSize: 15, color: "#A1A5C0", lineHeight: 1.65 }}>
+                  <p style={{ fontSize: 15, color: "#4B5472", lineHeight: 1.65 }}>
                     נחזור אליכם תוך 24 שעות לתיאום מועד הדמו.
                   </p>
                 </div>
@@ -187,7 +177,7 @@ export default function Contact() {
                   <h3 style={{ fontSize: 22, fontWeight: 800, color: "#000F61", marginBottom: 6 }}>
                     קבעו דמו חינם
                   </h3>
-                  <p style={{ fontSize: 14, color: "#A1A5C0", marginBottom: 28 }}>
+                  <p style={{ fontSize: 14, color: "#4B5472", marginBottom: 28 }}>
                     מלאו את הפרטים ונחזור אליכם תוך 24 שעות
                   </p>
 
@@ -280,7 +270,7 @@ export default function Contact() {
                       קבעו דמו חינם ←
                     </button>
 
-                    <p style={{ fontSize: 12, color: "#A1A5C0", textAlign: "center", marginTop: 12 }}>
+                    <p style={{ fontSize: 12, color: "#4B5472", textAlign: "center", marginTop: 12 }}>
                       ללא עלות, ללא התחייבות. המידע לא יועבר לצד שלישי.
                     </p>
                   </form>

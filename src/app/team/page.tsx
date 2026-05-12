@@ -3,29 +3,29 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const management = [
-  { name: "Alexey Kogan", role: "מייסד ומנכ\"ל", emoji: "👨‍💼", color: "#000F61" },
-  { name: "Ronen Nahmias", role: "יו\"ר הדירקטוריון", emoji: "🏛️", color: "#000F61" },
-  { name: "Adi Sharon", role: "מנהלת אקדמית", emoji: "🎓", color: "#000F61" },
-  { name: "Seva Konradt", role: "סמנכ\"ל תפעול (COO)", emoji: "⚙️", color: "#000F61" },
-  { name: "Yoav Davidovich", role: "סמנכ\"ל כספים (CFO)", emoji: "📊", color: "#000F61" },
+  { name: "Alexey Kogan",   role: "מייסד ומנכ\"ל",          emoji: "👨‍💼", color: "#000F61", photo: "/team-alexey.png" },
+  { name: "Ronen Nahmias",  role: "Chairperson",             emoji: "🏛️", color: "#000F61", photo: "/team-ronen.png"  },
+  { name: "Adi Sharon",     role: "מנהלת אקדמית",           emoji: "🎓", color: "#000F61", photo: "/team-adi.png"    },
+  { name: "Seva Konradt",   role: "סמנכ\"ל תפעול (COO)",    emoji: "⚙️", color: "#000F61", photo: "/team-seva.png"   },
+  { name: "Yoav Davidovich",role: "סמנכ\"ל כספים (CFO)",    emoji: "📊", color: "#000F61", photo: null               },
 ];
 
 const rd = [
-  { name: "Arthur Tsidkilov", role: "סמנכ\"ל פיתוח ומייסד שותף", emoji: "🛠️", color: "#F08700" },
-  { name: "Yoav Yelin", role: "מנהל טכנולוגיה (CTO)", emoji: "💻", color: "#F08700" },
-  { name: "Alina Zimina", role: "UI/UX Designer", emoji: "🎨", color: "#F08700" },
-  { name: "Evgeny Dobryansky", role: "ראש צוות פיתוח", emoji: "👨‍💻", color: "#F08700" },
-  { name: "Alexander Parkhomenko", role: "DevOps", emoji: "🔧", color: "#F08700" },
-  { name: "Vitalina Rebalsky", role: "מנהלת פרויקטים בכירה", emoji: "📋", color: "#F08700" },
-  { name: "Katya Klymenko", role: "Product Designer", emoji: "✏️", color: "#F08700" },
-  { name: "Andrey Novosad", role: "מפתח Backend — Laravel", emoji: "⚡", color: "#F08700" },
-  { name: "Yaroslaw Almazow", role: "מפתח Frontend — Angular", emoji: "🌐", color: "#F08700" },
-  { name: "Katya Nesin", role: "מעצבת גרפית", emoji: "🖌️", color: "#F08700" },
+  { name: "Arthur Tsidkilov",    role: "סמנכ\"ל פיתוח ומייסד שותף", emoji: "🛠️", color: "#F08700", photo: null                   },
+  { name: "Yoav Yelin",          role: "מנהל טכנולוגיה (CTO)",       emoji: "💻", color: "#F08700", photo: "/team-yoav.png"         },
+  { name: "Alina Zimina",        role: "UI/UX Designer",              emoji: "🎨", color: "#F08700", photo: null                   },
+  { name: "Evgeny Dobryansky",   role: "ראש צוות פיתוח",             emoji: "👨‍💻", color: "#F08700", photo: "/team-evgeny.png"      },
+  { name: "Alexander Parkhomenko",role: "DevOps",                     emoji: "🔧", color: "#F08700", photo: "/team-alexander.png"   },
+  { name: "Vitalina Rebalsky",   role: "מנהלת פרויקטים בכירה",       emoji: "📋", color: "#F08700", photo: "/team-vitalina.png"    },
+  { name: "Katya Klymenko",      role: "Product Designer",            emoji: "✏️", color: "#F08700", photo: null                   },
+  { name: "Andrey Novosad",      role: "מפתח Backend — Laravel",      emoji: "⚡", color: "#F08700", photo: null                   },
+  { name: "Yaroslaw Almazow",    role: "מפתח Frontend — Angular",     emoji: "🌐", color: "#F08700", photo: null                   },
+  { name: "Katya Nesin",         role: "מעצבת גרפית",                 emoji: "🖌️", color: "#F08700", photo: null                   },
 ];
 
 const marketing = [
-  { name: "Alon Soler", role: "מנהל שיווק", emoji: "📣", color: "#000F61" },
-  { name: "Yossi Toledano", role: "סמנכ\"ל מכירות", emoji: "🤝", color: "#000F61" },
+  { name: "Alon Soler",    role: "מנהל שיווק",       emoji: "📣", color: "#000F61", photo: null },
+  { name: "Yossi Toledano",role: "סמנכ\"ל מכירות",   emoji: "🤝", color: "#000F61", photo: null },
 ];
 
 function TeamCard({
@@ -33,11 +33,13 @@ function TeamCard({
   role,
   emoji,
   color,
+  photo,
 }: {
   name: string;
   role: string;
   emoji: string;
   color: string;
+  photo: string | null;
 }) {
   const initials = name
     .split(" ")
@@ -48,14 +50,14 @@ function TeamCard({
 
   return (
     <div
+      className="team-card"
       style={{
         background: "white",
         borderRadius: 14,
-        padding: "28px 20px 24px",
-        textAlign: "center",
         border: "1.5px solid #E0E4F0",
         transition: "box-shadow 0.2s, border-color 0.2s",
         cursor: "default",
+        overflow: "hidden",
       }}
       onMouseEnter={(e) => {
         e.currentTarget.style.borderColor = color;
@@ -66,64 +68,37 @@ function TeamCard({
         e.currentTarget.style.boxShadow = "none";
       }}
     >
-      {/* Avatar */}
-      <div
-        style={{
-          width: 72,
-          height: 72,
-          borderRadius: "50%",
-          background: color,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          margin: "0 auto 16px",
-          fontSize: 24,
-          fontWeight: 900,
-          color: "white",
-          letterSpacing: "-0.5px",
-          flexShrink: 0,
-        }}
-      >
-        {initials}
+      {/* Photo area — rectangular on mobile, circular on desktop */}
+      <div className="team-photo-area" style={{ background: "#E8EBF5", width: "100%", aspectRatio: "1 / 1.1", overflow: "hidden", position: "relative" }}>
+        {photo ? (
+          <img src={photo} alt={name} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center", display: "block" }} />
+        ) : (
+          <div style={{
+            width: "100%", height: "100%",
+            background: color,
+            display: "flex", alignItems: "center", justifyContent: "center",
+            fontSize: 32, fontWeight: 900, color: "white", letterSpacing: "-1px",
+          }}>
+            {initials}
+          </div>
+        )}
       </div>
 
-      {/* Name */}
-      <h3
-        style={{
-          fontSize: 15,
-          fontWeight: 800,
-          color: "#1B1B1E",
-          marginBottom: 6,
-          lineHeight: 1.3,
-          direction: "ltr",
-        }}
-      >
-        {name}
-      </h3>
-
-      {/* Role */}
-      <p
-        style={{
-          fontSize: 13,
-          color: "#6B7280",
-          margin: "0 0 12px",
-          lineHeight: 1.5,
-        }}
-      >
-        {role}
-      </p>
-
-      {/* Emoji tag */}
-      <div
-        style={{
+      {/* Text */}
+      <div className="team-card-text" style={{ padding: "14px 14px 16px", textAlign: "center" }}>
+        <h3 style={{ fontSize: 14, fontWeight: 800, color: "#1B1B1E", marginBottom: 4, lineHeight: 1.3, direction: "ltr" }}>
+          {name}
+        </h3>
+        <p style={{ fontSize: 12, color: "#6B7280", margin: "0 0 10px", lineHeight: 1.4 }}>
+          {role}
+        </p>
+        <div className="team-emoji-tag" style={{
           display: "inline-block",
           background: color === "#F08700" ? "#FFE4C2" : "#E8EBF8",
-          borderRadius: 20,
-          padding: "4px 12px",
-          fontSize: 16,
-        }}
-      >
-        {emoji}
+          borderRadius: 20, padding: "3px 10px", fontSize: 14,
+        }}>
+          {emoji}
+        </div>
       </div>
     </div>
   );
@@ -163,13 +138,7 @@ function Section({
           <p style={{ fontSize: 15, color: "#6B7280", lineHeight: 1.7 }}>{subtitle}</p>
         </div>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
-            gap: 18,
-          }}
-        >
+        <div className="team-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))", gap: 18 }}>
           {members.map((m) => (
             <TeamCard key={m.name} {...m} />
           ))}
@@ -361,6 +330,21 @@ export default function TeamPage() {
 
       </main>
       <Footer />
+
+      <style>{`
+        @media (max-width: 768px) {
+          .team-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 12px !important;
+          }
+          .team-card-text {
+            padding: 10px 10px 12px !important;
+          }
+          .team-emoji-tag {
+            display: none !important;
+          }
+        }
+      `}</style>
     </>
   );
 }

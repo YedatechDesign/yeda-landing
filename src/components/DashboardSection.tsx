@@ -40,7 +40,7 @@ export default function DashboardSection() {
           </p>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 340px", gap: 32, alignItems: "start" }}>
+        <div className="dashboard-grid" style={{ display: "grid", gridTemplateColumns: "1fr 340px", gap: 32, alignItems: "start" }}>
 
           {/* Dashboard frame */}
           <div>
@@ -64,16 +64,14 @@ export default function DashboardSection() {
 
             {/* Browser chrome frame */}
             <div style={{ borderRadius: 12, overflow: "hidden", boxShadow: "0 24px 72px rgba(0,15,97,0.18)", border: "1px solid #D0D5E8" }}>
-              {/* Browser bar */}
+              {/* Browser bar — no URL shown */}
               <div style={{ background: "#1E2A5E", padding: "10px 16px", display: "flex", alignItems: "center", gap: 12 }}>
                 <div style={{ display: "flex", gap: 6 }}>
                   {["#FF5F57", "#FFBD2E", "#28C840"].map((c) => (
                     <div key={c} style={{ width: 12, height: 12, borderRadius: "50%", background: c, flexShrink: 0 }} />
                   ))}
                 </div>
-                <div style={{ flex: 1, background: "rgba(255,255,255,0.08)", borderRadius: 6, padding: "5px 12px", fontSize: 12, color: "rgba(255,255,255,0.5)", fontFamily: "monospace" }}>
-                  yeda-dashboard.vercel.app
-                </div>
+                <div style={{ flex: 1, background: "rgba(255,255,255,0.08)", borderRadius: 6, padding: "5px 12px", height: 28 }} />
                 <div style={{ background: "#0A59EB", borderRadius: 4, padding: "3px 10px", fontSize: 11, color: "white", fontWeight: 700 }}>
                   LIVE
                 </div>
@@ -81,12 +79,12 @@ export default function DashboardSection() {
 
               {activeView === "preview" ? (
                 <div style={{
-                  background: "#0F1F6B", height: 420,
-                  display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 20, padding: 32,
+                  background: "#0F1F6B", height: 520,
+                  display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 16, padding: "24px 32px",
                 }}>
                   <div style={{ width: "100%", maxWidth: 560 }}>
                     {/* Metric cards */}
-                    <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 10, marginBottom: 16 }}>
+                    <div className="metric-cards" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 10, marginBottom: 14 }}>
                       {[
                         { label: "עובדים פעילים", value: "284", change: "+12%" },
                         { label: "הושלמו החודש", value: "1,247", change: "+23%" },
@@ -101,7 +99,7 @@ export default function DashboardSection() {
                       ))}
                     </div>
                     {/* Chart */}
-                    <div style={{ background: "rgba(255,255,255,0.05)", borderRadius: 8, padding: 16, marginBottom: 12, border: "1px solid rgba(255,255,255,0.08)", height: 120, display: "flex", alignItems: "flex-end", gap: 6 }}>
+                    <div style={{ background: "rgba(255,255,255,0.05)", borderRadius: 8, padding: 14, marginBottom: 10, border: "1px solid rgba(255,255,255,0.08)", height: 110, display: "flex", alignItems: "flex-end", gap: 6 }}>
                       {[60, 45, 75, 55, 80, 65, 90, 70, 85, 72, 95, 88].map((h, i) => (
                         <div key={i} style={{ flex: 1, height: `${h}%`, background: i === 11 ? "#0A59EB" : "rgba(255,255,255,0.2)", borderRadius: "3px 3px 0 0" }} />
                       ))}
@@ -112,8 +110,8 @@ export default function DashboardSection() {
                       { name: "מחלקת פיתוח", pct: 78 },
                       { name: "מחלקת תמיכה", pct: 85 },
                     ].map((dept) => (
-                      <div key={dept.name} style={{ marginBottom: 8 }}>
-                        <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 4 }}>
+                      <div key={dept.name} style={{ marginBottom: 7 }}>
+                        <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 3 }}>
                           <span style={{ fontSize: 11, color: "rgba(255,255,255,0.6)" }}>{dept.name}</span>
                           <span style={{ fontSize: 11, color: "#0A59EB", fontWeight: 700 }}>{dept.pct}%</span>
                         </div>
@@ -126,12 +124,13 @@ export default function DashboardSection() {
                   <button onClick={() => setActiveView("live")} style={{
                     background: "#0A59EB", color: "white", border: "none", borderRadius: 999,
                     padding: "12px 28px", fontSize: 14, fontWeight: 700, cursor: "pointer", fontFamily: "inherit",
+                    flexShrink: 0,
                   }}>
                     עברו לדאשבורד החי ←
                   </button>
                 </div>
               ) : (
-                <iframe src={DASHBOARD_URL} title="Yeda Dashboard" style={{ width: "100%", height: 480, border: "none", display: "block" }} />
+                <iframe src={DASHBOARD_URL} title="Yeda Dashboard" style={{ width: "100%", height: 520, border: "none", display: "block" }} />
               )}
             </div>
 
@@ -169,10 +168,9 @@ export default function DashboardSection() {
               ))}
             </div>
 
-            <a href={DASHBOARD_URL} target="_blank" rel="noopener noreferrer"
-              className="btn-primary"
+            <a href="#contact" className="btn-primary"
               style={{ display: "block", textAlign: "center", marginTop: 20, fontSize: 14 }}>
-              פתחו את הדאשבורד בחלון נפרד ↗
+              קבעו דמו וראו את הדאשבורד האמיתי ←
             </a>
           </div>
         </div>
@@ -180,8 +178,13 @@ export default function DashboardSection() {
 
       <style>{`
         @media (max-width: 900px) {
-          #dashboard > div > div[style*="grid-template-columns"] {
+          .dashboard-grid {
             grid-template-columns: 1fr !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .metric-cards {
+            grid-template-columns: repeat(2, 1fr) !important;
           }
         }
       `}</style>

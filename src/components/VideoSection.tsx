@@ -14,7 +14,7 @@ function SvgIcon({ d, size = 16, color = "white" }: { d: string; size?: number; 
 }
 
 const trustItems = [
-  { icon: "M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z M9 22V12h6v10", text: "מעל 50 ארגונים" },
+  { icon: "M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z M9 22V12h6v10", text: "מאות לקוחות" },
   { icon: "M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2 M23 21v-2a4 4 0 0 0-3-3.87 M16 3.13a4 4 0 0 1 0 7.75", text: "אלפי עובדים מוכשרים" },
   { icon: "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z", text: "4.9 / 5 שביעות רצון" },
 ];
@@ -23,7 +23,7 @@ export default function VideoSection() {
   const [playing, setPlaying] = useState(false);
 
   return (
-    <section style={{ background: "#000F61", padding: "0 24px 72px" }}>
+    <section className="no-pad-top" style={{ background: "#000F61", padding: "0 24px 72px" }}>
       <div style={{ maxWidth: 900, margin: "0 auto" }}>
 
         <div style={{ textAlign: "center", marginBottom: 28 }}>
@@ -45,42 +45,43 @@ export default function VideoSection() {
             <div
               style={{
                 position: "absolute", inset: 0,
-                background: "#000F61",
-                display: "flex", flexDirection: "column",
-                alignItems: "center", justifyContent: "center",
-                cursor: "pointer", gap: 20,
+                backgroundImage: `url(https://img.youtube.com/vi/${VIDEO_ID}/maxresdefault.jpg)`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                cursor: "pointer",
               }}
               onClick={() => setPlaying(true)}
             >
-              {/* Rings + play button */}
-              <div style={{ position: "relative", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <div style={{ position: "absolute", width: 100, height: 100, borderRadius: "50%", border: "2px solid rgba(10,89,235,0.3)", animation: "pulse 2s ease-in-out infinite" }} />
-                <div style={{ position: "absolute", width: 76, height: 76, borderRadius: "50%", border: "2px solid rgba(10,89,235,0.5)", animation: "pulse 2s ease-in-out infinite 0.3s" }} />
-                <div style={{
-                  width: 64, height: 64, borderRadius: "50%", background: "#0A59EB",
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  boxShadow: "0 8px 32px rgba(10,89,235,0.5)", position: "relative", zIndex: 1,
-                }}>
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="white" style={{ marginRight: "-2px" }}>
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-              </div>
+              {/* Dark overlay */}
+              <div style={{ position: "absolute", inset: 0, background: "rgba(0,10,50,0.52)" }} />
 
-              <p style={{ color: "rgba(255,255,255,0.93)", fontSize: 16, fontWeight: 600, margin: 0 }}>
-                סקירה מלאה של הפלטפורמה · 3 דקות
-              </p>
-
-              <div style={{ display: "flex", gap: 10, flexWrap: "wrap", justifyContent: "center" }}>
-                {["ניהול הכשרות", "יצירת תוכן AI", "דאשבורד ניהולי", "תעודות אוטומטיות"].map((chip) => (
-                  <span key={chip} style={{
-                    background: "rgba(255,255,255,0.08)", color: "rgba(255,255,255,0.7)",
-                    fontSize: 12, fontWeight: 600, padding: "5px 12px", borderRadius: 20,
-                    border: "1px solid rgba(255,255,255,0.15)",
+              {/* Content */}
+              <div style={{
+                position: "relative", zIndex: 1,
+                display: "flex", flexDirection: "column",
+                alignItems: "center", justifyContent: "center",
+                height: "100%", gap: 20, padding: "24px",
+              }}>
+                {/* Rings + play button */}
+                <div style={{ position: "relative", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <div style={{ position: "absolute", width: 110, height: 110, borderRadius: "50%", border: "2px solid rgba(255,255,255,0.25)", animation: "pulse 2s ease-in-out infinite" }} />
+                  <div style={{ position: "absolute", width: 84, height: 84, borderRadius: "50%", border: "2px solid rgba(255,255,255,0.4)", animation: "pulse 2s ease-in-out infinite 0.3s" }} />
+                  <div style={{
+                    width: 72, height: 72, borderRadius: "50%",
+                    background: "rgba(255,255,255,0.95)",
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                    boxShadow: "0 8px 40px rgba(0,0,0,0.5)", position: "relative", zIndex: 1,
+                    transition: "transform 0.2s, box-shadow 0.2s",
                   }}>
-                    {chip}
-                  </span>
-                ))}
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="#0A59EB" style={{ marginRight: "-3px" }}>
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </div>
+                </div>
+
+                <p style={{ color: "white", fontSize: 17, fontWeight: 700, margin: 0, textShadow: "0 2px 8px rgba(0,0,0,0.5)" }}>
+                  סקירה מלאה של הפלטפורמה
+                </p>
               </div>
             </div>
           ) : (
@@ -92,6 +93,19 @@ export default function VideoSection() {
               style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: "none" }}
             />
           )}
+        </div>
+
+        {/* Chips row — below the video to avoid overflow clipping */}
+        <div style={{ display: "flex", gap: 8, flexWrap: "wrap", justifyContent: "center", marginTop: 16 }}>
+          {["ניהול הכשרות", "יצירת תוכן AI", "דאשבורד ניהולי", "תעודות אוטומטיות"].map((chip) => (
+            <span key={chip} style={{
+              background: "rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.9)",
+              fontSize: 12, fontWeight: 600, padding: "5px 14px", borderRadius: 20,
+              border: "1px solid rgba(255,255,255,0.3)",
+            }}>
+              {chip}
+            </span>
+          ))}
         </div>
 
         {/* Trust strip — SVG icons instead of emoji */}

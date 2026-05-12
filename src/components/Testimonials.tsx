@@ -7,6 +7,7 @@ const namedTestimonials = [
     name: "עידן סיבן",
     title: "פישר | עורכי דין",
     initials: "עס",
+    photo: null as string | null,
     source: "Google Reviews ★★★★★",
   },
   {
@@ -14,6 +15,7 @@ const namedTestimonials = [
     name: "דבי רוח משיח",
     title: "מנהלת מרכז הדרכה, חטיבת TeamCAD · קבוצת MalamTeam",
     initials: "דר",
+    photo: "https://yedalms.io/wp-content/uploads/2023/05/Debi-Messiah.png" as string | null,
     source: "MalamTeam",
   },
   {
@@ -21,6 +23,7 @@ const namedTestimonials = [
     name: "גיא מנדל",
     title: "מנהל מערכות מידע · Hacker.U",
     initials: "גמ",
+    photo: "https://yedalms.io/wp-content/uploads/2025/12/hackeru-leader.png" as string | null,
     source: "Hacker.U",
   },
 ];
@@ -81,13 +84,20 @@ export default function Testimonials() {
               </div>
               <div>
                 <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 12 }}>
-                  <div style={{
-                    width: 44, height: 44, borderRadius: "50%", background: "#000F61",
-                    display: "flex", alignItems: "center", justifyContent: "center",
-                    flexShrink: 0, fontSize: 14, fontWeight: 800, color: "white",
-                  }}>
-                    {t.initials}
-                  </div>
+                  {t.photo ? (
+                    <img src={t.photo} alt={t.name} style={{
+                      width: 48, height: 48, borderRadius: "50%", objectFit: "cover",
+                      flexShrink: 0, border: "2px solid #E3E7F2",
+                    }} />
+                  ) : (
+                    <div style={{
+                      width: 48, height: 48, borderRadius: "50%", background: "#000F61",
+                      display: "flex", alignItems: "center", justifyContent: "center",
+                      flexShrink: 0, fontSize: 14, fontWeight: 800, color: "white",
+                    }}>
+                      {t.initials}
+                    </div>
+                  )}
                   <div>
                     <div style={{ fontSize: 14, fontWeight: 700, color: "#1A1F36" }}>{t.name}</div>
                     <div style={{ fontSize: 12, color: "#36405E", lineHeight: 1.4 }}>{t.title}</div>
@@ -102,31 +112,6 @@ export default function Testimonials() {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Anonymous quotes strip */}
-        <div style={{
-          background: "white",
-          borderRadius: 20,
-          padding: "40px 36px",
-          border: "1px solid #E3E7F2",
-        }}>
-          <p style={{ fontSize: 13, fontWeight: 700, color: "#7A84A0", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 28, textAlign: "center" }}>
-            אומרים עלינו גם...
-          </p>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 20 }}>
-            {anonTestimonials.map((q, i) => (
-              <div key={i} style={{
-                background: "#F5F7FD",
-                borderRadius: 12,
-                padding: "20px 20px",
-                borderRight: "3px solid #0A59EB",
-              }}>
-                <div style={{ fontSize: 22, color: "#0A59EB", fontWeight: 900, lineHeight: 1, marginBottom: 10, fontFamily: "Georgia, serif" }}>"</div>
-                <p style={{ fontSize: 15, color: "#2D3142", lineHeight: 1.8, margin: 0 }}>{q}</p>
-              </div>
-            ))}
-          </div>
         </div>
 
         <div style={{ textAlign: "center", marginTop: 44 }}>

@@ -14,7 +14,9 @@ export default function Header() {
 
   const navLinks = [
     { label: "פיצ'רים", href: "/#features" },
+    { label: "לומדות עם AI", href: "/labs" },
     { label: "דאשבורד", href: "/#dashboard" },
+    { label: "אבטחת מידע", href: "/security" },
     { label: "אודות", href: "/about" },
     { label: "יצירת קשר", href: "/#contact" },
   ];
@@ -45,7 +47,7 @@ export default function Header() {
         }}
       >
         {/* Logo */}
-        <a href="#" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
+        <a href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
           <YedaLogo color="white" height={30} />
         </a>
 

@@ -6,6 +6,7 @@ export default function Footer() {
     <footer style={{ background: "#000A45", borderTop: "1px solid rgba(255,255,255,0.08)", padding: "56px 24px 32px" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <div
+          className="footer-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "2fr 1fr 1fr 1fr",
@@ -60,8 +61,8 @@ export default function Footer() {
 
           {[
             { title: "מוצר", links: ["Yeda LMS", "Yeda Labs AI", "דאשבורד", "אינטגרציות", "אבטחה"] },
-            { title: "חברה", links: ["אודות", "לקוחות", "בלוג", "קריירה", "יצירת קשר"] },
-            { title: "תמיכה", links: ["מרכז עזרה", "תיעוד", "הדרכות", "שאלות נפוצות", "צור קשר"] },
+            { title: "חברה", links: ["אודות", "לקוחות", "יצירת קשר"] },
+            { title: "תמיכה", links: ["שאלות נפוצות", "צור קשר"] },
           ].map((col) => (
             <div key={col.title}>
               <h4 style={{ color: "white", fontSize: 13, fontWeight: 800, marginBottom: 16, letterSpacing: "0.05em", textTransform: "uppercase" }}>
@@ -113,6 +114,19 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      <style>{`
+        @media (max-width: 768px) {
+          .footer-grid {
+            grid-template-columns: 1fr 1fr !important;
+            gap: 32px !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .footer-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
     </footer>
   );
 }
