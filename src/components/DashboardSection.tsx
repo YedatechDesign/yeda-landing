@@ -92,9 +92,9 @@ export default function DashboardSection() {
                         { label: "תעודות הונפקו", value: "93", change: "+8%" },
                       ].map((m) => (
                         <div key={m.label} style={{ background: "rgba(255,255,255,0.08)", borderRadius: 8, padding: "12px 10px", textAlign: "center", border: "1px solid rgba(255,255,255,0.1)" }}>
-                          <div style={{ fontSize: 18, fontWeight: 900, color: "white", lineHeight: 1 }}>{m.value}</div>
-                          <div style={{ fontSize: 9, color: "rgba(255,255,255,0.5)", marginTop: 4, lineHeight: 1.3 }}>{m.label}</div>
-                          <div style={{ fontSize: 10, color: "#4ADE80", fontWeight: 700, marginTop: 4 }}>{m.change}</div>
+                          <div style={{ fontSize: 22, fontWeight: 900, color: "white", lineHeight: 1 }}>{m.value}</div>
+                          <div style={{ fontSize: 11, color: "rgba(255,255,255,0.5)", marginTop: 4, lineHeight: 1.3 }}>{m.label}</div>
+                          <div style={{ fontSize: 12, color: "#4ADE80", fontWeight: 700, marginTop: 4 }}>{m.change}</div>
                         </div>
                       ))}
                     </div>
@@ -112,8 +112,8 @@ export default function DashboardSection() {
                     ].map((dept) => (
                       <div key={dept.name} style={{ marginBottom: 7 }}>
                         <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 3 }}>
-                          <span style={{ fontSize: 11, color: "rgba(255,255,255,0.6)" }}>{dept.name}</span>
-                          <span style={{ fontSize: 11, color: "#0A59EB", fontWeight: 700 }}>{dept.pct}%</span>
+                          <span style={{ fontSize: 13, color: "rgba(255,255,255,0.6)" }}>{dept.name}</span>
+                          <span style={{ fontSize: 13, color: "#0A59EB", fontWeight: 700 }}>{dept.pct}%</span>
                         </div>
                         <div style={{ background: "rgba(255,255,255,0.1)", borderRadius: 4, height: 6 }}>
                           <div style={{ width: `${dept.pct}%`, background: "#0A59EB", borderRadius: 4, height: "100%" }} />
