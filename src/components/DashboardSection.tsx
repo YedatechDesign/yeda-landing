@@ -161,8 +161,8 @@ export default function DashboardSection() {
                     <SvgIcon d={cap.icon} size={16} color="#0A59EB" />
                   </div>
                   <div>
-                    <div style={{ fontSize: 14, fontWeight: 700, color: "#1A1F36", marginBottom: 2 }}>{cap.title}</div>
-                    <div style={{ fontSize: 12, color: "#4B5472", lineHeight: 1.5 }}>{cap.desc}</div>
+                    <div style={{ fontSize: 16, fontWeight: 700, color: "#1A1F36", marginBottom: 4 }}>{cap.title}</div>
+                    <div style={{ fontSize: 14, color: "#4B5472", lineHeight: 1.5 }}>{cap.desc}</div>
                   </div>
                 </div>
               ))}
