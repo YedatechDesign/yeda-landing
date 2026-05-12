@@ -28,7 +28,7 @@ export default function VideoSection() {
 
         <div style={{ textAlign: "center", marginBottom: 28 }}>
           <p style={{
-            color: "rgba(255,255,255,0.75)", fontSize: 13, fontWeight: 700,
+            color: "rgba(255,255,255,0.75)", fontSize: 15, fontWeight: 700,
             letterSpacing: "0.08em", textTransform: "uppercase", margin: 0,
           }}>
             ראו את המערכת בפעולה
@@ -100,7 +100,7 @@ export default function VideoSection() {
           {["ניהול הכשרות", "יצירת תוכן AI", "דאשבורד ניהולי", "תעודות אוטומטיות"].map((chip) => (
             <span key={chip} style={{
               background: "rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.9)",
-              fontSize: 12, fontWeight: 600, padding: "5px 14px", borderRadius: 20,
+              fontSize: 14, fontWeight: 600, padding: "5px 14px", borderRadius: 20,
               border: "1px solid rgba(255,255,255,0.3)",
             }}>
               {chip}
@@ -111,7 +111,7 @@ export default function VideoSection() {
         {/* Trust strip — SVG icons instead of emoji */}
         <div style={{ display: "flex", justifyContent: "center", gap: 36, marginTop: 24, flexWrap: "wrap" }}>
           {trustItems.map((item) => (
-            <div key={item.text} style={{ display: "flex", alignItems: "center", gap: 8, color: "rgba(255,255,255,0.75)", fontSize: 13, fontWeight: 500 }}>
+            <div key={item.text} style={{ display: "flex", alignItems: "center", gap: 8, color: "rgba(255,255,255,0.75)", fontSize: 15, fontWeight: 500 }}>
               <div style={{
                 width: 28, height: 28, borderRadius: 7,
                 background: "rgba(10,89,235,0.25)",

@@ -100,14 +100,14 @@ export default function Testimonials() {
                   )}
                   <div>
                     <div style={{ fontSize: 14, fontWeight: 700, color: "#1A1F36" }}>{t.name}</div>
-                    <div style={{ fontSize: 12, color: "#36405E", lineHeight: 1.4 }}>{t.title}</div>
+                    <div style={{ fontSize: 13, color: "#36405E", lineHeight: 1.4 }}>{t.title}</div>
                   </div>
                 </div>
                 <div style={{ background: "#EBF1FD", borderRadius: 8, padding: "5px 12px", display: "inline-flex", alignItems: "center", gap: 6 }}>
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0A59EB" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                   </svg>
-                  <span style={{ fontSize: 12, fontWeight: 700, color: "#0A59EB" }}>{t.source}</span>
+                  <span style={{ fontSize: 13, fontWeight: 700, color: "#0A59EB" }}>{t.source}</span>
                 </div>
               </div>
             </div>

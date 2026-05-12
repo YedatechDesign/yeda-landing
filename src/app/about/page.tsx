@@ -98,7 +98,7 @@ export default function AboutPage() {
               style={{
                 background: "#0A59EB",
                 color: "white",
-                fontSize: 11,
+                fontSize: 13,
                 fontWeight: 800,
                 padding: "5px 14px",
                 borderRadius: 4,
@@ -228,7 +228,7 @@ export default function AboutPage() {
                     >
                       {s.num}
                     </div>
-                    <div style={{ fontSize: 13, color: "#4B5472", marginTop: 4 }}>
+                    <div style={{ fontSize: 14, color: "#4B5472", marginTop: 4 }}>
                       {s.label}
                     </div>
                   </div>
@@ -416,7 +416,7 @@ export default function AboutPage() {
                   </h3>
                   <p
                     style={{
-                      fontSize: 13,
+                      fontSize: 14,
                       color: "#4B5472",
                       lineHeight: 1.7,
                       margin: 0,
@@ -475,7 +475,7 @@ export default function AboutPage() {
                     <span style={{
                       display: "inline-block",
                       background: "#EBF1FD", color: "#0A59EB",
-                      fontSize: 11, fontWeight: 700,
+                      fontSize: 13, fontWeight: 700,
                       padding: "4px 10px", borderRadius: 999,
                     }}>{member.title}</span>
                   </div>

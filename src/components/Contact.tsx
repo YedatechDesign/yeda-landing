@@ -54,7 +54,7 @@ export default function Contact() {
               borderRadius: 100, padding: "6px 18px", marginBottom: 22,
             }}>
               <div style={{ width: 7, height: 7, borderRadius: "50%", background: "#4CAF50", flexShrink: 0 }} />
-              <span style={{ color: "rgba(255,255,255,0.9)", fontSize: 13, fontWeight: 700 }}>30 דקות • ללא עלות וללא התחייבות</span>
+              <span style={{ color: "rgba(255,255,255,0.9)", fontSize: 15, fontWeight: 700 }}>30 דקות • ללא עלות וללא התחייבות</span>
             </div>
             <h2
               style={{
@@ -113,7 +113,7 @@ export default function Contact() {
                 borderTop: "1px solid rgba(255,255,255,0.1)",
               }}
             >
-              <p style={{ color: "rgba(255,255,255,0.65)", fontSize: 13, marginBottom: 12 }}>
+              <p style={{ color: "rgba(255,255,255,0.65)", fontSize: 15, marginBottom: 12 }}>
                 מעדיפים ליצור קשר ישירות?
               </p>
               <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
@@ -184,7 +184,7 @@ export default function Contact() {
                   <form onSubmit={handleSubmit}>
                     <div className="form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14, marginBottom: 14 }}>
                       <div>
-                        <label style={{ display: "block", fontSize: 13, fontWeight: 700, color: "#000F61", marginBottom: 6 }}>
+                        <label style={{ display: "block", fontSize: 14, fontWeight: 700, color: "#000F61", marginBottom: 6 }}>
                           שם מלא *
                         </label>
                         <input
@@ -198,7 +198,7 @@ export default function Contact() {
                         />
                       </div>
                       <div>
-                        <label style={{ display: "block", fontSize: 13, fontWeight: 700, color: "#000F61", marginBottom: 6 }}>
+                        <label style={{ display: "block", fontSize: 14, fontWeight: 700, color: "#000F61", marginBottom: 6 }}>
                           שם החברה *
                         </label>
                         <input
@@ -214,7 +214,7 @@ export default function Contact() {
                     </div>
 
                     <div style={{ marginBottom: 14 }}>
-                      <label style={{ display: "block", fontSize: 13, fontWeight: 700, color: "#000F61", marginBottom: 6 }}>
+                      <label style={{ display: "block", fontSize: 14, fontWeight: 700, color: "#000F61", marginBottom: 6 }}>
                         אימייל עסקי *
                       </label>
                       <input
@@ -230,7 +230,7 @@ export default function Contact() {
                     </div>
 
                     <div style={{ marginBottom: 14 }}>
-                      <label style={{ display: "block", fontSize: 13, fontWeight: 700, color: "#000F61", marginBottom: 6 }}>
+                      <label style={{ display: "block", fontSize: 14, fontWeight: 700, color: "#000F61", marginBottom: 6 }}>
                         טלפון
                       </label>
                       <input
@@ -244,7 +244,7 @@ export default function Contact() {
                     </div>
 
                     <div style={{ marginBottom: 28 }}>
-                      <label style={{ display: "block", fontSize: 13, fontWeight: 700, color: "#000F61", marginBottom: 6 }}>
+                      <label style={{ display: "block", fontSize: 14, fontWeight: 700, color: "#000F61", marginBottom: 6 }}>
                         מספר עובדים בארגון
                       </label>
                       <select
@@ -270,7 +270,7 @@ export default function Contact() {
                       קבעו דמו חינם ←
                     </button>
 
-                    <p style={{ fontSize: 12, color: "#4B5472", textAlign: "center", marginTop: 12 }}>
+                    <p style={{ fontSize: 13, color: "#4B5472", textAlign: "center", marginTop: 12 }}>
                       ללא עלות, ללא התחייבות. המידע לא יועבר לצד שלישי.
                     </p>
                   </form>

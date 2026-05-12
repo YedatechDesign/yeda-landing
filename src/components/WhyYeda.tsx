@@ -71,7 +71,7 @@ export default function WhyYeda() {
                 </p>
                 <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#F0F2F8", padding: "7px 14px", borderRadius: 6 }}>
                   <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#F08700", flexShrink: 0, display: "block" }} />
-                  <span style={{ fontSize: 13, fontWeight: 700, color: "#000F61" }}>{d.highlight}</span>
+                  <span style={{ fontSize: 14, fontWeight: 700, color: "#000F61" }}>{d.highlight}</span>
                 </div>
               </div>
             </div>

@@ -89,7 +89,7 @@ function TeamCard({
         <h3 style={{ fontSize: 14, fontWeight: 800, color: "#1B1B1E", marginBottom: 4, lineHeight: 1.3, direction: "ltr" }}>
           {name}
         </h3>
-        <p style={{ fontSize: 12, color: "#6B7280", margin: "0 0 10px", lineHeight: 1.4 }}>
+        <p style={{ fontSize: 13, color: "#6B7280", margin: "0 0 10px", lineHeight: 1.4 }}>
           {role}
         </p>
         <div className="team-emoji-tag" style={{

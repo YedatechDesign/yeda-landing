@@ -117,7 +117,7 @@ export default function SecurityPage() {
                   <svg width={13} height={13} viewBox="0 0 24 24" fill="none" stroke="#7FB3FF" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                   </svg>
-                  <span style={{ color: "#7FB3FF", fontSize: 12, fontWeight: 700, letterSpacing: "0.06em" }}>אבטחת מידע</span>
+                  <span style={{ color: "#7FB3FF", fontSize: 14, fontWeight: 700, letterSpacing: "0.06em" }}>אבטחת מידע</span>
                 </div>
 
                 <h1 style={{ fontSize: "clamp(32px, 4vw, 54px)", fontWeight: 900, color: "white", lineHeight: 1.1, marginBottom: 24 }}>
@@ -133,7 +133,7 @@ export default function SecurityPage() {
                     <div key={b} style={{
                       background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.18)",
                       borderRadius: 8, padding: "7px 14px",
-                      fontSize: 13, fontWeight: 700, color: "rgba(255,255,255,0.9)",
+                      fontSize: 14, fontWeight: 700, color: "rgba(255,255,255,0.9)",
                       display: "flex", alignItems: "center", gap: 6,
                     }}>
                       <svg width={11} height={11} viewBox="0 0 24 24" fill="none" stroke="#4CAF50" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round">
@@ -174,7 +174,7 @@ export default function SecurityPage() {
                   borderRight: i < 3 ? "1px solid rgba(255,255,255,0.2)" : "none",
                 }}>
                   <div style={{ fontSize: 34, fontWeight: 900, color: "white", lineHeight: 1 }}>{h.num}</div>
-                  <div style={{ fontSize: 13, color: "rgba(255,255,255,0.75)", fontWeight: 600, marginTop: 5 }}>{h.label}</div>
+                  <div style={{ fontSize: 14, color: "rgba(255,255,255,0.75)", fontWeight: 600, marginTop: 5 }}>{h.label}</div>
                 </div>
               ))}
             </div>
@@ -214,7 +214,7 @@ export default function SecurityPage() {
                   <span style={{
                     display: "inline-block",
                     background: "#EBF1FD", color: "#0A59EB",
-                    fontSize: 12, fontWeight: 800,
+                    fontSize: 14, fontWeight: 800,
                     padding: "5px 14px", borderRadius: 100, marginBottom: 20,
                     letterSpacing: "0.05em", textTransform: "uppercase" as const,
                   }}>{sec.tag}</span>
@@ -277,7 +277,7 @@ export default function SecurityPage() {
                   </div>
 
                   <div style={{
-                    display: "inline-block", fontSize: 11, fontWeight: 800,
+                    display: "inline-block", fontSize: 13, fontWeight: 800,
                     color: "#7FB3FF", letterSpacing: "0.08em", textTransform: "uppercase" as const,
                     marginBottom: 10,
                   }}>{sec.tag}</div>
@@ -295,7 +295,7 @@ export default function SecurityPage() {
                         }} />
                         <div>
                           <div style={{ fontSize: 14, fontWeight: 700, color: "white", marginBottom: 3 }}>{f.title}</div>
-                          <div style={{ fontSize: 13, color: "rgba(255,255,255,0.55)", lineHeight: 1.65 }}>{f.desc}</div>
+                          <div style={{ fontSize: 14, color: "rgba(255,255,255,0.55)", lineHeight: 1.65 }}>{f.desc}</div>
                         </div>
                       </div>
                     ))}

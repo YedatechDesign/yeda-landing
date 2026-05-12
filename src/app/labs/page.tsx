@@ -98,7 +98,7 @@ export default function LabsPage() {
               borderRadius: 100, padding: "6px 18px", marginBottom: 28,
             }}>
               <div style={{ width: 7, height: 7, borderRadius: "50%", background: "#76A4F9" }} />
-              <span style={{ color: "rgba(255,255,255,0.95)", fontSize: 13, fontWeight: 700 }}>Yeda Labs — בינה מלאכותית ליצירת תוכן</span>
+              <span style={{ color: "rgba(255,255,255,0.95)", fontSize: 15, fontWeight: 700 }}>Yeda Labs — בינה מלאכותית ליצירת תוכן</span>
             </div>
 
             <h1 style={{ fontSize: "clamp(30px, 5vw, 58px)", fontWeight: 900, color: "white", lineHeight: 1.12, marginBottom: 24 }}>
@@ -143,7 +143,7 @@ export default function LabsPage() {
                 <div style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 900, color: "white", lineHeight: 1, marginBottom: 8 }}>
                   {s.num}
                 </div>
-                <div style={{ fontSize: 13, color: "rgba(255,255,255,0.6)", fontWeight: 500 }}>{s.label}</div>
+                <div style={{ fontSize: 15, color: "rgba(255,255,255,0.6)", fontWeight: 500 }}>{s.label}</div>
               </div>
             ))}
           </div>
@@ -171,7 +171,7 @@ export default function LabsPage() {
                 display: "inline-block",
                 background: "rgba(10,89,235,0.3)", color: "rgba(255,255,255,0.9)",
                 border: "1px solid rgba(10,89,235,0.5)",
-                fontSize: 12, fontWeight: 800, padding: "5px 18px",
+                fontSize: 14, fontWeight: 800, padding: "5px 18px",
                 borderRadius: 999, letterSpacing: "0.08em", marginBottom: 18,
               }}>איך זה עובד</span>
               <h2 style={{ fontSize: "clamp(24px, 3vw, 40px)", fontWeight: 900, color: "white", lineHeight: 1.15, marginBottom: 14 }}>
@@ -265,7 +265,7 @@ export default function LabsPage() {
                             <h3 style={{ color: "white", fontSize: 15, fontWeight: 800, margin: "0 0 8px", lineHeight: 1.35 }}>
                               {step.title}
                             </h3>
-                            <p style={{ color: "rgba(255,255,255,0.55)", fontSize: 13, lineHeight: 1.65, margin: 0 }}>
+                            <p style={{ color: "rgba(255,255,255,0.55)", fontSize: 14, lineHeight: 1.65, margin: 0 }}>
                               {step.desc}
                             </p>
                           </div>
@@ -330,7 +330,7 @@ export default function LabsPage() {
               </div>
 
               <div>
-                <div style={{ fontSize: 12, fontWeight: 800, color: "#34D399", letterSpacing: "0.12em", marginBottom: 8 }}>שלב 07</div>
+                <div style={{ fontSize: 14, fontWeight: 800, color: "#34D399", letterSpacing: "0.12em", marginBottom: 8 }}>שלב 07</div>
                 <h3 style={{ color: "white", fontSize: "clamp(20px, 2.5vw, 28px)", fontWeight: 900, margin: "0 0 10px" }}>
                   הלומדה מוכנה לפרסום!
                 </h3>
@@ -372,7 +372,7 @@ export default function LabsPage() {
                   <span style={{
                     display: "inline-block",
                     background: "#EBF1FD", color: "#0A59EB",
-                    fontSize: 12, fontWeight: 800, padding: "5px 14px",
+                    fontSize: 14, fontWeight: 800, padding: "5px 14px",
                     borderRadius: 999, letterSpacing: "0.06em", marginBottom: 16,
                   }}>
                     {sec.tag}
@@ -425,7 +425,7 @@ export default function LabsPage() {
               <span style={{
                 display: "inline-block",
                 background: "#EBF1FD", color: "#0A59EB",
-                fontSize: 12, fontWeight: 800, padding: "5px 14px",
+                fontSize: 14, fontWeight: 800, padding: "5px 14px",
                 borderRadius: 999, letterSpacing: "0.06em", marginBottom: 16,
               }}>שימושים</span>
               <h2 style={{ fontSize: "clamp(24px, 3vw, 38px)", fontWeight: 900, color: "#000F61", lineHeight: 1.2, marginBottom: 16 }}>
@@ -527,7 +527,7 @@ export default function LabsPage() {
             <div className="comparison-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
               {/* Before */}
               <div style={{ background: "rgba(255,255,255,0.04)", borderRadius: 20, padding: "32px 28px", border: "1px solid rgba(255,255,255,0.1)" }}>
-                <div style={{ fontSize: 13, fontWeight: 800, color: "rgba(255,255,255,0.4)", letterSpacing: "0.1em", textTransform: "uppercase" as const, marginBottom: 24 }}>סוכנות לומדות מסורתית ✕</div>
+                <div style={{ fontSize: 14, fontWeight: 800, color: "rgba(255,255,255,0.4)", letterSpacing: "0.1em", textTransform: "uppercase" as const, marginBottom: 24 }}>סוכנות לומדות מסורתית ✕</div>
                 {[
                   "6,500–15,000 ₪ ללומדה אחת",
                   "4–8 שבועות לפיתוח ואספקה",
@@ -546,7 +546,7 @@ export default function LabsPage() {
 
               {/* After */}
               <div style={{ background: "rgba(10,89,235,0.15)", borderRadius: 20, padding: "32px 28px", border: "1px solid rgba(10,89,235,0.4)" }}>
-                <div style={{ fontSize: 13, fontWeight: 800, color: "#76A4F9", letterSpacing: "0.1em", textTransform: "uppercase" as const, marginBottom: 24 }}>עם Yeda Labs ✓</div>
+                <div style={{ fontSize: 14, fontWeight: 800, color: "#76A4F9", letterSpacing: "0.1em", textTransform: "uppercase" as const, marginBottom: 24 }}>עם Yeda Labs ✓</div>
                 {[
                   "לומדה מלאה תוך 3–10 דקות",
                   "עצמאות מלאה — בונים ומפיצים לבד",
@@ -573,7 +573,7 @@ export default function LabsPage() {
               <span style={{
                 display: "inline-block",
                 background: "rgba(10,89,235,0.35)", color: "#76A4F9",
-                fontSize: 12, fontWeight: 800, padding: "5px 14px",
+                fontSize: 14, fontWeight: 800, padding: "5px 14px",
                 borderRadius: 999, letterSpacing: "0.06em", marginBottom: 16,
                 border: "1px solid rgba(10,89,235,0.5)",
               }}>
@@ -600,7 +600,7 @@ export default function LabsPage() {
                 }}>
                   <img src={item.img} alt={item.label} style={{ width: "100%", display: "block" }} />
                   <div style={{ padding: "14px 16px", background: "rgba(255,255,255,0.05)" }}>
-                    <p style={{ color: "rgba(255,255,255,0.8)", fontSize: 13, fontWeight: 600, margin: 0, textAlign: "center" }}>{item.label}</p>
+                    <p style={{ color: "rgba(255,255,255,0.8)", fontSize: 14, fontWeight: 600, margin: 0, textAlign: "center" }}>{item.label}</p>
                   </div>
                 </div>
               ))}

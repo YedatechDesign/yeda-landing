@@ -123,7 +123,7 @@ export default function PainPointsNew() {
                 display: "inline-flex", alignItems: "center", gap: 8,
               }}>
                 <SvgIcon d="M13 10V3L4 14h7v7l9-11h-7z" size={13} color="#0A59EB" />
-                <span style={{ color: "#0A59EB", fontSize: 12, fontWeight: 700 }}>{pain.cost}</span>
+                <span style={{ color: "#0A59EB", fontSize: 14, fontWeight: 700 }}>{pain.cost}</span>
               </div>
             </div>
           ))}

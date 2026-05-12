@@ -51,7 +51,7 @@ export default function DashboardSection() {
             }}>
               {(["preview", "live"] as const).map((v) => (
                 <button key={v} onClick={() => setActiveView(v)} style={{
-                  padding: "8px 20px", borderRadius: 7, border: "none", fontSize: 13, fontWeight: 700,
+                  padding: "8px 20px", borderRadius: 7, border: "none", fontSize: 14, fontWeight: 700,
                   cursor: "pointer", fontFamily: "inherit",
                   background: activeView === v ? "#000F61" : "transparent",
                   color: activeView === v ? "white" : "#4B5472",
@@ -134,7 +134,7 @@ export default function DashboardSection() {
               )}
             </div>
 
-            <p style={{ textAlign: "center", fontSize: 13, color: "#7A84A0", marginTop: 12 }}>
+            <p style={{ textAlign: "center", fontSize: 14, color: "#7A84A0", marginTop: 12 }}>
               הדאשבורד המוצג הוא דמו חי בלבד — הנתונים של הארגון שלכם יישמרו בסביבה מאובטחת נפרדת.
             </p>
           </div>

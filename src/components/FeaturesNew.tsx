@@ -193,9 +193,9 @@ function AccordionItem({ feature, index }: { feature: FeatureItem; index: number
             <span style={{
               background: "linear-gradient(135deg, #0A59EB, #000F61)",
               color: "white",
-              fontSize: 11,
+              fontSize: 12,
               fontWeight: 700,
-              padding: "3px 10px",
+              padding: "4px 12px",
               borderRadius: 999,
               letterSpacing: "0.04em",
             }}>AI</span>
@@ -203,9 +203,9 @@ function AccordionItem({ feature, index }: { feature: FeatureItem; index: number
           <span style={{
             background: open ? "#0A59EB" : "#EEF1F8",
             color: open ? "white" : "#36405E",
-            fontSize: 10,
+            fontSize: 12,
             fontWeight: 700,
-            padding: "3px 10px",
+            padding: "4px 12px",
             borderRadius: 999,
             letterSpacing: "0.05em",
             textTransform: "uppercase" as const,
@@ -286,7 +286,7 @@ function LabsHeroCard() {
         borderRadius: 999, padding: "6px 20px", marginBottom: 22,
       }}>
         <div style={{ width: 7, height: 7, borderRadius: "50%", background: "#76A4F9" }} />
-        <span style={{ color: "#B4CCFF", fontSize: 13, fontWeight: 700, letterSpacing: "0.06em" }}>
+        <span style={{ color: "#B4CCFF", fontSize: 15, fontWeight: 700, letterSpacing: "0.06em" }}>
           Yeda Labs AI — בינה מלאכותית ליצירת לומדות
         </span>
       </div>
@@ -304,9 +304,9 @@ function LabsHeroCard() {
           { num: "03", title: "חסכו אלפי שקלים", desc: "לומדת בטיחות / הטרדה מינית עולה 6,500–15,000 ₪ בסוכנות — עם Yeda Labs: בונים לבד" },
         ].map(item => (
           <div key={item.num} style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.14)", borderRadius: 18, padding: "26px 22px", textAlign: "right" }}>
-            <div style={{ fontSize: 13, fontWeight: 800, color: "#76A4F9", letterSpacing: "0.08em", marginBottom: 8 }}>{item.num}</div>
+            <div style={{ fontSize: 14, fontWeight: 800, color: "#76A4F9", letterSpacing: "0.08em", marginBottom: 8 }}>{item.num}</div>
             <div style={{ fontSize: 16, fontWeight: 800, color: "white", marginBottom: 8, lineHeight: 1.3 }}>{item.title}</div>
-            <p style={{ fontSize: 13, color: "rgba(255,255,255,0.65)", lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
+            <p style={{ fontSize: 14, color: "rgba(255,255,255,0.65)", lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
           </div>
         ))}
       </div>

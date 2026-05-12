@@ -28,7 +28,7 @@ export default function AISection() {
         <div style={{ textAlign: "center", marginBottom: 52 }}>
           <span style={{
             display: "inline-block", background: "rgba(240,135,0,0.2)", border: "1px solid rgba(240,135,0,0.5)",
-            color: "#FFB84D", fontSize: 12, fontWeight: 700,
+            color: "#FFB84D", fontSize: 14, fontWeight: 700,
             padding: "5px 16px", borderRadius: 100, marginBottom: 20, letterSpacing: "0.05em",
           }}>
             Yeda Labs AI
@@ -53,8 +53,8 @@ export default function AISection() {
                 <div style={{ ...ICON_BOX, margin: "0 auto 8px" }}>
                   <s.icon size={18} color="#F08700" />
                 </div>
-                <div style={{ fontSize: 13, fontWeight: 700, color: "white" }}>{s.label}</div>
-                <div style={{ fontSize: 11, color: "rgba(255,255,255,0.45)" }}>{s.sub}</div>
+                <div style={{ fontSize: 14, fontWeight: 700, color: "white" }}>{s.label}</div>
+                <div style={{ fontSize: 13, color: "rgba(255,255,255,0.45)" }}>{s.sub}</div>
               </div>
               {i < steps.length - 1 && (
                 <div style={{ fontSize: 20, color: "rgba(255,255,255,0.2)", margin: "0 4px", paddingBottom: 20 }}>←</div>
@@ -77,7 +77,7 @@ export default function AISection() {
                 </div>
                 <h3 style={{ fontSize: 15, fontWeight: 700, color: "white", margin: 0 }}>{title}</h3>
               </div>
-              <p style={{ fontSize: 13, color: "rgba(255,255,255,0.55)", lineHeight: 1.7, margin: 0 }}>{desc}</p>
+              <p style={{ fontSize: 14, color: "rgba(255,255,255,0.55)", lineHeight: 1.7, margin: 0 }}>{desc}</p>
             </div>
           ))}
         </div>
