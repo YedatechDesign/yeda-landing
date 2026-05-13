@@ -217,20 +217,6 @@ h1, h2, h3, h4, h5, h6 {
 .float     { animation: floatY     4.5s ease-in-out infinite; }
 .float-slow{ animation: floatYSlow 6s   ease-in-out infinite; }
 
-/* ── Shimmer on CTA buttons ─────────────────── */
-.btn-primary {
-  position: relative;
-  overflow: hidden;
-}
-.btn-primary::after {
-  content: '';
-  position: absolute;
-  top: -50%; left: 0;
-  width: 35%; height: 200%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent);
-  animation: shimmer 3s ease-in-out infinite 1.5s;
-  pointer-events: none;
-}
 
 /* ── Card hover lift ────────────────────────── */
 .card-lift {
