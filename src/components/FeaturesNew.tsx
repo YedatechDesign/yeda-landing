@@ -120,8 +120,7 @@ const labsFeatures = [
 
 type FeatureItem = typeof lmsFeatures[0] | typeof labsFeatures[0];
 
-function AccordionItem({ feature, index }: { feature: FeatureItem; index: number }) {
-  const [open, setOpen] = useState(index === 0);
+function AccordionItem({ feature, open, onToggle }: { feature: FeatureItem; open: boolean; onToggle: () => void }) {
 
   return (
     <div
@@ -150,7 +149,7 @@ function AccordionItem({ feature, index }: { feature: FeatureItem; index: number
       {/* Header row */}
       <button
         className="acc-btn"
-        onClick={() => setOpen(!open)}
+        onClick={onToggle}
         style={{
           width: "100%",
           background: open ? "#EBF1FD" : "none",
@@ -317,6 +316,22 @@ function LabsHeroCard() {
   );
 }
 
+function AccordionList({ features, gap = 12 }: { features: FeatureItem[]; gap?: number }) {
+  const [openIndex, setOpenIndex] = useState(0);
+  return (
+    <div style={{ display: "grid", gap }}>
+      {features.map((f, i) => (
+        <AccordionItem
+          key={f.title}
+          feature={f}
+          open={openIndex === i}
+          onToggle={() => setOpenIndex(openIndex === i ? -1 : i)}
+        />
+      ))}
+    </div>
+  );
+}
+
 function LmsBanner() {
   return (
     <div style={{ background: "#000F61", borderRadius: 14, padding: "16px 28px", maxWidth: 760, margin: "0 auto 32px", textAlign: "center" }}>
@@ -366,11 +381,7 @@ export default function FeaturesNew() {
           {tab === "labs" && <LabsHeroCard />}
           {tab === "lms"  && <LmsBanner />}
 
-          <div style={{ display: "grid", gap: 12 }}>
-            {features.map((f, i) => (
-              <AccordionItem key={f.title} feature={f} index={i} />
-            ))}
-          </div>
+          <AccordionList features={features} gap={12} />
         </div>
 
         {/* ── MOBILE: both sections always visible ── */}
@@ -387,11 +398,7 @@ export default function FeaturesNew() {
               </span>
             </div>
             <LmsBanner />
-            <div style={{ display: "grid", gap: 10 }}>
-              {lmsFeatures.map((f, i) => (
-                <AccordionItem key={f.title} feature={f} index={i} />
-              ))}
-            </div>
+            <AccordionList features={lmsFeatures} gap={10} />
           </div>
 
           {/* Divider */}
@@ -416,11 +423,7 @@ export default function FeaturesNew() {
 
             <LabsHeroCard />
 
-            <div style={{ display: "grid", gap: 10 }}>
-              {labsFeatures.map((f, i) => (
-                <AccordionItem key={f.title} feature={f} index={i} />
-              ))}
-            </div>
+            <AccordionList features={labsFeatures} gap={10} />
           </div>
         </div>
 
