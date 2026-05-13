@@ -181,10 +181,10 @@ function AccordionItem({ feature, index }: { feature: FeatureItem; index: number
 
           {/* Title block */}
           <div style={{ flex: 1, minWidth: 0 }}>
-            <div style={{ fontSize: 18, fontWeight: 800, color: "#1A1F36", marginBottom: 3 }}>
+            <div style={{ fontSize: 18, fontWeight: 800, color: "#1A1F36", marginBottom: 4 }}>
               {feature.title}
             </div>
-            <div style={{ fontSize: 14, color: "#36405E", fontWeight: 400 }}>{feature.subtitle}</div>
+            <div style={{ fontSize: 15, color: "#1A1F36", fontWeight: 500, opacity: 0.7 }}>{feature.subtitle}</div>
           </div>
         </div>
 

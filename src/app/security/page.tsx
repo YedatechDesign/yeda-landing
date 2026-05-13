@@ -279,23 +279,23 @@ export default function SecurityPage() {
                   <div style={{
                     display: "inline-block", fontSize: 13, fontWeight: 800,
                     color: "#7FB3FF", letterSpacing: "0.08em", textTransform: "uppercase" as const,
-                    marginBottom: 10,
+                    marginBottom: 12,
                   }}>{sec.tag}</div>
 
-                  <h3 style={{ fontSize: 19, fontWeight: 800, color: "white", marginBottom: 24, lineHeight: 1.3 }}>
+                  <h3 style={{ fontSize: 22, fontWeight: 800, color: "white", marginBottom: 24, lineHeight: 1.3 }}>
                     {sec.title}
                   </h3>
 
-                  <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+                  <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
                     {sec.features.map(f => (
                       <div key={f.title} style={{ display: "flex", gap: 12, alignItems: "flex-start" }}>
                         <div style={{
-                          width: 6, height: 6, borderRadius: "50%",
+                          width: 7, height: 7, borderRadius: "50%",
                           background: "#0A59EB", flexShrink: 0, marginTop: 7,
                         }} />
                         <div>
-                          <div style={{ fontSize: 14, fontWeight: 700, color: "white", marginBottom: 3 }}>{f.title}</div>
-                          <div style={{ fontSize: 14, color: "rgba(255,255,255,0.55)", lineHeight: 1.65 }}>{f.desc}</div>
+                          <div style={{ fontSize: 16, fontWeight: 700, color: "white", marginBottom: 5 }}>{f.title}</div>
+                          <div style={{ fontSize: 15, color: "rgba(255,255,255,0.7)", lineHeight: 1.7 }}>{f.desc}</div>
                         </div>
                       </div>
                     ))}

@@ -58,7 +58,7 @@ function LogoCard({ client }: { client: typeof companies[0] }) {
         />
       </div>
       <p style={{
-        fontSize: 12,
+        fontSize: 14,
         color: "#4B5563",
         lineHeight: 1.5,
         textAlign: "center",
@@ -101,10 +101,7 @@ export default function ClientLogos() {
           .client-grid { grid-template-columns: repeat(4, 1fr) !important; }
         }
         @media (max-width: 600px) {
-          .client-grid { grid-template-columns: repeat(3, 1fr) !important; gap: 16px 12px !important; }
-        }
-        @media (max-width: 400px) {
-          .client-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          .client-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 16px 12px !important; }
         }
       `}</style>
     </section>

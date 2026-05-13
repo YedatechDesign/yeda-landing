@@ -377,7 +377,7 @@ export default function LabsPage() {
                   }}>
                     {sec.tag}
                   </span>
-                  <h2 style={{ fontSize: "clamp(22px, 3vw, 34px)", fontWeight: 800, color: "#000F61", lineHeight: 1.2, marginBottom: 16 }}>
+                  <h2 dir="rtl" style={{ fontSize: "clamp(22px, 3vw, 34px)", fontWeight: 800, color: "#000F61", lineHeight: 1.2, marginBottom: 16 }}>
                     {sec.title}{" "}
                     <span style={{ color: "#0A59EB" }}>{sec.titleBlue}</span>
                   </h2>
