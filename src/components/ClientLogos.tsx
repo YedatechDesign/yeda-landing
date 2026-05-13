@@ -85,7 +85,7 @@ export default function ClientLogos() {
         </h2>
 
         {/* Logo grid */}
-        <div className="client-grid" style={{
+        <div className="client-grid stagger-grid" style={{
           display: "grid",
           gridTemplateColumns: "repeat(7, 1fr)",
           gap: "28px 20px",

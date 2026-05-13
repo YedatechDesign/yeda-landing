@@ -42,7 +42,7 @@ export default function HeroNew() {
       </div>
 
       <div
-        className="hero-inner"
+        className="hero-inner no-reveal"
         style={{
           maxWidth: 1160, margin: "0 auto", padding: "72px 24px 56px",
           textAlign: "center", position: "relative", zIndex: 1,

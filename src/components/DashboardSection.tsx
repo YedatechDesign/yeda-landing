@@ -63,7 +63,7 @@ export default function DashboardSection() {
             </div>
 
             {/* Browser chrome frame */}
-            <div style={{ borderRadius: 12, overflow: "hidden", boxShadow: "0 24px 72px rgba(0,15,97,0.18)", border: "1px solid #D0D5E8" }}>
+            <div className="float-slow" style={{ borderRadius: 12, overflow: "hidden", boxShadow: "0 24px 72px rgba(0,15,97,0.18)", border: "1px solid #D0D5E8" }}>
               {/* Browser bar — no URL shown */}
               <div style={{ background: "#1E2A5E", padding: "10px 16px", display: "flex", alignItems: "center", gap: 12 }}>
                 <div style={{ display: "flex", gap: 6 }}>
@@ -148,7 +148,7 @@ export default function DashboardSection() {
               כל הנתונים שמנהל HR או L&D צריך — בלי להתאמץ לאסוף אותם.
             </p>
 
-            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+            <div className="stagger-grid" style={{ display: "flex", flexDirection: "column", gap: 12 }}>
               {capabilities.map((cap) => (
                 <div key={cap.title} style={{
                   display: "flex", gap: 14, padding: "14px 16px",
