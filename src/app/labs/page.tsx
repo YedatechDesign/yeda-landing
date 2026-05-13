@@ -628,7 +628,7 @@ export default function LabsPage() {
                 border: "1.5px solid #C5D4F6", color: "#000F61",
                 textDecoration: "none", fontWeight: 600, fontFamily: "inherit",
               }}>
-                חזרה לאתר הראשי
+                בחזרה לדף הבית
               </a>
             </div>
 
