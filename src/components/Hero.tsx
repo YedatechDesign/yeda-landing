@@ -17,7 +17,7 @@ export default function Hero() {
             color: "#FFB84D", fontSize: 13, fontWeight: 700,
             padding: "6px 16px", borderRadius: 100,
           }}>
-            <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#F08700", display: "inline-block" }} />
+            <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#000F61", display: "inline-block" }} />
             מעל 500 ארגונים כבר עושים את זה נכון
           </span>
         </div>
@@ -44,7 +44,7 @@ export default function Hero() {
         {/* CTAs */}
         <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap", marginBottom: 64 }}>
           <a href="#contact" style={{
-            background: "#F08700", color: "white", fontWeight: 800,
+            background: "#000F61", color: "white", fontWeight: 800,
             padding: "15px 36px", borderRadius: 6, fontSize: 17,
             textDecoration: "none", display: "inline-block", transition: "background 0.2s",
             fontFamily: "inherit",
@@ -59,7 +59,7 @@ export default function Hero() {
             transition: "border-color 0.2s", fontFamily: "inherit",
           }}>
             <span style={{
-              width: 30, height: 30, background: "#F08700", borderRadius: "50%",
+              width: 30, height: 30, background: "#000F61", borderRadius: "50%",
               display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
             }}>
               <IconPlay size={12} color="white" />
@@ -100,7 +100,7 @@ export default function Hero() {
                 ))}
               </div>
               <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
-                <div style={{ width: 26, height: 26, borderRadius: "50%", background: "#F08700", fontSize: 11, fontWeight: 800, color: "white", display: "flex", alignItems: "center", justifyContent: "center" }}>מ</div>
+                <div style={{ width: 26, height: 26, borderRadius: "50%", background: "#000F61", fontSize: 11, fontWeight: 800, color: "white", display: "flex", alignItems: "center", justifyContent: "center" }}>מ</div>
               </div>
             </div>
             {/* KPIs */}

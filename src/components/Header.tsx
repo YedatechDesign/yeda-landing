@@ -13,11 +13,10 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { label: "פיצ'רים", href: "/#features" },
+    { label: "יכולות", href: "/#features" },
     { label: "לומדות עם AI", href: "/labs" },
     { label: "דאשבורד", href: "/#dashboard" },
     { label: "אבטחת מידע", href: "/security" },
-    { label: "אודות", href: "/about" },
     { label: "יצירת קשר", href: "/#contact" },
   ];
 
@@ -29,9 +28,9 @@ export default function Header() {
         right: 0,
         left: 0,
         zIndex: 50,
-        background: "#000F61",
-        borderBottom: scrolled ? "1px solid rgba(255,255,255,0.12)" : "1px solid transparent",
-        boxShadow: scrolled ? "0 2px 16px rgba(0,0,0,0.25)" : "none",
+        background: "#F08700",
+        borderBottom: scrolled ? "1px solid rgba(255,255,255,0.25)" : "1px solid transparent",
+        boxShadow: scrolled ? "0 2px 16px rgba(163,92,0,0.25)" : "none",
         transition: "box-shadow 0.3s, border-color 0.3s",
       }}
     >
@@ -74,7 +73,17 @@ export default function Header() {
 
         {/* CTA */}
         <div style={{ display: "flex", alignItems: "center", gap: 12 }} className="desktop-nav">
-          <a href="#contact" className="btn-primary" style={{ padding: "10px 22px", fontSize: 14 }}>
+          <a
+            href="#contact"
+            style={{
+              background: "white", color: "#F08700", fontWeight: 700,
+              padding: "10px 22px", fontSize: 14, borderRadius: 999,
+              textDecoration: "none", display: "inline-block",
+              transition: "transform 0.15s, box-shadow 0.2s",
+            }}
+            onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-1px)"; e.currentTarget.style.boxShadow = "0 4px 14px rgba(0,0,0,0.2)"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = "none"; }}
+          >
             קבעו דמו חינם
           </a>
         </div>
@@ -100,8 +109,8 @@ export default function Header() {
       {mobileOpen && (
         <div
           style={{
-            background: "#000F61",
-            borderTop: "1px solid rgba(255,255,255,0.1)",
+            background: "#F08700",
+            borderTop: "1px solid rgba(255,255,255,0.2)",
             padding: "16px 24px 24px",
           }}
         >
@@ -124,8 +133,11 @@ export default function Header() {
           ))}
           <a
             href="#contact"
-            className="btn-primary"
-            style={{ marginTop: 16, display: "block", textAlign: "center" }}
+            style={{
+              marginTop: 16, display: "block", textAlign: "center",
+              background: "white", color: "#F08700", fontWeight: 700,
+              padding: "13px", fontSize: 15, borderRadius: 999, textDecoration: "none",
+            }}
           >
             קבעו דמו חינם
           </a>

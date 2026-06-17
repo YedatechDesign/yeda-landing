@@ -86,7 +86,7 @@ function CheckMark() {
   return (
     <div style={{
       width: 22, height: 22, borderRadius: "50%",
-      background: "#0A59EB", flexShrink: 0,
+      background: "#000F61", flexShrink: 0,
       display: "flex", alignItems: "center", justifyContent: "center", marginTop: 2,
     }}>
       <svg width={12} height={12} viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round">
@@ -103,7 +103,7 @@ export default function SecurityPage() {
       <main style={{ paddingTop: 72 }}>
 
         {/* ─── HERO ─── */}
-        <section style={{ background: "linear-gradient(160deg, #000F61 60%, #0A2EA4 100%)", padding: "80px 24px 72px", overflow: "hidden" }}>
+        <section style={{ background: "#000F61", padding: "80px 24px 72px", overflow: "hidden" }}>
           <div style={{ maxWidth: 1100, margin: "0 auto" }}>
             <div className="sec-hero-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }}>
 
@@ -114,10 +114,10 @@ export default function SecurityPage() {
                   background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.2)",
                   borderRadius: 100, padding: "6px 18px", marginBottom: 28,
                 }}>
-                  <svg width={13} height={13} viewBox="0 0 24 24" fill="none" stroke="#7FB3FF" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
+                  <svg width={13} height={13} viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                   </svg>
-                  <span style={{ color: "#7FB3FF", fontSize: 14, fontWeight: 700, letterSpacing: "0.06em" }}>אבטחת מידע</span>
+                  <span style={{ color: "white", fontSize: 14, fontWeight: 700, letterSpacing: "0.06em" }}>אבטחת מידע</span>
                 </div>
 
                 <h1 style={{ fontSize: "clamp(32px, 4vw, 54px)", fontWeight: 900, color: "white", lineHeight: 1.1, marginBottom: 24 }}>
@@ -165,7 +165,7 @@ export default function SecurityPage() {
         </section>
 
         {/* ─── STATS ─── */}
-        <section style={{ background: "#0A59EB" }}>
+        <section style={{ background: "#000F61" }}>
           <div style={{ maxWidth: 900, margin: "0 auto", padding: "28px 24px" }}>
             <div className="sec-stats-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 0 }}>
               {highlights.map((h, i) => (
@@ -213,7 +213,7 @@ export default function SecurityPage() {
                 <div style={{ direction: "rtl" }}>
                   <span style={{
                     display: "inline-block",
-                    background: "#EBF1FD", color: "#0A59EB",
+                    background: "#FFF3E6", color: "#F08700",
                     fontSize: 14, fontWeight: 800,
                     padding: "5px 14px", borderRadius: 100, marginBottom: 20,
                     letterSpacing: "0.05em", textTransform: "uppercase" as const,
@@ -262,23 +262,23 @@ export default function SecurityPage() {
                   background: "rgba(255,255,255,0.05)",
                   border: "1px solid rgba(255,255,255,0.1)",
                   borderRadius: 20, padding: "32px 28px",
-                  borderTop: "3px solid #0A59EB",
+                  borderTop: "3px solid #F08700",
                 }}>
                   {/* Icon */}
                   <div style={{
                     width: 52, height: 52, borderRadius: 14,
-                    background: "rgba(10,89,235,0.25)",
+                    background: "rgba(255,255,255,0.25)",
                     display: "flex", alignItems: "center", justifyContent: "center",
                     marginBottom: 20,
                   }}>
-                    <svg width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="#7FB3FF" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+                    <svg width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
                       <path d={sec.icon} />
                     </svg>
                   </div>
 
                   <div style={{
                     display: "inline-block", fontSize: 13, fontWeight: 800,
-                    color: "#7FB3FF", letterSpacing: "0.08em", textTransform: "uppercase" as const,
+                    color: "white", letterSpacing: "0.08em", textTransform: "uppercase" as const,
                     marginBottom: 12,
                   }}>{sec.tag}</div>
 
@@ -291,7 +291,7 @@ export default function SecurityPage() {
                       <div key={f.title} style={{ display: "flex", gap: 12, alignItems: "flex-start" }}>
                         <div style={{
                           width: 7, height: 7, borderRadius: "50%",
-                          background: "#0A59EB", flexShrink: 0, marginTop: 7,
+                          background: "white", flexShrink: 0, marginTop: 7,
                         }} />
                         <div>
                           <div style={{ fontSize: 16, fontWeight: 700, color: "white", marginBottom: 5 }}>{f.title}</div>
@@ -317,7 +317,7 @@ export default function SecurityPage() {
             }}>
               <div style={{
                 width: 68, height: 68, borderRadius: 18,
-                background: "linear-gradient(135deg, #0A59EB, #000F61)",
+                background: "#F08700",
                 border: "2px solid rgba(255,255,255,0.2)",
                 margin: "0 auto 28px",
                 display: "flex", alignItems: "center", justifyContent: "center",

@@ -34,7 +34,7 @@ const featureSections: {
     bullets: [
       "תמלול אוטומטי ב-100+ שפות",
       "כתוביות מסונכרנות אוטומטית",
-      "שאלות הבנה אינטראקטיביות שנוצרות לבד",
+      "שאלות הבנה אינטראקטיביות שנוצרות אוטומטית",
       "עריכה מלאה של התוכן לפני פרסום",
     ],
     reverse: true,
@@ -72,7 +72,7 @@ const featureSections: {
 function CheckMark() {
   return (
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-      stroke="#0A59EB" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
+      stroke="#F08700" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
       <path d="M20 6L9 17l-5-5" />
     </svg>
   );
@@ -87,24 +87,24 @@ export default function LabsPage() {
         {/* ── Hero ─────────────────────────────────────── */}
         <section style={{ background: "#000F61", padding: "88px 24px 80px", position: "relative", overflow: "hidden" }}>
           <div style={{ position: "absolute", inset: 0, pointerEvents: "none" }}>
-            <div style={{ position: "absolute", top: "10%", right: "8%", width: 500, height: 500, borderRadius: "50%", background: "radial-gradient(circle, rgba(10,89,235,0.25) 0%, transparent 70%)" }} />
-            <div style={{ position: "absolute", bottom: "-10%", left: "5%", width: 400, height: 400, borderRadius: "50%", background: "radial-gradient(circle, rgba(10,89,235,0.12) 0%, transparent 70%)" }} />
+            <div style={{ position: "absolute", top: "10%", right: "8%", width: 500, height: 500, borderRadius: "50%", background: "none" }} />
+            <div style={{ position: "absolute", bottom: "-10%", left: "5%", width: 400, height: 400, borderRadius: "50%", background: "none" }} />
           </div>
 
           <div style={{ maxWidth: 860, margin: "0 auto", textAlign: "center", position: "relative", zIndex: 1 }}>
             <div style={{
               display: "inline-flex", alignItems: "center", gap: 8,
-              background: "rgba(10,89,235,0.3)", border: "1px solid rgba(10,89,235,0.5)",
+              background: "rgba(255,255,255,0.3)", border: "1px solid rgba(255,255,255,0.5)",
               borderRadius: 100, padding: "6px 18px", marginBottom: 28,
             }}>
-              <div style={{ width: 7, height: 7, borderRadius: "50%", background: "#76A4F9" }} />
+              <div style={{ width: 7, height: 7, borderRadius: "50%", background: "white" }} />
               <span style={{ color: "rgba(255,255,255,0.95)", fontSize: 15, fontWeight: 700 }}>Yeda Labs — בינה מלאכותית ליצירת תוכן</span>
             </div>
 
             <h1 style={{ fontSize: "clamp(30px, 5vw, 58px)", fontWeight: 900, color: "white", lineHeight: 1.12, marginBottom: 24 }}>
               צרו לומדות מקצועיות
               <br />
-              <span style={{ background: "linear-gradient(135deg, #76A4F9, #B4CCFF)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+              <span style={{ color: "#FFC170" }}>
                 תוך דקות, עם AI
               </span>
             </h1>
@@ -160,8 +160,8 @@ export default function LabsPage() {
         <section style={{ background: "#000F61", padding: "88px 24px", position: "relative", overflow: "hidden" }}>
           {/* Background glows */}
           <div style={{ position: "absolute", inset: 0, pointerEvents: "none" }}>
-            <div style={{ position: "absolute", top: "-5%", right: "0%", width: 600, height: 600, borderRadius: "50%", background: "radial-gradient(circle, rgba(10,89,235,0.22) 0%, transparent 70%)" }} />
-            <div style={{ position: "absolute", bottom: "5%", left: "5%", width: 500, height: 500, borderRadius: "50%", background: "radial-gradient(circle, rgba(10,89,235,0.14) 0%, transparent 70%)" }} />
+            <div style={{ position: "absolute", top: "-5%", right: "0%", width: 600, height: 600, borderRadius: "50%", background: "none" }} />
+            <div style={{ position: "absolute", bottom: "5%", left: "5%", width: 500, height: 500, borderRadius: "50%", background: "none" }} />
           </div>
 
           <div style={{ maxWidth: 1060, margin: "0 auto", position: "relative", zIndex: 1 }}>
@@ -169,14 +169,14 @@ export default function LabsPage() {
             <div style={{ textAlign: "center", marginBottom: 60 }}>
               <span style={{
                 display: "inline-block",
-                background: "rgba(10,89,235,0.3)", color: "rgba(255,255,255,0.9)",
-                border: "1px solid rgba(10,89,235,0.5)",
+                background: "rgba(255,255,255,0.3)", color: "rgba(255,255,255,0.9)",
+                border: "1px solid rgba(255,255,255,0.5)",
                 fontSize: 14, fontWeight: 800, padding: "5px 18px",
                 borderRadius: 999, letterSpacing: "0.08em", marginBottom: 18,
               }}>איך זה עובד</span>
               <h2 style={{ fontSize: "clamp(24px, 3vw, 40px)", fontWeight: 900, color: "white", lineHeight: 1.15, marginBottom: 14 }}>
                 מחומר גלם ללומדה מוכנה —{" "}
-                <span style={{ color: "#76A4F9" }}>7 שלבים</span>
+                <span style={{ color: "white" }}>7 שלבים</span>
               </h2>
               <p style={{ fontSize: 16, color: "rgba(255,255,255,0.55)", maxWidth: 460, margin: "0 auto" }}>
                 בממוצע תוך 10–15 דקות
@@ -203,9 +203,9 @@ export default function LabsPage() {
                   <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 20 }}>
                     <div style={{ flex: 1, height: 1, background: "rgba(255,255,255,0.1)" }} />
                     <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                      <div style={{ width: 7, height: 7, borderRadius: "50%", background: "#76A4F9", flexShrink: 0 }} />
+                      <div style={{ width: 7, height: 7, borderRadius: "50%", background: "white", flexShrink: 0 }} />
                       <span style={{ fontSize: 14, fontWeight: 800, color: "white", letterSpacing: "0.08em", textTransform: "uppercase" as const, whiteSpace: "nowrap" as const }}>{label}</span>
-                      <div style={{ width: 7, height: 7, borderRadius: "50%", background: "#76A4F9", flexShrink: 0 }} />
+                      <div style={{ width: 7, height: 7, borderRadius: "50%", background: "white", flexShrink: 0 }} />
                     </div>
                     <div style={{ flex: 1, height: 1, background: "rgba(255,255,255,0.1)" }} />
                   </div>
@@ -217,7 +217,7 @@ export default function LabsPage() {
                       position: "absolute", top: 24,
                       left: "calc(100% / 6)", right: "calc(100% / 6)",
                       height: 1,
-                      background: "linear-gradient(to left, rgba(118,164,249,0.6), rgba(118,164,249,0.15))",
+                      background: "rgba(255,193,112,0.3)",
                       zIndex: 0,
                     }} />
 
@@ -227,10 +227,10 @@ export default function LabsPage() {
                           {/* Numbered dot */}
                           <div style={{
                             width: 48, height: 48, borderRadius: "50%",
-                            background: "linear-gradient(135deg, #0A59EB, #3B82F6)",
+                            background: "#F08700",
                             display: "flex", alignItems: "center", justifyContent: "center",
                             fontSize: 14, fontWeight: 900, color: "white",
-                            boxShadow: "0 0 20px rgba(10,89,235,0.55)",
+                            boxShadow: "0 0 20px rgba(255,255,255,0.55)",
                             position: "relative", zIndex: 1,
                             marginBottom: 18,
                             border: "2px solid rgba(255,255,255,0.15)",
@@ -252,12 +252,12 @@ export default function LabsPage() {
                             {/* Icon */}
                             <div style={{
                               width: 40, height: 40, borderRadius: 10,
-                              background: "rgba(10,89,235,0.3)",
+                              background: "rgba(255,255,255,0.3)",
                               display: "flex", alignItems: "center", justifyContent: "center",
                               margin: "0 auto 14px",
                             }}>
                               <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                stroke="#76A4F9" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"
+                                stroke="white" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"
                                 style={{ display: "block" }}>
                                 <path d={step.icon} />
                               </svg>
@@ -279,12 +279,12 @@ export default function LabsPage() {
                     <div style={{ display: "flex", justifyContent: "center", padding: "16px 0" }}>
                       <div style={{
                         width: 34, height: 34, borderRadius: "50%",
-                        background: "rgba(10,89,235,0.25)",
-                        border: "1px solid rgba(10,89,235,0.4)",
+                        background: "rgba(255,255,255,0.25)",
+                        border: "1px solid rgba(255,255,255,0.4)",
                         display: "flex", alignItems: "center", justifyContent: "center",
                       }}>
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-                          stroke="#76A4F9" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                          stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                           <path d="M12 5v14 M5 12l7 7 7-7" />
                         </svg>
                       </div>
@@ -311,7 +311,7 @@ export default function LabsPage() {
 
             {/* Final step — full width */}
             <div style={{
-              background: "linear-gradient(135deg, rgba(16,185,129,0.15) 0%, rgba(10,89,235,0.15) 100%)",
+              background: "rgba(16,185,129,0.12)",
               border: "1px solid rgba(16,185,129,0.35)",
               borderRadius: 22, padding: "40px 36px",
               display: "flex", flexDirection: "column", alignItems: "center", gap: 16, textAlign: "center",
@@ -319,7 +319,7 @@ export default function LabsPage() {
               {/* Check circle */}
               <div style={{
                 width: 68, height: 68, borderRadius: "50%",
-                background: "linear-gradient(135deg, #10B981, #059669)",
+                background: "#10B981",
                 display: "flex", alignItems: "center", justifyContent: "center",
                 boxShadow: "0 0 32px rgba(16,185,129,0.45)",
               }}>
@@ -371,7 +371,7 @@ export default function LabsPage() {
                 <div style={{ direction: "rtl" }}>
                   <span style={{
                     display: "inline-block",
-                    background: "#EBF1FD", color: "#0A59EB",
+                    background: "#FFF3E6", color: "#F08700",
                     fontSize: 14, fontWeight: 800, padding: "5px 14px",
                     borderRadius: 999, letterSpacing: "0.06em", marginBottom: 16,
                   }}>
@@ -379,7 +379,7 @@ export default function LabsPage() {
                   </span>
                   <h2 dir="rtl" style={{ fontSize: "clamp(22px, 3vw, 34px)", fontWeight: 800, color: "#000F61", lineHeight: 1.2, marginBottom: 16 }}>
                     {sec.title}{" "}
-                    <span style={{ color: "#0A59EB" }}>{sec.titleBlue}</span>
+                    <span style={{ color: "#F08700" }}>{sec.titleBlue}</span>
                   </h2>
                   <p style={{ fontSize: 16, color: "#4B5472", lineHeight: 1.8, marginBottom: 24 }}>
                     {sec.desc}
@@ -389,7 +389,7 @@ export default function LabsPage() {
                       <div key={b} style={{ display: "flex", alignItems: "center", gap: 10 }}>
                         <div style={{
                           width: 22, height: 22, borderRadius: "50%",
-                          background: "#EBF1FD",
+                          background: "#FFF3E6",
                           display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
                         }}>
                           <CheckMark />
@@ -424,17 +424,17 @@ export default function LabsPage() {
             <div style={{ textAlign: "center", marginBottom: 48 }}>
               <span style={{
                 display: "inline-block",
-                background: "#EBF1FD", color: "#0A59EB",
+                background: "#FFF3E6", color: "#F08700",
                 fontSize: 14, fontWeight: 800, padding: "5px 14px",
                 borderRadius: 999, letterSpacing: "0.06em", marginBottom: 16,
               }}>שימושים</span>
               <h2 style={{ fontSize: "clamp(24px, 3vw, 38px)", fontWeight: 900, color: "#000F61", lineHeight: 1.2, marginBottom: 16 }}>
                 לכל צורך הדרכה בארגון —{" "}
-                <span style={{ color: "#0A59EB" }}>לומדה תוך דקות</span>
+                <span style={{ color: "#F08700" }}>לומדה תוך דקות</span>
               </h2>
               <p style={{ fontSize: 17, color: "#4B5472", lineHeight: 1.75, maxWidth: 600, margin: "0 auto" }}>
                 מה שלקח שבועות ועלה <strong style={{ color: "#000F61" }}>6,500–15,000 ₪ לסוכנויות חיצוניות</strong> —
-                עכשיו בונים לבד, תוך דקות, בשפה הגרפית של הארגון.
+                עכשיו ניתן ליצור בתוך הארגון, תוך דקות, בשפה הגרפית של הארגון.
               </p>
             </div>
 
@@ -457,7 +457,7 @@ export default function LabsPage() {
                 {
                   d: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z",
                   title: "הכשרות רגולטוריות",
-                  desc: "בטיחות, מניעת הטרדה, נגישות, ציות — לומדות חובה שנתיות שבונים בעצמכם ולא משלמים לסוכנות",
+                  desc: "בטיחות, מניעת הטרדה, נגישות, ציות — לומדות חובה שנתיות שניתן ליצור בתוך הארגון, ללא תשלום לסוכנות",
                 },
                 {
                   d: "M19 11H5a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2z M7 11V7a5 5 0 0 1 10 0v4",
@@ -484,12 +484,12 @@ export default function LabsPage() {
                 }}>
                   <div style={{
                     width: 48, height: 48, borderRadius: 12,
-                    background: "#D6E3FC",
+                    background: "#FFE4C2",
                     display: "flex", alignItems: "center", justifyContent: "center",
                     marginBottom: 16,
                   }}>
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-                      stroke="#0A59EB" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"
+                      stroke="#F08700" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"
                       style={{ display: "block" }}>
                       <path d={item.d} />
                     </svg>
@@ -517,7 +517,7 @@ export default function LabsPage() {
           <div style={{ maxWidth: 960, margin: "0 auto" }}>
             <div style={{ textAlign: "center", marginBottom: 48 }}>
               <h2 style={{ fontSize: "clamp(26px, 3.5vw, 40px)", fontWeight: 800, color: "white", lineHeight: 1.15 }}>
-                לפני Yeda Labs · <span style={{ color: "#76A4F9" }}>אחרי Yeda Labs</span>
+                לפני Yeda Labs · <span style={{ color: "white" }}>אחרי Yeda Labs</span>
               </h2>
               <p style={{ fontSize: 16, color: "rgba(255,255,255,0.55)", marginTop: 12 }}>
                 כך נראה פיתוח לומדה לפני ואחרי AI
@@ -545,18 +545,18 @@ export default function LabsPage() {
               </div>
 
               {/* After */}
-              <div style={{ background: "rgba(10,89,235,0.15)", borderRadius: 20, padding: "32px 28px", border: "1px solid rgba(10,89,235,0.4)" }}>
-                <div style={{ fontSize: 14, fontWeight: 800, color: "#76A4F9", letterSpacing: "0.1em", textTransform: "uppercase" as const, marginBottom: 24 }}>עם Yeda Labs ✓</div>
+              <div style={{ background: "rgba(255,255,255,0.15)", borderRadius: 20, padding: "32px 28px", border: "1px solid rgba(255,255,255,0.4)" }}>
+                <div style={{ fontSize: 14, fontWeight: 800, color: "white", letterSpacing: "0.1em", textTransform: "uppercase" as const, marginBottom: 24 }}>עם Yeda Labs ✓</div>
                 {[
                   "לומדה מלאה תוך 3–10 דקות",
-                  "עצמאות מלאה — בונים ומפיצים לבד",
+                  "עצמאות מלאה — יצירה והפצה בתוך הארגון",
                   "דיבוב לשפות רבות עם AI תוך דקות ספורות",
                   "תרגום אוטומטי ל-100+ שפות",
                   "עריכה חיה ושינויים בלחיצה אחת",
                 ].map((item) => (
                   <div key={item} style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 14, color: "rgba(255,255,255,0.9)", fontSize: 15 }}>
-                    <div style={{ width: 20, height: 20, borderRadius: "50%", background: "rgba(10,89,235,0.4)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#76A4F9" strokeWidth="2.5" strokeLinecap="round"><path d="M20 6L9 17l-5-5" /></svg>
+                    <div style={{ width: 20, height: 20, borderRadius: "50%", background: "rgba(255,255,255,0.4)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round"><path d="M20 6L9 17l-5-5" /></svg>
                     </div>
                     {item}
                   </div>
@@ -572,10 +572,10 @@ export default function LabsPage() {
             <div style={{ textAlign: "center", marginBottom: 52 }}>
               <span style={{
                 display: "inline-block",
-                background: "rgba(10,89,235,0.35)", color: "#76A4F9",
+                background: "rgba(255,255,255,0.35)", color: "white",
                 fontSize: 14, fontWeight: 800, padding: "5px 14px",
                 borderRadius: 999, letterSpacing: "0.06em", marginBottom: 16,
-                border: "1px solid rgba(10,89,235,0.5)",
+                border: "1px solid rgba(255,255,255,0.5)",
               }}>
                 עוזר AI ארגוני
               </span>
@@ -613,7 +613,7 @@ export default function LabsPage() {
           <div style={{ maxWidth: 680, margin: "0 auto", textAlign: "center" }}>
             <span className="section-badge-navy">התחילו היום</span>
             <h2 style={{ fontSize: "clamp(26px, 3.5vw, 42px)", fontWeight: 900, color: "#000F61", marginBottom: 20, lineHeight: 1.15, marginTop: 16 }}>
-              רוצים לראות את <span style={{ color: "#0A59EB" }}>Yeda Labs</span> בפעולה?
+              רוצים לראות את <span style={{ color: "#F08700" }}>Yeda Labs</span> בפעולה?
             </h2>
             <p style={{ fontSize: 17, color: "#4B5472", lineHeight: 1.75, maxWidth: 500, margin: "0 auto 36px" }}>
               בדמו של 30 דקות נראה לכם איך להפוך את החומרים שלכם ללומדות AI — בדיוק לפי הצרכים של הארגון שלכם.
@@ -625,7 +625,7 @@ export default function LabsPage() {
               </a>
               <a href="/" style={{
                 fontSize: 16, padding: "14px 36px", borderRadius: 999,
-                border: "1.5px solid #C5D4F6", color: "#000F61",
+                border: "1.5px solid #FFD9A8", color: "#000F61",
                 textDecoration: "none", fontWeight: 600, fontFamily: "inherit",
               }}>
                 בחזרה לדף הבית
@@ -635,7 +635,7 @@ export default function LabsPage() {
             <div style={{ display: "flex", flexWrap: "wrap", gap: 20, justifyContent: "center" }}>
               {["ללא עלות וללא התחייבות", "30 דקות בלבד", "הדגמה חיה עם חומרים שלכם"].map((item) => (
                 <div key={item} style={{ display: "flex", alignItems: "center", gap: 8, color: "#36405E", fontSize: 14, fontWeight: 500 }}>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0A59EB" strokeWidth="2.5" strokeLinecap="round"><path d="M20 6L9 17l-5-5" /></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F08700" strokeWidth="2.5" strokeLinecap="round"><path d="M20 6L9 17l-5-5" /></svg>
                   {item}
                 </div>
               ))}

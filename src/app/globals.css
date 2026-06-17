@@ -3,11 +3,11 @@
 :root {
   --navy:       #000F61;
   --navy-800:   #0A1575;
-  --blue:       #0A59EB;
-  --blue-500:   #2E72F0;
-  --blue-400:   #6B93F4;
-  --blue-100:   #D6E3FC;
-  --blue-50:    #EBF1FD;
+  --blue:       #F08700;
+  --blue-500:   #FF9E1F;
+  --blue-400:   #FFC170;
+  --blue-100:   #FFE4C2;
+  --blue-50:    #FFF3E6;
   --bg:         #F5F7FD;
   --white:      #FFFFFF;
   --dark-text:  #1A1F36;
@@ -28,7 +28,7 @@ html {
 }
 
 body {
-  font-family: 'Heebo', 'Segoe UI', Arial, sans-serif;
+  font-family: 'Rubik', 'Segoe UI', Arial, sans-serif;
   background: var(--bg);
   color: var(--dark-text);
   direction: rtl;
@@ -39,7 +39,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   letter-spacing: normal;
-  font-family: 'Heebo', 'Segoe UI', Arial, sans-serif;
+  font-family: 'Rubik', 'Segoe UI', Arial, sans-serif;
 }
 
 /* ── Buttons ────────────────────────────────── */
@@ -60,6 +60,25 @@ h1, h2, h3, h4, h5, h6 {
 .btn-primary:hover {
   background: var(--blue-500);
   transform: translateY(-1px);
+}
+
+.btn-white {
+  background: white;
+  color: #F08700;
+  font-weight: 700;
+  padding: 14px 36px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.2s;
+  font-size: 15px;
+  text-decoration: none;
+  display: inline-block;
+  font-family: inherit;
+}
+.btn-white:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.18);
 }
 
 .btn-outline-white {
@@ -106,10 +125,10 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.07em;
   text-transform: uppercase;
   margin-bottom: 18px;
-  background: #EBF1FD;
+  background: #FFF3E6;
   padding: 6px 18px;
   border-radius: 999px;
-  border: 1px solid #D6E3FC;
+  border: 1px solid #FFE4C2;
 }
 
 .section-badge-navy {
@@ -120,10 +139,10 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.07em;
   text-transform: uppercase;
   margin-bottom: 18px;
-  background: #EBF1FD;
+  background: #FFF3E6;
   padding: 6px 18px;
   border-radius: 999px;
-  border: 1px solid #D6E3FC;
+  border: 1px solid #FFE4C2;
 }
 
 /* ── Tab buttons ────────────────────────────── */
@@ -191,8 +210,8 @@ h1, h2, h3, h4, h5, h6 {
   to   { opacity: 1; transform: translateX(0); }
 }
 @keyframes glowPulse {
-  0%, 100% { box-shadow: 0 0 20px rgba(10,89,235,0.3); }
-  50%       { box-shadow: 0 0 40px rgba(10,89,235,0.6); }
+  0%, 100% { box-shadow: 0 0 20px rgba(240,135,0,0.3); }
+  50%       { box-shadow: 0 0 40px rgba(240,135,0,0.6); }
 }
 
 /* ── Scroll reveal ──────────────────────────── */

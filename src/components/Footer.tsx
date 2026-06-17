@@ -60,9 +60,9 @@ export default function Footer() {
                     transition: "all 0.2s",
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.background = "#0A59EB";
+                    e.currentTarget.style.background = "#F08700";
                     e.currentTarget.style.color = "white";
-                    e.currentTarget.style.borderColor = "#0A59EB";
+                    e.currentTarget.style.borderColor = "#F08700";
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.background = "rgba(255,255,255,0.07)";
@@ -78,7 +78,7 @@ export default function Footer() {
 
           {[
             { title: "מוצר", links: ["Yeda LMS", "Yeda Labs AI", "דאשבורד", "אינטגרציות", "אבטחה"] },
-            { title: "חברה", links: ["אודות", "לקוחות", "יצירת קשר"] },
+            { title: "חברה", links: ["לקוחות", "יצירת קשר"] },
             { title: "תמיכה", links: ["שאלות נפוצות", "צור קשר"] },
           ].map((col) => (
             <div key={col.title}>

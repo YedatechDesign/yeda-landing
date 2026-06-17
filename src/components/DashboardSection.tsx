@@ -1,9 +1,7 @@
 "use client";
 import { useState } from "react";
 
-const DASHBOARD_URL = "https://yeda-dashboard.vercel.app/";
-
-function SvgIcon({ d, size = 18, color = "#0A59EB" }: { d: string; size?: number; color?: string }) {
+function SvgIcon({ d, size = 18, color = "#F08700" }: { d: string; size?: number; color?: string }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none"
       stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"
@@ -22,8 +20,66 @@ const capabilities = [
   { icon: "M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z", title: "התאמה אישית מלאה", desc: "ערכות צבעים, לוגו, KPIs — כל מה שחשוב לארגון" },
 ];
 
+type PeriodKey = "month" | "quarter" | "year";
+
+const PERIODS: { key: PeriodKey; label: string }[] = [
+  { key: "month",   label: "החודש" },
+  { key: "quarter", label: "רבעון" },
+  { key: "year",    label: "שנה" },
+];
+
+const DATA: Record<PeriodKey, {
+  metrics: { label: string; value: string; change: string }[];
+  bars: number[];
+  depts: { name: string; pct: number }[];
+}> = {
+  month: {
+    metrics: [
+      { label: "עובדים פעילים", value: "284", change: "+12%" },
+      { label: "הכשרות שהושלמו", value: "1,247", change: "+23%" },
+      { label: "ממוצע ציונים", value: "87%", change: "+4%" },
+      { label: "תעודות שהונפקו", value: "93", change: "+8%" },
+    ],
+    bars: [60, 45, 75, 55, 80, 65, 90, 70, 85, 72, 95, 88],
+    depts: [
+      { name: "מחלקת מכירות", pct: 92 },
+      { name: "מחלקת תפעול", pct: 78 },
+      { name: "מחלקת שירות", pct: 85 },
+    ],
+  },
+  quarter: {
+    metrics: [
+      { label: "עובדים פעילים", value: "612", change: "+18%" },
+      { label: "הכשרות שהושלמו", value: "3,904", change: "+31%" },
+      { label: "ממוצע ציונים", value: "89%", change: "+6%" },
+      { label: "תעודות שהונפקו", value: "274", change: "+15%" },
+    ],
+    bars: [50, 62, 58, 70, 66, 80, 76, 84, 79, 90, 86, 94],
+    depts: [
+      { name: "מחלקת מכירות", pct: 88 },
+      { name: "מחלקת תפעול", pct: 83 },
+      { name: "מחלקת שירות", pct: 90 },
+    ],
+  },
+  year: {
+    metrics: [
+      { label: "עובדים פעילים", value: "1,940", change: "+41%" },
+      { label: "הכשרות שהושלמו", value: "15,802", change: "+52%" },
+      { label: "ממוצע ציונים", value: "91%", change: "+9%" },
+      { label: "תעודות שהונפקו", value: "1,118", change: "+27%" },
+    ],
+    bars: [40, 48, 55, 60, 64, 70, 73, 80, 84, 88, 92, 97],
+    depts: [
+      { name: "מחלקת מכירות", pct: 94 },
+      { name: "מחלקת תפעול", pct: 87 },
+      { name: "מחלקת שירות", pct: 91 },
+    ],
+  },
+};
+
 export default function DashboardSection() {
-  const [activeView, setActiveView] = useState<"preview" | "live">("preview");
+  const [period, setPeriod] = useState<PeriodKey>("month");
+  const d = DATA[period];
 
   return (
     <section id="dashboard" style={{ background: "#F5F7FD", padding: "88px 24px" }}>
@@ -32,11 +88,11 @@ export default function DashboardSection() {
         <div style={{ textAlign: "center", marginBottom: 52 }}>
           <span className="section-badge-navy">דאשבורד ניהולי</span>
           <h2 style={{ fontSize: "clamp(24px, 3.5vw, 40px)", fontWeight: 800, color: "#1A1F36", marginBottom: 14, lineHeight: 1.15, }}>
-            נראות מלאה על הכשרות וביצועי עובדים
+            סטטיסטיקה והתקדמות בתוך המערכת
           </h2>
           <p style={{ fontSize: 16, color: "#4B5472", maxWidth: 540, margin: "0 auto", lineHeight: 1.75 }}>
-            דאשבורד ניהולי בזמן אמת, מותאם לצרכי הארגון. הכל במקום אחד —
-            מהשלמות, דרך ציונים, ועד דוחות לרגולציה.
+            נראות מלאה על הכשרות וביצועי עובדים בזמן אמת — מהשלמות, דרך ציונים,
+            ועד דוחות לרגולציה. מותאם לנתוני הארגון שלכם.
           </p>
         </div>
 
@@ -44,98 +100,87 @@ export default function DashboardSection() {
 
           {/* Dashboard frame */}
           <div>
-            {/* View toggle */}
-            <div style={{
-              display: "flex", gap: 0, marginBottom: 16,
-              background: "#E3E7F2", borderRadius: 10, padding: 4, width: "fit-content",
-            }}>
-              {(["preview", "live"] as const).map((v) => (
-                <button key={v} onClick={() => setActiveView(v)} style={{
-                  padding: "8px 20px", borderRadius: 7, border: "none", fontSize: 14, fontWeight: 700,
-                  cursor: "pointer", fontFamily: "inherit",
-                  background: activeView === v ? "#000F61" : "transparent",
-                  color: activeView === v ? "white" : "#4B5472",
-                  transition: "all 0.2s",
-                }}>
-                  {v === "preview" ? "תצוגה מקדימה" : "Live — נסו בעצמכם"}
-                </button>
-              ))}
-            </div>
-
-            {/* Browser chrome frame */}
             <div className="float-slow" style={{ borderRadius: 12, overflow: "hidden", boxShadow: "0 24px 72px rgba(0,15,97,0.18)", border: "1px solid #D0D5E8" }}>
-              {/* Browser bar — no URL shown */}
+              {/* Window chrome */}
               <div style={{ background: "#1E2A5E", padding: "10px 16px", display: "flex", alignItems: "center", gap: 12 }}>
                 <div style={{ display: "flex", gap: 6 }}>
                   {["#FF5F57", "#FFBD2E", "#28C840"].map((c) => (
                     <div key={c} style={{ width: 12, height: 12, borderRadius: "50%", background: c, flexShrink: 0 }} />
                   ))}
                 </div>
-                <div style={{ flex: 1, background: "rgba(255,255,255,0.08)", borderRadius: 6, padding: "5px 12px", height: 28 }} />
-                <div style={{ background: "#0A59EB", borderRadius: 4, padding: "3px 10px", fontSize: 11, color: "white", fontWeight: 700 }}>
-                  LIVE
-                </div>
+                <span style={{ flex: 1, color: "rgba(255,255,255,0.85)", fontSize: 13, fontWeight: 700, textAlign: "center" }}>
+                  סטטיסטיקה והתקדמות בתוך המערכת
+                </span>
+                <div style={{ width: 54 }} />
               </div>
 
-              {activeView === "preview" ? (
-                <div style={{
-                  background: "#0F1F6B", height: 520,
-                  display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 16, padding: "24px 32px",
-                }}>
-                  <div style={{ width: "100%", maxWidth: 560 }}>
-                    {/* Metric cards */}
-                    <div className="metric-cards" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 10, marginBottom: 14 }}>
-                      {[
-                        { label: "עובדים פעילים", value: "284", change: "+12%" },
-                        { label: "הושלמו החודש", value: "1,247", change: "+23%" },
-                        { label: "ממוצע ציונים", value: "87%", change: "+4%" },
-                        { label: "תעודות הונפקו", value: "93", change: "+8%" },
-                      ].map((m) => (
-                        <div key={m.label} style={{ background: "rgba(255,255,255,0.08)", borderRadius: 8, padding: "12px 10px", textAlign: "center", border: "1px solid rgba(255,255,255,0.1)" }}>
-                          <div style={{ fontSize: 22, fontWeight: 900, color: "white", lineHeight: 1 }}>{m.value}</div>
-                          <div style={{ fontSize: 11, color: "rgba(255,255,255,0.5)", marginTop: 4, lineHeight: 1.3 }}>{m.label}</div>
-                          <div style={{ fontSize: 12, color: "#4ADE80", fontWeight: 700, marginTop: 4 }}>{m.change}</div>
-                        </div>
-                      ))}
-                    </div>
-                    {/* Chart */}
-                    <div style={{ background: "rgba(255,255,255,0.05)", borderRadius: 8, padding: 14, marginBottom: 10, border: "1px solid rgba(255,255,255,0.08)", height: 110, display: "flex", alignItems: "flex-end", gap: 6 }}>
-                      {[60, 45, 75, 55, 80, 65, 90, 70, 85, 72, 95, 88].map((h, i) => (
-                        <div key={i} style={{ flex: 1, height: `${h}%`, background: i === 11 ? "#0A59EB" : "rgba(255,255,255,0.2)", borderRadius: "3px 3px 0 0" }} />
-                      ))}
-                    </div>
-                    {/* Progress bars */}
-                    {[
-                      { name: "מחלקת מכירות", pct: 92 },
-                      { name: "מחלקת פיתוח", pct: 78 },
-                      { name: "מחלקת תמיכה", pct: 85 },
-                    ].map((dept) => (
-                      <div key={dept.name} style={{ marginBottom: 7 }}>
-                        <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 3 }}>
-                          <span style={{ fontSize: 13, color: "rgba(255,255,255,0.6)" }}>{dept.name}</span>
-                          <span style={{ fontSize: 13, color: "#0A59EB", fontWeight: 700 }}>{dept.pct}%</span>
-                        </div>
-                        <div style={{ background: "rgba(255,255,255,0.1)", borderRadius: 4, height: 6 }}>
-                          <div style={{ width: `${dept.pct}%`, background: "#0A59EB", borderRadius: 4, height: "100%" }} />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                  <button onClick={() => setActiveView("live")} style={{
-                    background: "#0A59EB", color: "white", border: "none", borderRadius: 999,
-                    padding: "12px 28px", fontSize: 14, fontWeight: 700, cursor: "pointer", fontFamily: "inherit",
-                    flexShrink: 0,
-                  }}>
-                    עברו לדאשבורד החי ←
-                  </button>
+              {/* Body */}
+              <div style={{ background: "#0F1F6B", padding: "22px 24px" }}>
+                {/* Period tabs */}
+                <div style={{ display: "flex", gap: 6, marginBottom: 18 }}>
+                  {PERIODS.map((p) => {
+                    const active = p.key === period;
+                    return (
+                      <button
+                        key={p.key}
+                        onClick={() => setPeriod(p.key)}
+                        style={{
+                          padding: "7px 18px", borderRadius: 999, border: "none",
+                          fontSize: 13, fontWeight: 700, cursor: "pointer", fontFamily: "inherit",
+                          background: active ? "#F08700" : "rgba(255,255,255,0.08)",
+                          color: active ? "white" : "rgba(255,255,255,0.7)",
+                          transition: "all 0.2s",
+                        }}
+                      >
+                        {p.label}
+                      </button>
+                    );
+                  })}
                 </div>
-              ) : (
-                <iframe src={DASHBOARD_URL} title="Yeda Dashboard" style={{ width: "100%", height: 520, border: "none", display: "block" }} />
-              )}
+
+                {/* Metric cards */}
+                <div className="metric-cards" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 10, marginBottom: 16 }}>
+                  {d.metrics.map((m) => (
+                    <div key={m.label} style={{ background: "rgba(255,255,255,0.08)", borderRadius: 10, padding: "14px 10px", textAlign: "center", border: "1px solid rgba(255,255,255,0.1)" }}>
+                      <div style={{ fontSize: 23, fontWeight: 900, color: "white", lineHeight: 1 }}>{m.value}</div>
+                      <div style={{ fontSize: 11, color: "rgba(255,255,255,0.55)", marginTop: 5, lineHeight: 1.3 }}>{m.label}</div>
+                      <div style={{ fontSize: 12, color: "#4ADE80", fontWeight: 700, marginTop: 5 }}>{m.change}</div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Chart */}
+                <div style={{ background: "rgba(255,255,255,0.05)", borderRadius: 10, padding: 14, marginBottom: 14, border: "1px solid rgba(255,255,255,0.08)", height: 120, display: "flex", alignItems: "flex-end", gap: 6 }}>
+                  {d.bars.map((h, i) => (
+                    <div
+                      key={i}
+                      style={{
+                        flex: 1, height: `${h}%`,
+                        background: i === d.bars.length - 1 ? "#F08700" : "rgba(255,255,255,0.22)",
+                        borderRadius: "3px 3px 0 0",
+                        transition: "height 0.5s cubic-bezier(0.4,0,0.2,1)",
+                      }}
+                    />
+                  ))}
+                </div>
+
+                {/* Department progress */}
+                {d.depts.map((dept) => (
+                  <div key={dept.name} style={{ marginBottom: 9 }}>
+                    <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 4 }}>
+                      <span style={{ fontSize: 13, color: "rgba(255,255,255,0.65)" }}>{dept.name}</span>
+                      <span style={{ fontSize: 13, color: "#F08700", fontWeight: 700 }}>{dept.pct}%</span>
+                    </div>
+                    <div style={{ background: "rgba(255,255,255,0.1)", borderRadius: 4, height: 6 }}>
+                      <div style={{ width: `${dept.pct}%`, background: "#F08700", borderRadius: 4, height: "100%", transition: "width 0.6s cubic-bezier(0.4,0,0.2,1)" }} />
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
 
             <p style={{ textAlign: "center", fontSize: 14, color: "#7A84A0", marginTop: 12 }}>
-              הדאשבורד המוצג הוא דמו חי בלבד — הנתונים של הארגון שלכם יישמרו בסביבה מאובטחת נפרדת.
+              תצוגה לדוגמה — בארגון שלכם הנתונים מוצגים בזמן אמת לפי המחלקות, ההכשרות והעובדים.
             </p>
           </div>
 
@@ -145,7 +190,7 @@ export default function DashboardSection() {
               מה ניתן לראות ולנהל בדאשבורד
             </h3>
             <p style={{ fontSize: 14, color: "#4B5472", marginBottom: 24, lineHeight: 1.65 }}>
-              כל הנתונים שמנהל HR או L&D צריך — בלי להתאמץ לאסוף אותם.
+              כל הנתונים שמנהל HR או L&D צריך — ללא צורך לאסוף אותם ידנית.
             </p>
 
             <div className="stagger-grid" style={{ display: "flex", flexDirection: "column", gap: 12 }}>
@@ -155,10 +200,10 @@ export default function DashboardSection() {
                   background: "white", borderRadius: 12, border: "1px solid #E3E7F2", alignItems: "flex-start",
                 }}>
                   <div style={{
-                    width: 36, height: 36, borderRadius: 9, background: "#D6E3FC",
+                    width: 36, height: 36, borderRadius: 9, background: "#FFE4C2",
                     display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
                   }}>
-                    <SvgIcon d={cap.icon} size={16} color="#0A59EB" />
+                    <SvgIcon d={cap.icon} size={16} color="#F08700" />
                   </div>
                   <div>
                     <div style={{ fontSize: 16, fontWeight: 700, color: "#1A1F36", marginBottom: 4 }}>{cap.title}</div>

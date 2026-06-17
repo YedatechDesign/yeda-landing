@@ -77,7 +77,7 @@ export default function Testimonials() {
               animation: visible ? `fadeInUp 0.5s ease ${i * 0.1}s both` : "none",
             }}>
               <div>
-                <div style={{ fontSize: 36, color: "#0A59EB", fontWeight: 900, lineHeight: 1, marginBottom: 14, fontFamily: "Georgia, serif" }}>"</div>
+                <div style={{ fontSize: 36, color: "#F08700", fontWeight: 900, lineHeight: 1, marginBottom: 14, fontFamily: "Georgia, serif" }}>"</div>
                 <p style={{ fontSize: 16, color: "#2D3142", lineHeight: 1.85, marginBottom: 24 }}>
                   {t.quote}
                 </p>
@@ -103,11 +103,11 @@ export default function Testimonials() {
                     <div style={{ fontSize: 13, color: "#36405E", lineHeight: 1.4 }}>{t.title}</div>
                   </div>
                 </div>
-                <div style={{ background: "#EBF1FD", borderRadius: 8, padding: "5px 12px", display: "inline-flex", alignItems: "center", gap: 6 }}>
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0A59EB" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <div style={{ background: "#FFF3E6", borderRadius: 8, padding: "5px 12px", display: "inline-flex", alignItems: "center", gap: 6 }}>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#F08700" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                   </svg>
-                  <span style={{ fontSize: 13, fontWeight: 700, color: "#0A59EB" }}>{t.source}</span>
+                  <span style={{ fontSize: 13, fontWeight: 700, color: "#F08700" }}>{t.source}</span>
                 </div>
               </div>
             </div>
@@ -116,7 +116,7 @@ export default function Testimonials() {
 
         <div style={{ textAlign: "center", marginTop: 44 }}>
           <a href="#contact" className="btn-primary">
-            הצטרפו ללקוחות שכבר שינו ←
+            הצטרפו לארגונים שכבר עברו ל-Yeda ←
           </a>
         </div>
       </div>

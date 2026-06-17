@@ -3,7 +3,7 @@ import { useState } from "react";
 import { IconCheck } from "./Icons";
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: "", company: "", phone: "", email: "", size: "" });
+  const [form, setForm] = useState({ name: "", phone: "", email: "" });
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -32,8 +32,8 @@ export default function Contact() {
     >
       {/* Background glow */}
       <div style={{ position: "absolute", inset: 0, overflow: "hidden", pointerEvents: "none" }}>
-        <div style={{ position: "absolute", top: "-20%", right: "-10%", width: 600, height: 600, borderRadius: "50%", background: "radial-gradient(circle, rgba(10,89,235,0.18) 0%, transparent 70%)" }} />
-        <div style={{ position: "absolute", bottom: "-10%", left: "5%", width: 400, height: 400, borderRadius: "50%", background: "radial-gradient(circle, rgba(10,89,235,0.1) 0%, transparent 70%)" }} />
+        <div style={{ position: "absolute", top: "-20%", right: "-10%", width: 600, height: 600, borderRadius: "50%", background: "none" }} />
+        <div style={{ position: "absolute", bottom: "-10%", left: "5%", width: 400, height: 400, borderRadius: "50%", background: "none" }} />
       </div>
 
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
@@ -50,7 +50,7 @@ export default function Contact() {
           <div>
             <div style={{
               display: "inline-flex", alignItems: "center", gap: 8,
-              background: "rgba(10,89,235,0.3)", border: "1px solid rgba(10,89,235,0.5)",
+              background: "rgba(255,255,255,0.15)", border: "1px solid rgba(255,255,255,0.3)",
               borderRadius: 100, padding: "6px 18px", marginBottom: 22,
             }}>
               <div style={{ width: 7, height: 7, borderRadius: "50%", background: "#4CAF50", flexShrink: 0 }} />
@@ -66,11 +66,7 @@ export default function Contact() {
               }}
             >
               מוכנים לראות את{" "}
-              <span style={{
-                background: "linear-gradient(135deg, #76A4F9, #B4CCFF)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}>
+              <span style={{ color: "#FFC170" }}>
                 Yeda בפעולה?
               </span>
             </h2>
@@ -94,9 +90,9 @@ export default function Contact() {
                   <div
                     style={{
                       width: 26, height: 26, borderRadius: "50%",
-                      background: "linear-gradient(135deg, #0A59EB, #3B82F6)",
+                      background: "#F08700",
                       display: "flex", alignItems: "center", justifyContent: "center",
-                      flexShrink: 0, boxShadow: "0 0 12px rgba(10,89,235,0.4)",
+                      flexShrink: 0, boxShadow: "none",
                     }}
                   >
                     <IconCheck size={13} color="white" />
@@ -121,7 +117,7 @@ export default function Contact() {
                   href="tel:0723385091"
                   style={{ color: "rgba(255,255,255,0.8)", fontSize: 15, textDecoration: "none", display: "flex", alignItems: "center", gap: 8 }}
                 >
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0A59EB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.48 2 2 0 0 1 3.6 1.28h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6 6l.95-.85a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
                   </svg>
                   072-338-5091
@@ -130,7 +126,7 @@ export default function Contact() {
                   href="mailto:info@yedalms.io"
                   style={{ color: "rgba(255,255,255,0.8)", fontSize: 15, textDecoration: "none", display: "flex", alignItems: "center", gap: 8 }}
                 >
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0A59EB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z M22 6l-10 7L2 6" />
                   </svg>
                   info@yedalms.io
@@ -155,7 +151,7 @@ export default function Contact() {
                     style={{
                       width: 64,
                       height: 64,
-                      background: "#0A59EB",
+                      background: "#000F61",
                       borderRadius: "50%",
                       display: "flex",
                       alignItems: "center",
@@ -182,35 +178,19 @@ export default function Contact() {
                   </p>
 
                   <form onSubmit={handleSubmit}>
-                    <div className="form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14, marginBottom: 14 }}>
-                      <div>
-                        <label style={{ display: "block", fontSize: 14, fontWeight: 700, color: "#000F61", marginBottom: 6 }}>
-                          שם מלא *
-                        </label>
-                        <input
-                          required
-                          style={inputStyle}
-                          placeholder="ישראל ישראלי"
-                          value={form.name}
-                          onChange={(e) => setForm({ ...form, name: e.target.value })}
-                          onFocus={(e) => { e.target.style.borderColor = "#000F61"; e.target.style.background = "white"; }}
-                          onBlur={(e) => { e.target.style.borderColor = "#DDE1EF"; e.target.style.background = "#F5F7FD"; }}
-                        />
-                      </div>
-                      <div>
-                        <label style={{ display: "block", fontSize: 14, fontWeight: 700, color: "#000F61", marginBottom: 6 }}>
-                          שם החברה *
-                        </label>
-                        <input
-                          required
-                          style={inputStyle}
-                          placeholder="חברת XYZ"
-                          value={form.company}
-                          onChange={(e) => setForm({ ...form, company: e.target.value })}
-                          onFocus={(e) => { e.target.style.borderColor = "#000F61"; e.target.style.background = "white"; }}
-                          onBlur={(e) => { e.target.style.borderColor = "#DDE1EF"; e.target.style.background = "#F5F7FD"; }}
-                        />
-                      </div>
+                    <div style={{ marginBottom: 14 }}>
+                      <label style={{ display: "block", fontSize: 14, fontWeight: 700, color: "#000F61", marginBottom: 6 }}>
+                        שם מלא *
+                      </label>
+                      <input
+                        required
+                        style={inputStyle}
+                        placeholder="ישראל ישראלי"
+                        value={form.name}
+                        onChange={(e) => setForm({ ...form, name: e.target.value })}
+                        onFocus={(e) => { e.target.style.borderColor = "#000F61"; e.target.style.background = "white"; }}
+                        onBlur={(e) => { e.target.style.borderColor = "#DDE1EF"; e.target.style.background = "#F5F7FD"; }}
+                      />
                     </div>
 
                     <div style={{ marginBottom: 14 }}>
@@ -229,11 +209,12 @@ export default function Contact() {
                       />
                     </div>
 
-                    <div style={{ marginBottom: 14 }}>
+                    <div style={{ marginBottom: 28 }}>
                       <label style={{ display: "block", fontSize: 14, fontWeight: 700, color: "#000F61", marginBottom: 6 }}>
-                        טלפון
+                        טלפון *
                       </label>
                       <input
+                        required
                         style={inputStyle}
                         placeholder="050-000-0000"
                         value={form.phone}
@@ -241,25 +222,6 @@ export default function Contact() {
                         onFocus={(e) => { e.target.style.borderColor = "#000F61"; e.target.style.background = "white"; }}
                         onBlur={(e) => { e.target.style.borderColor = "#DDE1EF"; e.target.style.background = "#F5F7FD"; }}
                       />
-                    </div>
-
-                    <div style={{ marginBottom: 28 }}>
-                      <label style={{ display: "block", fontSize: 14, fontWeight: 700, color: "#000F61", marginBottom: 6 }}>
-                        מספר עובדים בארגון
-                      </label>
-                      <select
-                        style={{ ...inputStyle, cursor: "pointer" }}
-                        value={form.size}
-                        onChange={(e) => setForm({ ...form, size: e.target.value })}
-                        onFocus={(e) => { e.target.style.borderColor = "#000F61"; e.target.style.background = "white"; }}
-                        onBlur={(e) => { e.target.style.borderColor = "#DDE1EF"; e.target.style.background = "#F5F7FD"; }}
-                      >
-                        <option value="">בחרו טווח</option>
-                        <option>10–50 עובדים</option>
-                        <option>50–200 עובדים</option>
-                        <option>200–1,000 עובדים</option>
-                        <option>1,000+ עובדים</option>
-                      </select>
                     </div>
 
                     <button

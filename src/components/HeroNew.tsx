@@ -36,9 +36,9 @@ export default function HeroNew() {
 
       {/* Animated background glows */}
       <div style={{ position: "absolute", inset: 0, overflow: "hidden", pointerEvents: "none" }}>
-        <div style={{ position: "absolute", top: "8%", right: "12%", width: 480, height: 480, borderRadius: "50%", background: "radial-gradient(circle, rgba(0,122,255,0.16) 0%, transparent 70%)", animation: "heroGlow1 7s ease-in-out infinite" }} />
-        <div style={{ position: "absolute", bottom: "0%", left: "8%", width: 360, height: 360, borderRadius: "50%", background: "radial-gradient(circle, rgba(10,89,235,0.1) 0%, transparent 70%)", animation: "heroGlow2 9s ease-in-out infinite" }} />
-        <div style={{ position: "absolute", top: "40%", left: "5%", width: 200, height: 200, borderRadius: "50%", background: "radial-gradient(circle, rgba(0,122,255,0.08) 0%, transparent 70%)", animation: "heroGlow3 5s ease-in-out infinite" }} />
+        <div style={{ position: "absolute", top: "8%", right: "12%", width: 480, height: 480, borderRadius: "50%", background: "none", animation: "heroGlow1 7s ease-in-out infinite" }} />
+        <div style={{ position: "absolute", bottom: "0%", left: "8%", width: 360, height: 360, borderRadius: "50%", background: "none", animation: "heroGlow2 9s ease-in-out infinite" }} />
+        <div style={{ position: "absolute", top: "40%", left: "5%", width: 200, height: 200, borderRadius: "50%", background: "none", animation: "heroGlow3 5s ease-in-out infinite" }} />
       </div>
 
       <div
@@ -54,7 +54,7 @@ export default function HeroNew() {
         {/* Badge with pulse glow */}
         <div style={{ marginBottom: 24 }}>
           <span style={{
-            background: "#0A59EB", color: "white", fontSize: 11, fontWeight: 800,
+            background: "white", color: "#F08700", fontSize: 11, fontWeight: 800,
             padding: "5px 14px", borderRadius: 4, letterSpacing: "0.1em",
             textTransform: "uppercase", display: "inline-block",
             animation: "badgePulse 3.5s ease-in-out infinite",
@@ -72,7 +72,7 @@ export default function HeroNew() {
         >
           הפסיקו לאבד ידע ארגוני.
           <br />
-          <span style={{ color: "#76A4F9" }}>התחילו לנהל אותו.</span>
+          <span style={{ color: "#FFC170" }}>התחילו לנהל אותו.</span>
         </h1>
 
         <p
@@ -91,7 +91,7 @@ export default function HeroNew() {
             קבעו דמו חינם ←
           </a>
           <a href="#features" className="btn-outline-white" style={{ fontSize: 16, padding: "14px 36px" }}>
-            ראו את הפיצ׳רים
+            ראו את היכולות
           </a>
         </div>
 
@@ -105,7 +105,7 @@ export default function HeroNew() {
           }}
         >
           {statTargets.map((s, i) => (
-            <div key={i} className="hero-stats-cell" style={{ background: "rgba(10,89,235,0.18)", padding: "28px 24px", textAlign: "center" }}>
+            <div key={i} className="hero-stats-cell" style={{ background: "rgba(255,255,255,0.16)", padding: "28px 24px", textAlign: "center" }}>
               <div style={{
                 fontSize: "clamp(34px, 4vw, 48px)", fontWeight: 900, color: "white",
                 lineHeight: 1, marginBottom: 10, transition: "all 0.1s",
@@ -135,8 +135,8 @@ export default function HeroNew() {
           50% { transform: translate(15px, 20px) scale(1.2); opacity: 0.8; }
         }
         @keyframes badgePulse {
-          0%, 100% { box-shadow: 0 0 0 0 rgba(0,122,255,0); }
-          50% { box-shadow: 0 0 0 10px rgba(0,122,255,0.18); }
+          0%, 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
+          50% { box-shadow: 0 0 0 10px rgba(255,255,255,0.16); }
         }
         @media (max-width: 768px) {
           .hero-inner { padding: 40px 20px 32px !important; }

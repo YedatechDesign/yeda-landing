@@ -42,7 +42,7 @@ function LogoCard({ client }: { client: typeof companies[0] }) {
       }}
         onMouseEnter={e => {
           (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 20px rgba(0,15,97,0.12)";
-          (e.currentTarget as HTMLElement).style.borderColor = "#C5D4F6";
+          (e.currentTarget as HTMLElement).style.borderColor = "#FFD9A8";
         }}
         onMouseLeave={e => {
           (e.currentTarget as HTMLElement).style.boxShadow = "0 1px 6px rgba(0,15,97,0.06)";

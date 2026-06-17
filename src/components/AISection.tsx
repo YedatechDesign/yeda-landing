@@ -84,7 +84,7 @@ export default function AISection() {
 
         {/* Stat callout */}
         <div style={{
-          background: "#F08700", borderRadius: 10, padding: "32px 40px",
+          background: "#000F61", borderRadius: 10, padding: "32px 40px",
           display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 20,
         }}>
           <div>

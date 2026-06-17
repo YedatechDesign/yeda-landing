@@ -51,12 +51,12 @@ const lmsFeatures = [
   { icon: "cert" as const, title: "תעודות והסמכות אוטומטיות", tag: "אוטומציה", ai: false,
     subtitle: "תעודה אישית בסיום כל הכשרה",
     desc: "עם השלמת הכשרה, עובד מקבל תעודה מותאמת אישית אוטומטית.",
-    bullets: ["תבניות תעודה מותאמות למותג", "ניהול הסמכות דיגיטלי מלא", "תזכורות לחידוש הסמכה"],
+    bullets: ["תבניות תעודה מותאמות למותג", "ניהול הסמכות דיגיטלי מלא"],
     image: null as string | null },
   { icon: "calendar" as const, title: "דיגיטלי, Zoom ופרונטלי — מקום אחד", tag: "ניהול", ai: false,
     subtitle: "כל פורמטי ההדרכה בממשק אחד",
     desc: "ניהול אחיד של הכשרות דיגיטליות, שידורים חיים, מפגשים פרונטליים ולוח שנה.",
-    bullets: ["לוח שנה מובנה לכל ההכשרות", "נוכחות אוטומטית לכל פורמט", "רישום והרשמה עצמית להכשרות"],
+    bullets: ["לוח שנה מובנה לכל ההכשרות", "נוכחות אוטומטית לכל פורמט"],
     image: null as string | null },
   { icon: "book" as const, title: "ספריית ידע ארגונית", tag: "ידע", ai: false,
     subtitle: "מאגר ידע מרכזי לכל הארגון",
@@ -64,9 +64,9 @@ const lmsFeatures = [
     bullets: ["חיפוש חכם בכל הארגון", "ניהול גרסאות ועדכונים", "גישה מהירה מכל מכשיר"],
     image: null as string | null },
   { icon: "settings" as const, title: "אינטגרציות ואוטומציות", tag: "אינטגרציה", ai: false,
-    subtitle: "חיבור למערכות קיימות בארגון",
-    desc: "חיבור ל-WhatsApp, Slack, מערכות HR, ועוד — בהתאמה אישית.",
-    bullets: ["חיבור ל-WhatsApp ו-Slack", "אינטגרציה עם מערכות HR", "ענפים נפרדים לכל יחידה עסקית"],
+    subtitle: "ממשק למערכות הקיימות בארגון",
+    desc: "ניתן להתממשק למערכות CRM, WhatsApp ועוד — כפיתוח בהתאמה אישית לצרכי הארגון.",
+    bullets: ["ממשק ל-CRM, WhatsApp ומערכות נוספות", "פיתוח אינטגרציות בהתאמה אישית (בתשלום)", "ענפים נפרדים לכל יחידה עסקית"],
     image: null as string | null },
   { icon: "shield" as const, title: "אבטחת תוכן ושליטה בגישה", tag: "אבטחה", ai: false,
     subtitle: "הגנה על תכנים ומניעת הדלפות",
@@ -76,7 +76,7 @@ const lmsFeatures = [
   { icon: "clipboard" as const, title: "ניהול ציות ורגולציה", tag: "ציות", ai: false,
     subtitle: "דוחות מוכנים לביקורת ורגולציה",
     desc: "מעקב אוטומטי אחר עמידה בדרישות הכשרה רגולטוריות — ISO, בטיחות, הטרדה מינית ועוד. דוחות מוכנים לייצוא בלחיצה אחת.",
-    bullets: ["מעקב עמידה בדרישות רגולציה", "דוחות לייצוא לביקורות ISO", "תזכורות אוטומטיות לחידוש הסמכה"],
+    bullets: ["מעקב עמידה בדרישות רגולציה", "דוחות לייצוא לביקורות ISO"],
     image: null as string | null },
 ];
 
@@ -126,11 +126,11 @@ function AccordionItem({ feature, open, onToggle }: { feature: FeatureItem; open
     <div
       style={{
         background: "white",
-        border: open ? "1px solid #0A59EB" : "1px solid #E3E7F2",
+        border: open ? "1px solid #F08700" : "1px solid #E3E7F2",
         borderRadius: 16,
         overflow: "hidden",
         transition: "border-color 0.25s, box-shadow 0.25s",
-        boxShadow: open ? "0 4px 16px rgba(10,89,235,0.1)" : "0 1px 2px rgba(0,15,97,0.05)",
+        boxShadow: open ? "0 4px 16px rgba(240,135,0,0.1)" : "0 1px 2px rgba(0,15,97,0.05)",
         position: "relative",
       }}
     >
@@ -139,7 +139,7 @@ function AccordionItem({ feature, open, onToggle }: { feature: FeatureItem; open
         position: "absolute",
         top: 0, right: 0, bottom: 0,
         width: 4,
-        background: "#0A59EB",
+        background: "#000F61",
         transform: open ? "scaleY(1)" : "scaleY(0)",
         transformOrigin: "top",
         transition: "transform 0.25s ease",
@@ -152,7 +152,7 @@ function AccordionItem({ feature, open, onToggle }: { feature: FeatureItem; open
         onClick={onToggle}
         style={{
           width: "100%",
-          background: open ? "#EBF1FD" : "none",
+          background: open ? "#FFF3E6" : "none",
           border: "none",
           padding: "22px 28px",
           display: "flex",
@@ -171,11 +171,11 @@ function AccordionItem({ feature, open, onToggle }: { feature: FeatureItem; open
           {/* Icon */}
           <div style={{
             width: 48, height: 48, borderRadius: 12, flexShrink: 0,
-            background: open ? "#0A59EB" : "#D6E3FC",
+            background: open ? "#F08700" : "#FFE4C2",
             display: "flex", alignItems: "center", justifyContent: "center",
             transition: "background 0.25s",
           }}>
-            <Icon d={ICONS[feature.icon]} size={22} color={open ? "white" : "#0A59EB"} />
+            <Icon d={ICONS[feature.icon]} size={22} color={open ? "white" : "#F08700"} />
           </div>
 
           {/* Title block */}
@@ -190,7 +190,7 @@ function AccordionItem({ feature, open, onToggle }: { feature: FeatureItem; open
         <div className="acc-right" style={{ display: "flex", alignItems: "center", gap: 10, flexShrink: 0 }}>
           {feature.ai && (
             <span style={{
-              background: "linear-gradient(135deg, #0A59EB, #000F61)",
+              background: "#F08700",
               color: "white",
               fontSize: 12,
               fontWeight: 700,
@@ -200,7 +200,7 @@ function AccordionItem({ feature, open, onToggle }: { feature: FeatureItem; open
             }}>AI</span>
           )}
           <span style={{
-            background: open ? "#0A59EB" : "#EEF1F8",
+            background: open ? "#F08700" : "#EEF1F8",
             color: open ? "white" : "#36405E",
             fontSize: 12,
             fontWeight: 700,
@@ -214,7 +214,7 @@ function AccordionItem({ feature, open, onToggle }: { feature: FeatureItem; open
           {/* Toggle chevron */}
           <div style={{
             width: 34, height: 34, borderRadius: 10, flexShrink: 0,
-            background: open ? "#0A59EB" : "#EEF1F8",
+            background: open ? "#F08700" : "#EEF1F8",
             display: "flex", alignItems: "center", justifyContent: "center",
             transform: open ? "rotate(180deg)" : "rotate(0)",
             transition: "all 0.25s",
@@ -232,7 +232,7 @@ function AccordionItem({ feature, open, onToggle }: { feature: FeatureItem; open
       }}>
         <div style={{
           padding: "20px 28px 28px",
-          borderTop: "1px solid #EBF1FD",
+          borderTop: "1px solid #FFF3E6",
         }}>
           <p style={{ fontSize: 17, color: "#2D3142", lineHeight: 1.8, marginBottom: 18 }}>
             {feature.desc}
@@ -243,12 +243,12 @@ function AccordionItem({ feature, open, onToggle }: { feature: FeatureItem; open
                 display: "flex", alignItems: "flex-start", gap: 10,
                 fontSize: 16, color: "#2D3142", lineHeight: 1.6,
                 padding: "11px 14px",
-                background: "#EBF1FD",
+                background: "#FFF3E6",
                 borderRadius: 10,
               }}>
                 <div style={{
                   width: 6, height: 6, borderRadius: "50%",
-                  background: "#0A59EB", marginTop: 8, flexShrink: 0,
+                  background: "#000F61", marginTop: 8, flexShrink: 0,
                 }} />
                 {b}
               </div>
@@ -276,22 +276,22 @@ function AccordionItem({ feature, open, onToggle }: { feature: FeatureItem; open
 function LabsHeroCard() {
   return (
     <div style={{
-      background: "linear-gradient(135deg, #000F61 0%, #0A1F7A 55%, #0A59EB 100%)",
+      background: "#000F61",
       borderRadius: 24, padding: "52px 48px", marginBottom: 28, textAlign: "center",
     }} className="labs-hero-card">
       <div style={{
         display: "inline-flex", alignItems: "center", gap: 8,
-        background: "rgba(10,89,235,0.35)", border: "1px solid rgba(118,164,249,0.45)",
+        background: "rgba(240,135,0,0.35)", border: "1px solid rgba(255,193,112,0.45)",
         borderRadius: 999, padding: "6px 20px", marginBottom: 22,
       }}>
-        <div style={{ width: 7, height: 7, borderRadius: "50%", background: "#76A4F9" }} />
-        <span style={{ color: "#B4CCFF", fontSize: 15, fontWeight: 700, letterSpacing: "0.06em" }}>
+        <div style={{ width: 7, height: 7, borderRadius: "50%", background: "#FFC170" }} />
+        <span style={{ color: "#FFE4C2", fontSize: 15, fontWeight: 700, letterSpacing: "0.06em" }}>
           Yeda Labs AI — בינה מלאכותית ליצירת לומדות
         </span>
       </div>
       <h3 style={{ fontSize: "clamp(22px, 3vw, 34px)", fontWeight: 900, color: "white", margin: "0 auto 16px", lineHeight: 1.25, maxWidth: 680 }}>
-        בנו לומדות מקצועיות תוך דקות —{" "}
-        <span style={{ color: "#76A4F9" }}>מדף, בשפה הגרפית שלכם</span>
+        ניתן ליצור לומדות מקצועיות תוך דקות —{" "}
+        <span style={{ color: "#FFC170" }}>בשפה הגרפית של הארגון</span>
       </h3>
       <p style={{ fontSize: 17, color: "rgba(255,255,255,0.75)", lineHeight: 1.8, maxWidth: 600, margin: "0 auto 36px" }}>
         מעלים חומר גלם — ה-AI יוצר לומדה מלאה, מותאמת לצבעי ולוגו הלקוח. לומדות רגולטוריות, הדרכות בטיחות, ISO — ללא תשלום לחברות חיצוניות.
@@ -300,10 +300,10 @@ function LabsHeroCard() {
         {[
           { num: "01", title: "דקות, לא חודשים", desc: "סוכנויות לומדות לוקחות 4–8 שבועות. עם AI — לומדה מלאה תוך דקות בלבד" },
           { num: "02", title: "בשפה הגרפית שלכם", desc: "לוגו, צבעים וגרפיקה של הלקוח — הלומדה נראית כחלק מהמותג" },
-          { num: "03", title: "חסכו אלפי שקלים", desc: "לומדת בטיחות / הטרדה מינית עולה 6,500–15,000 ₪ בסוכנות — עם Yeda Labs: בונים לבד" },
+          { num: "03", title: "חיסכון של אלפי שקלים", desc: "לומדת בטיחות / הטרדה מינית עולה 6,500–15,000 ₪ בסוכנות — עם Yeda Labs ניתן ליצור אותה בתוך הארגון, בעלות שבריר" },
         ].map(item => (
           <div key={item.num} style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.14)", borderRadius: 18, padding: "26px 22px", textAlign: "right" }}>
-            <div style={{ fontSize: 14, fontWeight: 800, color: "#76A4F9", letterSpacing: "0.08em", marginBottom: 8 }}>{item.num}</div>
+            <div style={{ fontSize: 14, fontWeight: 800, color: "#FFC170", letterSpacing: "0.08em", marginBottom: 8 }}>{item.num}</div>
             <div style={{ fontSize: 16, fontWeight: 800, color: "white", marginBottom: 8, lineHeight: 1.3 }}>{item.title}</div>
             <p style={{ fontSize: 14, color: "rgba(255,255,255,0.65)", lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
           </div>
@@ -404,7 +404,7 @@ export default function FeaturesNew() {
           {/* Divider */}
           <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 32 }}>
             <div style={{ flex: 1, height: 1, background: "#E3E7F2" }} />
-            <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#0A59EB", flexShrink: 0 }} />
+            <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#000F61", flexShrink: 0 }} />
             <div style={{ flex: 1, height: 1, background: "#E3E7F2" }} />
           </div>
 
@@ -412,10 +412,10 @@ export default function FeaturesNew() {
           <div>
             <div style={{
               display: "flex", alignItems: "center", gap: 12, marginBottom: 20,
-              background: "linear-gradient(135deg, #000F61, #0A1F7A)",
+              background: "#000F61",
               borderRadius: 12, padding: "12px 18px",
             }}>
-              <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#76A4F9", flexShrink: 0 }} />
+              <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#FFC170", flexShrink: 0 }} />
               <span style={{ fontSize: 14, fontWeight: 800, color: "white", letterSpacing: "0.04em" }}>
                 Yeda Labs — יצירת תוכן AI
               </span>
@@ -429,7 +429,7 @@ export default function FeaturesNew() {
 
         <div style={{ textAlign: "center", marginTop: 48 }}>
           <a href="#contact" className="btn-primary" style={{ fontSize: 15 }}>
-            ראו את כל הפיצ׳רים בדמו חי ←
+            ראו את כל היכולות בדמו חי ←
           </a>
         </div>
       </div>

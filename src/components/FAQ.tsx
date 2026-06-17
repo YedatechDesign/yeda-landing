@@ -12,7 +12,7 @@ const faqs = [
   },
   {
     q: "האם המערכת מתחברת ל-HRIS / ל-CRM הקיים שלנו?",
-    a: "כן — Yeda מתחברת ל-SAP, Priority, Monday, Salesforce, Workday ועוד, דרך API פתוח או קונקטורים מוכנים. סנכרון עובדים, מחלקות ותפקידים קורה אוטומטית — עדכון בצד שלכם מתעדכן אצלנו בזמן אמת.",
+    a: "כן — ניתן להתממשק למערכות כמו SAP, Priority, Monday, Salesforce, Workday ועוד, דרך API פתוח, כפיתוח בהתאמה אישית לצרכי הארגון. כך ניתן לסנכרן עובדים, מחלקות ותפקידים בין המערכת לכלים הקיימים אצלכם.",
   },
   {
     q: "איך הסוכן AI יודע לענות לעובדים שלנו על הנהלים שלנו?",
@@ -54,7 +54,7 @@ export default function FAQ() {
           </h2>
           <p style={{ fontSize: 16, color: "#36405E", maxWidth: 500, margin: "0 auto", lineHeight: 1.75 }}>
             יש שאלה שלא ענינו עליה?{" "}
-            <a href="#contact" style={{ color: "#0A59EB", fontWeight: 700, textDecoration: "none" }}>דברו איתנו</a>.
+            <a href="#contact" style={{ color: "#F08700", fontWeight: 700, textDecoration: "none" }}>דברו איתנו</a>.
           </p>
         </div>
 
@@ -64,15 +64,15 @@ export default function FAQ() {
             return (
               <div key={i} style={{
                 background: "white", borderRadius: 16,
-                border: isOpen ? "1px solid #0A59EB" : "1px solid #E3E7F2",
-                boxShadow: isOpen ? "0 4px 20px rgba(10,89,235,0.1)" : "0 1px 4px rgba(0,15,97,0.05)",
+                border: isOpen ? "1px solid #F08700" : "1px solid #E3E7F2",
+                boxShadow: isOpen ? "0 4px 20px rgba(240,135,0,0.1)" : "0 1px 4px rgba(0,15,97,0.05)",
                 overflow: "hidden", transition: "border-color 0.25s, box-shadow 0.25s",
                 position: "relative",
               }}>
                 {/* Blue left accent */}
                 <div style={{
                   position: "absolute", top: 0, right: 0, bottom: 0, width: 4,
-                  background: "#0A59EB",
+                  background: "#000F61",
                   transform: isOpen ? "scaleY(1)" : "scaleY(0)",
                   transformOrigin: "top", transition: "transform 0.25s ease",
                   borderRadius: "0 16px 16px 0",
@@ -82,7 +82,7 @@ export default function FAQ() {
                   className="faq-btn"
                   onClick={() => setOpen(isOpen ? null : i)}
                   style={{
-                    width: "100%", background: isOpen ? "#EBF1FD" : "none",
+                    width: "100%", background: isOpen ? "#FFF3E6" : "none",
                     border: "none", padding: "22px 28px",
                     display: "flex", alignItems: "center", justifyContent: "space-between",
                     gap: 16, cursor: "pointer", fontFamily: "inherit",
@@ -94,7 +94,7 @@ export default function FAQ() {
                   </span>
                   <div style={{
                     width: 32, height: 32, borderRadius: 9, flexShrink: 0,
-                    background: isOpen ? "#0A59EB" : "#EEF1F8",
+                    background: isOpen ? "#F08700" : "#EEF1F8",
                     display: "flex", alignItems: "center", justifyContent: "center",
                     transition: "all 0.25s",
                   }}>
@@ -111,7 +111,7 @@ export default function FAQ() {
                   maxHeight: isOpen ? 400 : 0, overflow: "hidden",
                   transition: "max-height 0.35s cubic-bezier(0.4,0,0.2,1)",
                 }}>
-                  <div className="faq-body" style={{ padding: "18px 28px 24px", borderTop: "1px solid #EBF1FD" }}>
+                  <div className="faq-body" style={{ padding: "18px 28px 24px", borderTop: "1px solid #FFF3E6" }}>
                     <p style={{ fontSize: 16, color: "#36405E", lineHeight: 1.85, margin: 0 }}>
                       {faq.a}
                     </p>

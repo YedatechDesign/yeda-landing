@@ -73,7 +73,7 @@ export default function VideoSection() {
                     boxShadow: "0 8px 40px rgba(0,0,0,0.5)", position: "relative", zIndex: 1,
                     transition: "transform 0.2s, box-shadow 0.2s",
                   }}>
-                    <svg width="26" height="26" viewBox="0 0 24 24" fill="#0A59EB" style={{ marginRight: "-3px" }}>
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="#F08700" style={{ marginRight: "-3px" }}>
                       <path d="M8 5v14l11-7z" />
                     </svg>
                   </div>
@@ -114,10 +114,10 @@ export default function VideoSection() {
             <div key={item.text} style={{ display: "flex", alignItems: "center", gap: 8, color: "rgba(255,255,255,0.75)", fontSize: 15, fontWeight: 500 }}>
               <div style={{
                 width: 28, height: 28, borderRadius: 7,
-                background: "rgba(10,89,235,0.25)",
+                background: "rgba(255,255,255,0.18)",
                 display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
               }}>
-                <SvgIcon d={item.icon} size={14} color="#6B93F4" />
+                <SvgIcon d={item.icon} size={14} color="white" />
               </div>
               <span>{item.text}</span>
             </div>

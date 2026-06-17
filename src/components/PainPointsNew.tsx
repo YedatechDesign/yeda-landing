@@ -1,7 +1,7 @@
 "use client";
 import { useRef, useEffect, useState } from "react";
 
-function SvgIcon({ d, size = 20, color = "#0A59EB" }: { d: string; size?: number; color?: string }) {
+function SvgIcon({ d, size = 20, color = "#F08700" }: { d: string; size?: number; color?: string }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none"
       stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"
@@ -11,7 +11,7 @@ function SvgIcon({ d, size = 20, color = "#0A59EB" }: { d: string; size?: number
   );
 }
 
-function IconBox({ d, bg = "#D6E3FC", color = "#0A59EB" }: { d: string; bg?: string; color?: string }) {
+function IconBox({ d, bg = "#FFE4C2", color = "#F08700" }: { d: string; bg?: string; color?: string }) {
   return (
     <div style={{
       width: 48, height: 48, borderRadius: 12, background: bg,
@@ -103,7 +103,7 @@ export default function PainPointsNew() {
                 padding: "28px 24px",
                 border: "1px solid #E3E7F2",
                 borderTopWidth: 3,
-                borderTopColor: "#0A59EB",
+                borderTopColor: "#F08700",
                 boxShadow: "0 4px 16px rgba(0,15,97,0.07)",
                 opacity: visible ? 1 : 0,
                 animation: visible ? `fadeInUp 0.5s ease ${i * 0.08}s both` : "none",
@@ -119,11 +119,11 @@ export default function PainPointsNew() {
                 {pain.desc}
               </p>
               <div style={{
-                background: "#EBF1FD", borderRadius: 8, padding: "8px 12px",
+                background: "#FFF3E6", borderRadius: 8, padding: "8px 12px",
                 display: "inline-flex", alignItems: "center", gap: 8,
               }}>
-                <SvgIcon d="M13 10V3L4 14h7v7l9-11h-7z" size={13} color="#0A59EB" />
-                <span style={{ color: "#0A59EB", fontSize: 14, fontWeight: 700 }}>{pain.cost}</span>
+                <SvgIcon d="M13 10V3L4 14h7v7l9-11h-7z" size={13} color="#F08700" />
+                <span style={{ color: "#F08700", fontSize: 14, fontWeight: 700 }}>{pain.cost}</span>
               </div>
             </div>
           ))}
