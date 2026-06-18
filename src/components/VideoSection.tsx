@@ -1,7 +1,4 @@
-"use client";
-import { useState } from "react";
-
-const VIDEO_ID = "HRYp7PyJkW8";
+const VIDEO_SRC = "https://iframe.yedatech.io/embed/vz-ac26fd16-36a/4cf217df-8fc6-405d-a114-d410ac5b8181";
 
 function SvgIcon({ d, size = 16, color = "white" }: { d: string; size?: number; color?: string }) {
   return (
@@ -20,8 +17,6 @@ const trustItems = [
 ];
 
 export default function VideoSection() {
-  const [playing, setPlaying] = useState(false);
-
   return (
     <section className="no-pad-top" style={{ background: "#000F61", padding: "0 24px 72px" }}>
       <div style={{ maxWidth: 900, margin: "0 auto" }}>
@@ -41,58 +36,14 @@ export default function VideoSection() {
           boxShadow: "0 32px 80px rgba(0,0,0,0.5)",
           background: "#000", aspectRatio: "16/9",
         }}>
-          {!playing ? (
-            <div
-              style={{
-                position: "absolute", inset: 0,
-                backgroundImage: `url(https://img.youtube.com/vi/${VIDEO_ID}/maxresdefault.jpg)`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                cursor: "pointer",
-              }}
-              onClick={() => setPlaying(true)}
-            >
-              {/* Dark overlay */}
-              <div style={{ position: "absolute", inset: 0, background: "rgba(0,10,50,0.52)" }} />
-
-              {/* Content */}
-              <div style={{
-                position: "relative", zIndex: 1,
-                display: "flex", flexDirection: "column",
-                alignItems: "center", justifyContent: "center",
-                height: "100%", gap: 20, padding: "24px",
-              }}>
-                {/* Rings + play button */}
-                <div style={{ position: "relative", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <div style={{ position: "absolute", width: 110, height: 110, borderRadius: "50%", border: "2px solid rgba(255,255,255,0.25)", animation: "pulse 2s ease-in-out infinite" }} />
-                  <div style={{ position: "absolute", width: 84, height: 84, borderRadius: "50%", border: "2px solid rgba(255,255,255,0.4)", animation: "pulse 2s ease-in-out infinite 0.3s" }} />
-                  <div style={{
-                    width: 72, height: 72, borderRadius: "50%",
-                    background: "rgba(255,255,255,0.95)",
-                    display: "flex", alignItems: "center", justifyContent: "center",
-                    boxShadow: "0 8px 40px rgba(0,0,0,0.5)", position: "relative", zIndex: 1,
-                    transition: "transform 0.2s, box-shadow 0.2s",
-                  }}>
-                    <svg width="26" height="26" viewBox="0 0 24 24" fill="#F08700" style={{ marginRight: "-3px" }}>
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  </div>
-                </div>
-
-                <p style={{ color: "white", fontSize: 17, fontWeight: 700, margin: 0, textShadow: "0 2px 8px rgba(0,0,0,0.5)" }}>
-                  סקירה מלאה של הפלטפורמה
-                </p>
-              </div>
-            </div>
-          ) : (
-            <iframe
-              src={`https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1&rel=0`}
-              title="Yeda LMS Platform Overview"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: "none" }}
-            />
-          )}
+          <iframe
+            src={VIDEO_SRC}
+            title="Yeda LMS — סקירה מלאה של הפלטפורמה"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+            allowFullScreen
+            style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: "none" }}
+          />
         </div>
 
         {/* Chips row — below the video to avoid overflow clipping */}

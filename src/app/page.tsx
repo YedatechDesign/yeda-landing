@@ -4,6 +4,7 @@ import VideoSection from "@/components/VideoSection";
 import ClientLogos from "@/components/ClientLogos";
 import PainPointsNew from "@/components/PainPointsNew";
 import FeaturesNew from "@/components/FeaturesNew";
+import AIAgentSection from "@/components/AIAgentSection";
 import DashboardSection from "@/components/DashboardSection";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
@@ -20,6 +21,7 @@ export default function Home() {
         <ClientLogos />
         <PainPointsNew />
         <FeaturesNew />
+        <AIAgentSection />
         <DashboardSection />
         <Testimonials />
         <FAQ />

@@ -47,7 +47,7 @@ export default function Header() {
       >
         {/* Logo */}
         <a href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
-          <YedaLogo color="white" height={30} />
+          <YedaLogo color="white" height={44} />
         </a>
 
         {/* Desktop Nav */}
