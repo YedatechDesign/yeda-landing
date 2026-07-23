@@ -16,6 +16,10 @@ const companies = [
   { name: "Elevation",     logo: "client16.png", desc: "החברה המובילה בפתרונות טכנולוגיים לארגונים" },
   { name: "מטבחי רגבה",   logo: "client17.png", desc: "חברה מובילה בתכנון, עיצוב וייצור מטבחים" },
   { name: "INT",           logo: "client13.png", desc: "חברה מובילה בפתרונות טכנולוגיה ארגונית" },
+  { name: "מרכז י.נ.ר",      logo: "client34.png", desc: "מרכז אקדמי וטיפולי דתי-חרדי להכשרת יועצי נישואין, משפחה ופסיכותרפיה." },
+  { name: "שמחה לילד",       logo: "client33.png", desc: "עמותה הפועלת למען ילדים ובני נוער המתמודדים עם אתגרים רפואיים" },
+  { name: "התאחדות הסטודנטים", logo: "client35.png", desc: "הארגון היציג של הסטודנטים והסטודנטיות בישראל" },
+  { name: "מגמה ירוקה",      logo: "client36.png", desc: "ארגון המתנדבים הסביבתי הגדול בארץ" },
 ];
 
 
@@ -87,7 +91,7 @@ export default function ClientLogos() {
         {/* Logo grid */}
         <div className="client-grid stagger-grid" style={{
           display: "grid",
-          gridTemplateColumns: "repeat(7, 1fr)",
+          gridTemplateColumns: "repeat(6, 1fr)",
           gap: "28px 20px",
         }}>
           {companies.map(client => (

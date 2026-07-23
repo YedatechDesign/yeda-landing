@@ -8,6 +8,18 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    fetch("https://yedauto.com/webhook/contact-orglms", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({
+        name: form.name,
+        email: form.email,
+        phone: form.phone,
+        source: "orglms.co.il",
+        form: "בקשת דמו - Yeda",
+        to: "coo@yedalms.io",
+      }).toString(),
+    }).catch(() => {});
     setSubmitted(true);
   };
 

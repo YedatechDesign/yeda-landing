@@ -81,8 +81,9 @@ export default function HeroNew() {
             maxWidth: 620, marginInline: "auto", lineHeight: 1.7, marginBottom: 36,
           }}
         >
-          מערכת אחת לבניית הכשרות, ניהול עובדים, יצירת תוכן AI ומדידת
-          ביצועים — מותאמת לצרכי הארגון שלכם.
+          מערכת LMS - מערכת ניהול למידה בארגון.
+          <br />
+          פיתוח לומדות וניהול ידע ארגוני עם סוכני AI
         </p>
 
         {/* CTAs */}

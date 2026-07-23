@@ -110,7 +110,7 @@ export default function LabsPage() {
             </h1>
 
             <p style={{ fontSize: "clamp(16px, 2.2vw, 20px)", color: "rgba(255,255,255,0.8)", maxWidth: 640, margin: "0 auto 40px", lineHeight: 1.75 }}>
-              קובץ PDF, סרטוני הדרכה או פרומפט — ה-AI יוצר לומדה אינטראקטיבית מלאה עם תסריט, דיבוב, שאלות ותרגום לכל שפה.
+              קובץ PDF, סרטוני הדרכה או פרומפט — ה-AI יוצר לומדה אינטראקטיבית מלאה עם תסריט, דיבוב, שאלות ותרגום לכל שפה. בנוסף, יש כלי ייעודי ליצירת לומדות HTML אינטראקטיביות.
             </p>
 
             <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>

@@ -3,7 +3,7 @@ import "./globals.css";
 import AnimationObserver from "@/components/AnimationObserver";
 
 export const metadata: Metadata = {
-  title: "Yeda LMS | מערכת ניהול ידע ארגוני מבוססת AI",
+  title: "מערכת LMS - מערכת ניהול למידה בארגון - פיתוח לומדות וניהול ידע ארגוני עם סוכני AI",
   description: "הפלטפורמה החכמה לניהול ידע, הכשרות והדרכות ארגוניות – עם כלי AI מתקדמים ליצירת תוכן ומעקב ביצועים",
 };
 
