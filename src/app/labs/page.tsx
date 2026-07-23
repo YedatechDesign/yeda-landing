@@ -14,8 +14,8 @@ const featureSections: {
   {
     img: "/labs-import.png",
     tag: "יצירה מחומר קיים",
-    title: "מעלים קובץ PDF —",
-    titleBlue: "AI הופך אותו ללומדה",
+    title: "מעלים קובץ ‎PDF —",
+    titleBlue: "AI‎ הופך אותו ללומדה",
     desc: "מעלים קובץ PDF או סרטון MP4, ומטמיעים קישור YouTube — ה-AI מנתח את החומר ויוצר לומדה אינטראקטיבית מלאה תוך דקות. מצגת PowerPoint, Word, Google Slides? ממירים ל-PDF ומעלים בקלות.",
     bullets: [
       "העלאת PDF — כל מצגת או מסמך ניתן להמיר בקלות",
