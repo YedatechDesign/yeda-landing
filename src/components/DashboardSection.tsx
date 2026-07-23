@@ -123,8 +123,8 @@ export default function DashboardSection() {
           {/* KPI row */}
           <div className="kpi-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16, marginBottom: 22 }}>
             {kpis.map((k) => (
-              <div key={k.label} style={{ background: "#F7F9FE", border: "1px solid rgba(196,216,253,0.5)", borderRadius: 16, padding: "18px 20px", display: "flex", alignItems: "center", gap: 14 }}>
-                <div style={{ width: 46, height: 46, borderRadius: 13, background: "#E7EFFE", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+              <div key={k.label} className="kpi-card" style={{ background: "#F7F9FE", border: "1px solid rgba(196,216,253,0.5)", borderRadius: 16, padding: "18px 20px", display: "flex", alignItems: "center", gap: 14 }}>
+                <div className="kpi-icon" style={{ width: 46, height: 46, borderRadius: 13, background: "#E7EFFE", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                   <SvgIcon d={k.icon} size={20} color="#0A59EB" />
                 </div>
                 <div>
@@ -227,6 +227,7 @@ export default function DashboardSection() {
         }
         @media (max-width: 560px) {
           .kpi-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          .kpi-card { flex-direction: column !important; align-items: center !important; text-align: center; gap: 12px !important; }
         }
       `}</style>
     </section>
