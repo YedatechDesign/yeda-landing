@@ -4,11 +4,11 @@ import { useRef, useEffect, useState } from "react";
 const namedTestimonials = [
   {
     quote: "מערכת LMS ברמה מאוד גבוהה, בחנתי מספר מערכות גלובליות והמערכת הזאת כחול לבן! ואינה נופלת טכנולוגית משום מערכת שראיתי אף מתעלה עליהן. הצוות של Yeda מובילים במקצועיות ובהבנה עמוקה של התחום. זמינים ותמיד מעוניינים לשפר ולהתאים את המערכת לצרכים הארגוניים.",
-    name: "עידן סיבן",
+    name: "עידן סיוון",
     title: "פישר | עורכי דין",
     initials: "עס",
     photo: null as string | null,
-    source: "Google Reviews ★★★★★",
+    source: "Google Reviews",
   },
   {
     quote: "נתקלנו במערכת ידע בעת חיפוש מערכת LMS ידידותית עבור קורסים המיועדים ללקוחות החברה. לשמחתנו המערכת ענתה על כל הציפיות, הצרכים והרצונות שלנו ואף יותר. באמצעותה לקוחותינו נהנים מכל מה שיש למרכז ההדרכה להציע — צפייה בשעורים, מבחנים, תעודות וניהול מלא.",
@@ -104,9 +104,6 @@ export default function Testimonials() {
                   </div>
                 </div>
                 <div style={{ background: "#FFF3E6", borderRadius: 8, padding: "5px 12px", display: "inline-flex", alignItems: "center", gap: 6 }}>
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#F08700" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                  </svg>
                   <span style={{ fontSize: 13, fontWeight: 700, color: "#F08700" }}>{t.source}</span>
                 </div>
               </div>

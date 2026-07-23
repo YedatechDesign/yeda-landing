@@ -135,13 +135,13 @@ export default function Contact() {
                   072-338-5091
                 </a>
                 <a
-                  href="mailto:info@yedalms.io"
+                  href="mailto:coo@yedalms.io"
                   style={{ color: "rgba(255,255,255,0.8)", fontSize: 15, textDecoration: "none", display: "flex", alignItems: "center", gap: 8 }}
                 >
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z M22 6l-10 7L2 6" />
                   </svg>
-                  info@yedalms.io
+                  coo@yedalms.io
                 </a>
               </div>
             </div>
