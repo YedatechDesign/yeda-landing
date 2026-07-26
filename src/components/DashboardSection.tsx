@@ -80,13 +80,13 @@ function DistroPanel({ title, sub, rows }: { title: string; sub: string; rows: {
   return (
     <div style={{ background: "white", border: "1px solid rgba(196,216,253,0.5)", borderRadius: 18, padding: "20px 22px" }}>
       <div style={{ fontSize: 15, fontWeight: 800, color: "#0A1B4D" }}>{title}</div>
-      <div style={{ fontSize: 12.5, color: "#7A84A0", marginTop: 3, marginBottom: 16 }}>{sub}</div>
+      <div style={{ fontSize: 12.5, color: "#5A647F", marginTop: 3, marginBottom: 16 }}>{sub}</div>
       <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
         {rows.map((r, i) => (
           <div key={r.label}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 5 }}>
               <span style={{ fontSize: 13.5, color: "#3A4366", fontWeight: 600 }}>{r.label}</span>
-              <span style={{ fontSize: 13, color: "#7A84A0" }}>
+              <span style={{ fontSize: 13, color: "#5A647F" }}>
                 <strong style={{ color: "#0A1B4D", fontSize: 14 }}>{r.n.toLocaleString()}</strong>&nbsp;· {r.pct}%
               </span>
             </div>
@@ -130,7 +130,7 @@ export default function DashboardSection() {
                 <div>
                   <div style={{ fontSize: 28, fontWeight: 900, color: "#0A1B4D", lineHeight: 1 }}>{k.value}</div>
                   <div style={{ fontSize: 14, fontWeight: 700, color: "#1A1F36", marginTop: 4 }}>{k.label}</div>
-                  <div style={{ fontSize: 12, color: "#7A84A0", marginTop: 2 }}>{k.sub}</div>
+                  <div style={{ fontSize: 12, color: "#5A647F", marginTop: 2 }}>{k.sub}</div>
                 </div>
               </div>
             ))}
@@ -142,7 +142,7 @@ export default function DashboardSection() {
             <DistroPanel {...completion} />
             <div style={{ background: "white", border: "1px solid rgba(196,216,253,0.5)", borderRadius: 18, padding: "20px 22px" }}>
               <div style={{ fontSize: 15, fontWeight: 800, color: "#0A1B4D" }}>{newRegs.title}</div>
-              <div style={{ fontSize: 12.5, color: "#7A84A0", marginTop: 3, marginBottom: 16 }}>{newRegs.sub}</div>
+              <div style={{ fontSize: 12.5, color: "#5A647F", marginTop: 3, marginBottom: 16 }}>{newRegs.sub}</div>
               <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                 {newRegs.rows.map((r) => (
                   <div key={r.label} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", background: "#F7F9FE", border: "1px solid rgba(196,216,253,0.5)", borderRadius: 12, padding: "12px 14px" }}>
@@ -159,7 +159,7 @@ export default function DashboardSection() {
             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, padding: "18px 22px", flexWrap: "wrap" }}>
               <div>
                 <div style={{ fontSize: 15, fontWeight: 800, color: "#0A1B4D" }}>{courses.title}</div>
-                <div style={{ fontSize: 12.5, color: "#7A84A0", marginTop: 3 }}>{courses.sub}</div>
+                <div style={{ fontSize: 12.5, color: "#5A647F", marginTop: 3 }}>{courses.sub}</div>
               </div>
               <button style={{ display: "inline-flex", alignItems: "center", gap: 7, background: "#E7EFFE", color: "#0A59EB", border: "1px solid rgba(10,89,235,0.2)", borderRadius: 10, padding: "9px 14px", fontSize: 13, fontWeight: 700, fontFamily: "inherit", cursor: "pointer" }}>
                 <SvgIcon d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4 M7 10l5 5 5-5 M12 15V3" size={15} color="#0A59EB" />

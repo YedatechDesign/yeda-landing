@@ -5,7 +5,19 @@ export const ORGANIZATION_JSON_LD = {
   "@type": "Organization",
   name: "Yeda",
   url: SITE_URL,
-  logo: `${SITE_URL}/yeda-org-logo.png`,
+  description: "מערכת LMS לניהול למידה, ידע והדרכות בארגונים וחברות.",
+  logo: `${SITE_URL}/icon.png`,
+  sameAs: [
+    "https://www.linkedin.com/company/yedalms",
+    "https://www.youtube.com/@yedalms",
+    "https://www.facebook.com/yedalms",
+  ],
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+972-72-338-5091",
+    email: "coo@yedalms.io",
+    availableLanguage: ["he", "en"],
+  },
 };
 
 export const WEBSITE_JSON_LD = {

@@ -6,7 +6,7 @@ import { SITE_URL } from "@/lib/site";
 
 const title = "יצירת לומדות עם AI לארגונים | Yeda Labs";
 const description = "צרו לומדות מקצועיות עם AI בתוך דקות: תסריט, מצגת, קריינות ותוכן אינטראקטיבי לעובדים, הכשרות וידע ארגוני.";
-const shareImage = `${SITE_URL}/labs-import.png`;
+const shareImage = `${SITE_URL}/og-labs.png`;
 
 export const metadata: Metadata = {
   title,
@@ -19,13 +19,13 @@ export const metadata: Metadata = {
     siteName: "Yeda",
     title,
     description,
-    images: [shareImage],
+    images: [{ url: shareImage, width: 1200, height: 630, alt: "Yeda Labs - יצירת לומדות מקצועיות עם AI" }],
   },
   twitter: {
     card: "summary_large_image",
     title,
     description,
-    images: [shareImage],
+    images: [{ url: shareImage, alt: "Yeda Labs - יצירת לומדות מקצועיות עם AI" }],
   },
 };
 
@@ -111,7 +111,7 @@ const featureSections: {
 function CheckMark() {
   return (
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-      stroke="#F08700" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
+      stroke="#A94700" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
       <path d="M20 6L9 17l-5-5" />
     </svg>
   );
@@ -125,7 +125,7 @@ export default function LabsPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationJsonLd).replace(/</g, "\\u003c") }}
       />
       <Header />
-      <main style={{ paddingTop: 72 }}>
+      <main id="main-content" tabIndex={-1} style={{ paddingTop: 72 }}>
 
         {/* ── Hero ─────────────────────────────────────── */}
         <section style={{ background: "#000F61", padding: "88px 24px 80px", position: "relative", overflow: "hidden" }}>
@@ -270,7 +270,7 @@ export default function LabsPage() {
                           {/* Numbered dot */}
                           <div style={{
                             width: 48, height: 48, borderRadius: "50%",
-                            background: "#F08700",
+                            background: "#A94700",
                             display: "flex", alignItems: "center", justifyContent: "center",
                             fontSize: 14, fontWeight: 900, color: "white",
                             boxShadow: "0 0 20px rgba(255,255,255,0.55)",
@@ -414,7 +414,7 @@ export default function LabsPage() {
                 <div style={{ direction: "rtl" }}>
                   <span style={{
                     display: "inline-block",
-                    background: "#FFF3E6", color: "#F08700",
+                    background: "#FFF3E6", color: "#A94700",
                     fontSize: 14, fontWeight: 800, padding: "5px 14px",
                     borderRadius: 999, letterSpacing: "0.06em", marginBottom: 16,
                   }}>
@@ -422,7 +422,7 @@ export default function LabsPage() {
                   </span>
                   <h2 dir="rtl" style={{ fontSize: "clamp(22px, 3vw, 34px)", fontWeight: 800, color: "#000F61", lineHeight: 1.2, marginBottom: 16 }}>
                     {sec.title}{" "}
-                    <span style={{ color: "#F08700" }}>{sec.titleBlue}</span>
+                    <span style={{ color: "#A94700" }}>{sec.titleBlue}</span>
                   </h2>
                   <p style={{ fontSize: 16, color: "#4B5472", lineHeight: 1.8, marginBottom: 24 }}>
                     {sec.desc}
@@ -448,6 +448,8 @@ export default function LabsPage() {
                   <img
                     src={sec.img}
                     alt={sec.title}
+                    loading="lazy"
+                    decoding="async"
                     style={{
                       width: "100%",
                       borderRadius: 16,
@@ -467,13 +469,13 @@ export default function LabsPage() {
             <div style={{ textAlign: "center", marginBottom: 48 }}>
               <span style={{
                 display: "inline-block",
-                background: "#FFF3E6", color: "#F08700",
+                background: "#FFF3E6", color: "#A94700",
                 fontSize: 14, fontWeight: 800, padding: "5px 14px",
                 borderRadius: 999, letterSpacing: "0.06em", marginBottom: 16,
               }}>שימושים</span>
               <h2 style={{ fontSize: "clamp(24px, 3vw, 38px)", fontWeight: 900, color: "#000F61", lineHeight: 1.2, marginBottom: 16 }}>
                 לכל צורך הדרכה בארגון —{" "}
-                <span style={{ color: "#F08700" }}>לומדה תוך דקות</span>
+                <span style={{ color: "#A94700" }}>לומדה תוך דקות</span>
               </h2>
               <p style={{ fontSize: 17, color: "#4B5472", lineHeight: 1.75, maxWidth: 600, margin: "0 auto" }}>
                 מה שלקח שבועות ועלה <strong style={{ color: "#000F61" }}>6,500–15,000 ₪ לסוכנויות חיצוניות</strong> —
@@ -532,7 +534,7 @@ export default function LabsPage() {
                     marginBottom: 16,
                   }}>
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-                      stroke="#F08700" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"
+                      stroke="#A94700" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"
                       style={{ display: "block" }}>
                       <path d={item.d} />
                     </svg>
@@ -570,7 +572,7 @@ export default function LabsPage() {
             <div className="comparison-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
               {/* Before */}
               <div style={{ background: "rgba(255,255,255,0.04)", borderRadius: 20, padding: "32px 28px", border: "1px solid rgba(255,255,255,0.1)" }}>
-                <div style={{ fontSize: 14, fontWeight: 800, color: "rgba(255,255,255,0.4)", letterSpacing: "0.1em", textTransform: "uppercase" as const, marginBottom: 24 }}>סוכנות לומדות מסורתית ✕</div>
+                <div style={{ fontSize: 14, fontWeight: 800, color: "rgba(255,255,255,0.82)", letterSpacing: "0.1em", textTransform: "uppercase" as const, marginBottom: 24 }}>סוכנות לומדות מסורתית ✕</div>
                 {[
                   "6,500–15,000 ₪ ללומדה אחת",
                   "4–8 שבועות לפיתוח ואספקה",
@@ -578,7 +580,7 @@ export default function LabsPage() {
                   "תרגום יקר לכל שפה — ידנית",
                   "שינוי קטן = הפקה מחדש בתשלום",
                 ].map((item) => (
-                  <div key={item} style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 14, color: "rgba(255,255,255,0.5)", fontSize: 15 }}>
+                  <div key={item} style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 14, color: "rgba(255,255,255,0.82)", fontSize: 15 }}>
                     <div style={{ width: 20, height: 20, borderRadius: "50%", background: "rgba(255,255,255,0.07)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                       <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" strokeWidth="3" strokeLinecap="round"><path d="M18 6L6 18M6 6l12 12" /></svg>
                     </div>
@@ -641,7 +643,7 @@ export default function LabsPage() {
                   border: "1px solid rgba(255,255,255,0.1)",
                   boxShadow: "0 8px 32px rgba(0,0,0,0.3)",
                 }}>
-                  <img src={item.img} alt={item.label} style={{ width: "100%", display: "block" }} />
+                  <img src={item.img} alt={item.label} loading="lazy" decoding="async" style={{ width: "100%", display: "block" }} />
                   <div style={{ padding: "14px 16px", background: "rgba(255,255,255,0.05)" }}>
                     <p style={{ color: "rgba(255,255,255,0.8)", fontSize: 14, fontWeight: 600, margin: 0, textAlign: "center" }}>{item.label}</p>
                   </div>
@@ -656,7 +658,7 @@ export default function LabsPage() {
           <div style={{ maxWidth: 680, margin: "0 auto", textAlign: "center" }}>
             <span className="section-badge-navy">התחילו היום</span>
             <h2 style={{ fontSize: "clamp(26px, 3.5vw, 42px)", fontWeight: 900, color: "#000F61", marginBottom: 20, lineHeight: 1.15, marginTop: 16 }}>
-              רוצים לראות את <span style={{ color: "#F08700" }}>Yeda Labs</span> בפעולה?
+              רוצים לראות את <span style={{ color: "#A94700" }}>Yeda Labs</span> בפעולה?
             </h2>
             <p style={{ fontSize: 17, color: "#4B5472", lineHeight: 1.75, maxWidth: 500, margin: "0 auto 36px" }}>
               בדמו של 30 דקות נראה לכם איך להפוך את החומרים שלכם ללומדות AI — בדיוק לפי הצרכים של הארגון שלכם.
@@ -678,7 +680,7 @@ export default function LabsPage() {
             <div style={{ display: "flex", flexWrap: "wrap", gap: 20, justifyContent: "center" }}>
               {["ללא עלות וללא התחייבות", "30 דקות בלבד", "הדגמה חיה עם חומרים שלכם"].map((item) => (
                 <div key={item} style={{ display: "flex", alignItems: "center", gap: 8, color: "#36405E", fontSize: 14, fontWeight: 500 }}>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F08700" strokeWidth="2.5" strokeLinecap="round"><path d="M20 6L9 17l-5-5" /></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#A94700" strokeWidth="2.5" strokeLinecap="round"><path d="M20 6L9 17l-5-5" /></svg>
                   {item}
                 </div>
               ))}

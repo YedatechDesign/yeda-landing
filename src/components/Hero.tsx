@@ -96,7 +96,7 @@ export default function Hero() {
             <div style={{ background: "#000F61", borderRadius: "8px 8px 0 0", padding: "10px 18px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <div style={{ display: "flex", gap: 16 }}>
                 {["ראשי", "הכשרות", "משתמשים", "תוכן", "דוחות"].map(t => (
-                  <span key={t} style={{ color: t === "ראשי" ? "#F08700" : "rgba(255,255,255,0.5)", fontSize: 12, fontWeight: 600, cursor: "pointer" }}>{t}</span>
+                  <span key={t} style={{ color: t === "ראשי" ? "#A94700" : "rgba(255,255,255,0.5)", fontSize: 12, fontWeight: 600, cursor: "pointer" }}>{t}</span>
                 ))}
               </div>
               <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
@@ -107,7 +107,7 @@ export default function Hero() {
             <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 10, padding: "14px 0 10px" }}>
               {[
                 { label: "עובדים פעילים", val: "247", delta: "+12", color: "#000F61" },
-                { label: "הכשרות פעילות", val: "18", delta: "+3", color: "#F08700" },
+                { label: "הכשרות פעילות", val: "18", delta: "+3", color: "#A94700" },
                 { label: "ממוצע השלמה", val: "94%", delta: "+6%", color: "#10B981" },
                 { label: "שעות הדרכה", val: "1,240", delta: "+180", color: "#000F61" },
               ].map(k => (
@@ -124,9 +124,9 @@ export default function Hero() {
                 <div style={{ fontSize: 11, fontWeight: 700, color: "#6B7280", marginBottom: 12 }}>השלמת הכשרות לפי מחלקה</div>
                 {[
                   { d: "מכירות", p: 94, c: "#000F61" },
-                  { d: "טכנולוגיה", p: 88, c: "#F08700" },
+                  { d: "טכנולוגיה", p: 88, c: "#A94700" },
                   { d: "שיווק", p: 76, c: "#000F61" },
-                  { d: "תפעול", p: 82, c: "#F08700" },
+                  { d: "תפעול", p: 82, c: "#A94700" },
                 ].map(r => (
                   <div key={r.d} style={{ marginBottom: 9 }}>
                     <div style={{ display: "flex", justifyContent: "space-between", fontSize: 10, marginBottom: 3, color: "#1B1B1E", fontWeight: 600 }}>
@@ -142,7 +142,7 @@ export default function Hero() {
                 <div style={{ fontSize: 11, fontWeight: 700, color: "#6B7280", marginBottom: 10 }}>פעילות שבועית</div>
                 <div style={{ display: "flex", alignItems: "flex-end", gap: 5, height: 70 }}>
                   {[45, 68, 52, 80, 63, 90, 55].map((h, i) => (
-                    <div key={i} style={{ flex: 1, height: `${h}%`, background: i === 5 ? "#F08700" : "#000F61", borderRadius: "3px 3px 0 0", opacity: i === 5 ? 1 : 0.45 }} />
+                    <div key={i} style={{ flex: 1, height: `${h}%`, background: i === 5 ? "#A94700" : "#000F61", borderRadius: "3px 3px 0 0", opacity: i === 5 ? 1 : 0.45 }} />
                   ))}
                 </div>
                 <div style={{ display: "flex", justifyContent: "space-between", fontSize: 9, color: "#6B7280", marginTop: 5 }}>
@@ -164,7 +164,7 @@ export default function Hero() {
             { val: "72h", label: "זמן הטמעה" },
           ].map(s => (
             <div key={s.label} style={{ border: "1.5px solid rgba(255,255,255,0.12)", borderRadius: 8, padding: "16px 12px", textAlign: "center" }}>
-              <div style={{ color: "#F08700", fontSize: 26, fontWeight: 900 }}>{s.val}</div>
+              <div style={{ color: "#A94700", fontSize: 26, fontWeight: 900 }}>{s.val}</div>
               <div style={{ color: "rgba(255,255,255,0.5)", fontSize: 12, marginTop: 3 }}>{s.label}</div>
             </div>
           ))}

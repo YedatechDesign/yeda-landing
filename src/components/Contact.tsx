@@ -102,7 +102,7 @@ export default function Contact() {
                   <div
                     style={{
                       width: 26, height: 26, borderRadius: "50%",
-                      background: "#F08700",
+                      background: "#A94700",
                       display: "flex", alignItems: "center", justifyContent: "center",
                       flexShrink: 0, boxShadow: "none",
                     }}

@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 
 const companies = [
@@ -31,7 +30,7 @@ function LogoCard({ client }: { client: typeof companies[0] }) {
       alignItems: "center",
       gap: 14,
     }}>
-      <div style={{
+      <div className="client-logo-box" style={{
         width: "100%",
         height: 76,
         background: "white",
@@ -43,21 +42,14 @@ function LogoCard({ client }: { client: typeof companies[0] }) {
         justifyContent: "center",
         padding: "10px 14px",
         transition: "box-shadow 0.2s, border-color 0.2s",
-      }}
-        onMouseEnter={e => {
-          (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 20px rgba(0,15,97,0.12)";
-          (e.currentTarget as HTMLElement).style.borderColor = "#FFD9A8";
-        }}
-        onMouseLeave={e => {
-          (e.currentTarget as HTMLElement).style.boxShadow = "0 1px 6px rgba(0,15,97,0.06)";
-          (e.currentTarget as HTMLElement).style.borderColor = "#E3E8F5";
-        }}
-      >
+      }}>
         <Image
           src={`/${client.logo}`}
           alt={client.name}
           width={130}
           height={56}
+          loading="lazy"
+          fetchPriority="low"
           style={{ objectFit: "contain", maxHeight: 56, filter: "grayscale(20%)" }}
         />
       </div>
@@ -76,7 +68,7 @@ function LogoCard({ client }: { client: typeof companies[0] }) {
 
 export default function ClientLogos() {
   return (
-    <section style={{ background: "#F7F9FF", padding: "64px 24px", borderBottom: "1px solid #EEF1F8" }}>
+    <section id="clients" style={{ background: "#F7F9FF", padding: "64px 24px", borderBottom: "1px solid #EEF1F8" }}>
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
 
         {/* Label */}
@@ -101,6 +93,10 @@ export default function ClientLogos() {
       </div>
 
       <style>{`
+        .client-logo-box:hover {
+          box-shadow: 0 4px 20px rgba(0,15,97,0.12) !important;
+          border-color: #FFD9A8 !important;
+        }
         @media (max-width: 900px) {
           .client-grid { grid-template-columns: repeat(4, 1fr) !important; }
         }

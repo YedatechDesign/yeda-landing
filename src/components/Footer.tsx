@@ -1,4 +1,3 @@
-"use client";
 import YedaLogo from "./YedaLogo";
 
 export default function Footer() {
@@ -17,9 +16,9 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div style={{ marginBottom: 16 }}>
-              <YedaLogo color="white" height={40} />
+              <YedaLogo height={40} />
             </div>
-            <p style={{ fontSize: 14, color: "rgba(255,255,255,0.5)", lineHeight: 1.7, maxWidth: 260 }}>
+            <p style={{ fontSize: 14, color: "rgba(255,255,255,0.72)", lineHeight: 1.7, maxWidth: 260 }}>
               הפלטפורמה החכמה לניהול ידע ארגוני, הכשרות והדרכות – עם כלי AI מתקדמים שמאיצים תהליכי למידה בארגון.
             </p>
             <div style={{ marginTop: 20, display: "flex", gap: 10 }}>
@@ -46,6 +45,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
+                  className="footer-social-link"
                   style={{
                     width: 34,
                     height: 34,
@@ -54,20 +54,10 @@ export default function Footer() {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    color: "rgba(255,255,255,0.5)",
+                    color: "rgba(255,255,255,0.72)",
                     textDecoration: "none",
                     border: "1px solid rgba(255,255,255,0.1)",
                     transition: "all 0.2s",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.background = "#F08700";
-                    e.currentTarget.style.color = "white";
-                    e.currentTarget.style.borderColor = "#F08700";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background = "rgba(255,255,255,0.07)";
-                    e.currentTarget.style.color = "rgba(255,255,255,0.5)";
-                    e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)";
                   }}
                 >
                   {icon}
@@ -77,24 +67,35 @@ export default function Footer() {
           </div>
 
           {[
-            { title: "מוצר", links: ["Yeda LMS", "Yeda Labs AI", "דאשבורד", "אינטגרציות", "אבטחה"] },
-            { title: "חברה", links: ["לקוחות", "יצירת קשר"] },
-            { title: "תמיכה", links: ["שאלות נפוצות", "צור קשר"] },
+            { title: "מוצר", links: [
+              { label: "Yeda LMS", href: "/" },
+              { label: "Yeda Labs AI", href: "/labs" },
+              { label: "דאשבורד", href: "/#dashboard" },
+              { label: "אינטגרציות", href: "/#features" },
+              { label: "אבטחה", href: "/security" },
+            ] },
+            { title: "חברה", links: [
+              { label: "לקוחות", href: "/#clients" },
+              { label: "יצירת קשר", href: "/#contact" },
+            ] },
+            { title: "תמיכה", links: [
+              { label: "שאלות נפוצות", href: "/#faq" },
+              { label: "צור קשר", href: "/#contact" },
+            ] },
           ].map((col) => (
             <div key={col.title}>
-              <h4 style={{ color: "white", fontSize: 13, fontWeight: 800, marginBottom: 16, letterSpacing: "0.05em", textTransform: "uppercase" }}>
+              <p style={{ color: "white", fontSize: 13, fontWeight: 800, marginBottom: 16, letterSpacing: "0.05em", textTransform: "uppercase" }}>
                 {col.title}
-              </h4>
+              </p>
               <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                 {col.links.map((link) => (
                   <a
-                    key={link}
-                    href="#"
-                    style={{ color: "rgba(255,255,255,0.45)", fontSize: 14, textDecoration: "none", transition: "color 0.2s" }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = "white")}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.45)")}
+                    key={link.href}
+                    href={link.href}
+                    className="footer-nav-link"
+                    style={{ color: "rgba(255,255,255,0.72)", fontSize: 14, textDecoration: "none", transition: "color 0.2s" }}
                   >
-                    {link}
+                    {link.label}
                   </a>
                 ))}
               </div>
@@ -113,25 +114,26 @@ export default function Footer() {
             gap: 12,
           }}
         >
-          <p style={{ fontSize: 13, color: "rgba(255,255,255,0.35)" }}>
-            © 2025 Yeda LMS | YedaLabs. כל הזכויות שמורות.
+          <p style={{ fontSize: 13, color: "rgba(255,255,255,0.68)" }}>
+            © 2026 Yeda LMS | YedaLabs. כל הזכויות שמורות.
           </p>
           <div style={{ display: "flex", gap: 20 }}>
-            {["מדיניות פרטיות", "תנאי שימוש", "נגישות"].map((item) => (
-              <a
-                key={item}
-                href="#"
-                style={{ fontSize: 13, color: "rgba(255,255,255,0.35)", textDecoration: "none", transition: "color 0.2s" }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.7)")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.35)")}
-              >
-                {item}
-              </a>
-            ))}
+            <a
+              href="mailto:coo@yedalms.io?subject=%D7%A0%D7%92%D7%99%D7%A9%D7%95%D7%AA%20%D7%91%D7%90%D7%AA%D7%A8%20orglms.co.il"
+              style={{ fontSize: 13, color: "rgba(255,255,255,0.72)", textDecoration: "underline", textUnderlineOffset: 3 }}
+            >
+              דיווח על בעיית נגישות
+            </a>
           </div>
         </div>
       </div>
       <style>{`
+        .footer-social-link:hover {
+          background: #A94700 !important;
+          color: white !important;
+          border-color: #A94700 !important;
+        }
+        .footer-nav-link:hover { color: white !important; }
         @media (max-width: 768px) {
           .footer-grid {
             grid-template-columns: 1fr 1fr !important;

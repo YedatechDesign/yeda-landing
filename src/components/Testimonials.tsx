@@ -1,6 +1,3 @@
-"use client";
-import { useRef, useEffect, useState } from "react";
-
 const namedTestimonials = [
   {
     quote: "מערכת LMS ברמה מאוד גבוהה, בחנתי מספר מערכות גלובליות והמערכת הזאת כחול לבן! ואינה נופלת טכנולוגית משום מערכת שראיתי אף מתעלה עליהן. הצוות של Yeda מובילים במקצועיות ובהבנה עמוקה של התחום. זמינים ותמיד מעוניינים לשפר ולהתאים את המערכת לצרכים הארגוניים.",
@@ -29,18 +26,6 @@ const namedTestimonials = [
 ];
 
 export default function Testimonials() {
-  const gridRef = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setVisible(true); observer.disconnect(); } },
-      { threshold: 0.08 }
-    );
-    if (gridRef.current) observer.observe(gridRef.current);
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <section style={{ background: "#F5F7FD", padding: "88px 24px" }}>
       <div style={{ maxWidth: 1160, margin: "0 auto" }}>
@@ -56,8 +41,8 @@ export default function Testimonials() {
         </div>
 
         {/* Named testimonials */}
-        <div ref={gridRef} style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(330px, 1fr))", gap: 20, marginBottom: 48 }}>
-          {namedTestimonials.map((t, i) => (
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(330px, 1fr))", gap: 20, marginBottom: 48 }}>
+          {namedTestimonials.map((t) => (
             <div key={t.name} className="card-lift" style={{
               background: "white",
               borderRadius: 16,
@@ -67,11 +52,9 @@ export default function Testimonials() {
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-between",
-              opacity: visible ? 1 : 0,
-              animation: visible ? `fadeInUp 0.5s ease ${i * 0.1}s both` : "none",
             }}>
               <div>
-                <div style={{ fontSize: 36, color: "#F08700", fontWeight: 900, lineHeight: 1, marginBottom: 14, fontFamily: "Georgia, serif" }}>&quot;</div>
+                <div style={{ fontSize: 36, color: "#A94700", fontWeight: 900, lineHeight: 1, marginBottom: 14, fontFamily: "Georgia, serif" }}>&quot;</div>
                 <p style={{ fontSize: 16, color: "#2D3142", lineHeight: 1.85, marginBottom: 24 }}>
                   {t.quote}
                 </p>
@@ -79,7 +62,7 @@ export default function Testimonials() {
               <div>
                 <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 12 }}>
                   {t.photo ? (
-                    <img src={t.photo} alt={t.name} style={{
+                    <img src={t.photo} alt={t.name} loading="lazy" decoding="async" style={{
                       width: 48, height: 48, borderRadius: "50%", objectFit: "cover",
                       flexShrink: 0, border: "2px solid #E3E7F2",
                     }} />
@@ -98,7 +81,7 @@ export default function Testimonials() {
                   </div>
                 </div>
                 <div style={{ background: "#FFF3E6", borderRadius: 8, padding: "5px 12px", display: "inline-flex", alignItems: "center", gap: 6 }}>
-                  <span style={{ fontSize: 13, fontWeight: 700, color: "#F08700" }}>{t.source}</span>
+                  <span style={{ fontSize: 13, fontWeight: 700, color: "#A94700" }}>{t.source}</span>
                 </div>
               </div>
             </div>
