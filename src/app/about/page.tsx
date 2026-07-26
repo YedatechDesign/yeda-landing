@@ -1,6 +1,20 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { SITE_URL } from "@/lib/site";
+
+const title = "אודות Yeda | מערכת LMS ישראלית לארגונים";
+const description = "הכירו את Yeda, את הניסיון והחזון שמאחורי מערכת ה-LMS הישראלית לניהול למידה וידע ארגוני.";
+const shareImage = `${SITE_URL}/og-about.png`;
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: { canonical: "/about" },
+  openGraph: { type: "website", locale: "he_IL", url: `${SITE_URL}/about`, siteName: "Yeda", title, description, images: [{ url: shareImage, width: 1200, height: 630, alt: "אודות Yeda" }] },
+  twitter: { card: "summary_large_image", title, description, images: [shareImage] },
+};
 
 function SvgIcon({ d, size = 22, color = "#0A59EB" }: { d: string; size?: number; color?: string }) {
   return (
@@ -83,7 +97,7 @@ export default function AboutPage() {
   return (
     <>
       <Header />
-      <main>
+      <main id="main-content" tabIndex={-1}>
 
         {/* Hero */}
         <section
@@ -468,6 +482,8 @@ export default function AboutPage() {
                     <img
                       src={member.img}
                       alt={member.name}
+                      loading="lazy"
+                      decoding="async"
                       style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }}
                     />
                   </div>

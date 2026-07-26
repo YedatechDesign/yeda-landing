@@ -51,7 +51,7 @@ export default function AISection() {
             <div key={s.label} style={{ display: "flex", alignItems: "center", gap: 8 }}>
               <div style={{ textAlign: "center" }}>
                 <div style={{ ...ICON_BOX, margin: "0 auto 8px" }}>
-                  <s.icon size={18} color="#F08700" />
+                  <s.icon size={18} color="#A94700" />
                 </div>
                 <div style={{ fontSize: 14, fontWeight: 700, color: "white" }}>{s.label}</div>
                 <div style={{ fontSize: 13, color: "rgba(255,255,255,0.45)" }}>{s.sub}</div>
@@ -73,7 +73,7 @@ export default function AISection() {
             }}>
               <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 10 }}>
                 <div style={ICON_BOX}>
-                  <Icon size={18} color="#F08700" />
+                  <Icon size={18} color="#A94700" />
                 </div>
                 <h3 style={{ fontSize: 15, fontWeight: 700, color: "white", margin: 0 }}>{title}</h3>
               </div>

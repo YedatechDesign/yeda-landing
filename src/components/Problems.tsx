@@ -70,7 +70,7 @@ export default function Problems() {
                 borderRadius: 10,
                 padding: "28px 24px",
                 border: "1.5px solid #E0E4F0",
-                borderInlineStart: "4px solid #F08700",
+                borderInlineStart: "4px solid #A94700",
                 transition: "box-shadow 0.2s",
               }}
               onMouseEnter={e => (e.currentTarget.style.boxShadow = "0 6px 24px rgba(0,15,97,0.09)")}
@@ -83,7 +83,7 @@ export default function Problems() {
                 {title}
               </h3>
               <p style={{ fontSize: 14, color: "#6B7280", lineHeight: 1.7, margin: "0 0 12px" }}>{desc}</p>
-              <div style={{ fontSize: 12, fontWeight: 700, color: "#F08700", background: "rgba(240,135,0,0.08)", padding: "5px 10px", borderRadius: 5 }}>
+              <div style={{ fontSize: 12, fontWeight: 700, color: "#A94700", background: "rgba(240,135,0,0.08)", padding: "5px 10px", borderRadius: 5 }}>
                 {cost}
               </div>
             </div>

@@ -6,7 +6,7 @@ import { SITE_URL } from "@/lib/site";
 
 const title = "אבטחת מערכת LMS לארגונים וחברות | Yeda";
 const description = "מערכת LMS מאובטחת לארגונים: הרשאות לפי תפקיד, הגנת תוכן, בקרת גישה, תיעוד פעילות ותמיכה בדרישות ציות ורגולציה.";
-const shareImage = `${SITE_URL}/feature-drm.png`;
+const shareImage = `${SITE_URL}/og-security.png`;
 
 export const metadata: Metadata = {
   title,
@@ -19,13 +19,13 @@ export const metadata: Metadata = {
     siteName: "Yeda",
     title,
     description,
-    images: [shareImage],
+    images: [{ url: shareImage, width: 1200, height: 630, alt: "אבטחת מערכת Yeda LMS לארגונים" }],
   },
   twitter: {
     card: "summary_large_image",
     title,
     description,
-    images: [shareImage],
+    images: [{ url: shareImage, alt: "אבטחת מערכת Yeda LMS לארגונים" }],
   },
 };
 
@@ -128,7 +128,7 @@ export default function SecurityPage() {
   return (
     <>
       <Header />
-      <main style={{ paddingTop: 72 }}>
+      <main id="main-content" tabIndex={-1} style={{ paddingTop: 72 }}>
 
         {/* ─── HERO ─── */}
         <section style={{ background: "#000F61", padding: "80px 24px 72px", overflow: "hidden" }}>
@@ -178,6 +178,8 @@ export default function SecurityPage() {
                 <img
                   src="https://yedalms.io/wp-content/uploads/2026/01/fc_hero.png"
                   alt="Yeda Security"
+                  loading="lazy"
+                  decoding="async"
                   style={{ width: "100%", maxWidth: 520, display: "block", borderRadius: 16, filter: "drop-shadow(0 24px 48px rgba(0,0,0,0.5))" }}
                 />
               </div>
@@ -232,6 +234,8 @@ export default function SecurityPage() {
                     <img
                       src={sec.img}
                       alt={sec.title}
+                      loading="lazy"
+                      decoding="async"
                       style={{ width: "100%", display: "block" }}
                     />
                   </div>
@@ -241,7 +245,7 @@ export default function SecurityPage() {
                 <div style={{ direction: "rtl" }}>
                   <span style={{
                     display: "inline-block",
-                    background: "#FFF3E6", color: "#F08700",
+                    background: "#FFF3E6", color: "#A94700",
                     fontSize: 14, fontWeight: 800,
                     padding: "5px 14px", borderRadius: 100, marginBottom: 20,
                     letterSpacing: "0.05em", textTransform: "uppercase" as const,
@@ -290,7 +294,7 @@ export default function SecurityPage() {
                   background: "rgba(255,255,255,0.05)",
                   border: "1px solid rgba(255,255,255,0.1)",
                   borderRadius: 20, padding: "32px 28px",
-                  borderTop: "3px solid #F08700",
+                  borderTop: "3px solid #A94700",
                 }}>
                   {/* Icon */}
                   <div style={{
@@ -345,7 +349,7 @@ export default function SecurityPage() {
             }}>
               <div style={{
                 width: 68, height: 68, borderRadius: 18,
-                background: "#F08700",
+                background: "#A94700",
                 border: "2px solid rgba(255,255,255,0.2)",
                 margin: "0 auto 28px",
                 display: "flex", alignItems: "center", justifyContent: "center",

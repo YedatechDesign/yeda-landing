@@ -27,7 +27,7 @@ export default function ClickToLoadVideo({ src, title, posterSrc, posterAlt }: C
         <button
           type="button"
           onClick={() => setIsLoaded(true)}
-          aria-label={`הפעלת הסרטון: ${title}`}
+          aria-label={`לחצו לצפייה בסרטון: ${title}`}
           style={{
             position: "absolute", inset: 0, width: "100%", padding: 0, border: "none", cursor: "pointer",
             overflow: "hidden", color: "white", background: "#000F61", fontFamily: "inherit",
@@ -42,7 +42,7 @@ export default function ClickToLoadVideo({ src, title, posterSrc, posterAlt }: C
           />
           <span style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(0,15,97,0.35), rgba(0,0,0,0.64))" }} />
           <span style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 14, padding: 24 }}>
-            <span style={{ width: 64, height: 64, borderRadius: "50%", background: "#F08700", display: "grid", placeItems: "center", boxShadow: "0 8px 28px rgba(0,0,0,0.35)" }}>
+            <span style={{ width: 64, height: 64, borderRadius: "50%", background: "#A94700", display: "grid", placeItems: "center", boxShadow: "0 8px 28px rgba(0,0,0,0.35)" }}>
               <svg width="25" height="25" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M8 5v14l11-7z" fill="white" />
               </svg>

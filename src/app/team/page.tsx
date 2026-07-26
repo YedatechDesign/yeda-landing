@@ -11,16 +11,16 @@ const management = [
 ];
 
 const rd = [
-  { name: "Arthur Tsidkilov",    role: "סמנכ\"ל פיתוח ומייסד שותף", emoji: "🛠️", color: "#F08700", photo: null                   },
-  { name: "Yoav Yelin",          role: "מנהל טכנולוגיה (CTO)",       emoji: "💻", color: "#F08700", photo: "/team-yoav.png"         },
-  { name: "Alina Zimina",        role: "UI/UX Designer",              emoji: "🎨", color: "#F08700", photo: null                   },
-  { name: "Evgeny Dobryansky",   role: "ראש צוות פיתוח",             emoji: "👨‍💻", color: "#F08700", photo: "/team-evgeny.png"      },
-  { name: "Alexander Parkhomenko",role: "DevOps",                     emoji: "🔧", color: "#F08700", photo: "/team-alexander.png"   },
-  { name: "Vitalina Rebalsky",   role: "מנהלת פרויקטים בכירה",       emoji: "📋", color: "#F08700", photo: "/team-vitalina.png"    },
-  { name: "Katya Klymenko",      role: "Product Designer",            emoji: "✏️", color: "#F08700", photo: null                   },
-  { name: "Andrey Novosad",      role: "מפתח Backend — Laravel",      emoji: "⚡", color: "#F08700", photo: null                   },
-  { name: "Yaroslaw Almazow",    role: "מפתח Frontend — Angular",     emoji: "🌐", color: "#F08700", photo: null                   },
-  { name: "Katya Nesin",         role: "מעצבת גרפית",                 emoji: "🖌️", color: "#F08700", photo: null                   },
+  { name: "Arthur Tsidkilov",    role: "סמנכ\"ל פיתוח ומייסד שותף", emoji: "🛠️", color: "#A94700", photo: null                   },
+  { name: "Yoav Yelin",          role: "מנהל טכנולוגיה (CTO)",       emoji: "💻", color: "#A94700", photo: "/team-yoav.png"         },
+  { name: "Alina Zimina",        role: "UI/UX Designer",              emoji: "🎨", color: "#A94700", photo: null                   },
+  { name: "Evgeny Dobryansky",   role: "ראש צוות פיתוח",             emoji: "👨‍💻", color: "#A94700", photo: "/team-evgeny.png"      },
+  { name: "Alexander Parkhomenko",role: "DevOps",                     emoji: "🔧", color: "#A94700", photo: "/team-alexander.png"   },
+  { name: "Vitalina Rebalsky",   role: "מנהלת פרויקטים בכירה",       emoji: "📋", color: "#A94700", photo: "/team-vitalina.png"    },
+  { name: "Katya Klymenko",      role: "Product Designer",            emoji: "✏️", color: "#A94700", photo: null                   },
+  { name: "Andrey Novosad",      role: "מפתח Backend — Laravel",      emoji: "⚡", color: "#A94700", photo: null                   },
+  { name: "Yaroslaw Almazow",    role: "מפתח Frontend — Angular",     emoji: "🌐", color: "#A94700", photo: null                   },
+  { name: "Katya Nesin",         role: "מעצבת גרפית",                 emoji: "🖌️", color: "#A94700", photo: null                   },
 ];
 
 const marketing = [
@@ -71,7 +71,7 @@ function TeamCard({
       {/* Photo area — rectangular on mobile, circular on desktop */}
       <div className="team-photo-area" style={{ background: "#E8EBF5", width: "100%", aspectRatio: "1 / 1.1", overflow: "hidden", position: "relative" }}>
         {photo ? (
-          <img src={photo} alt={name} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center", display: "block" }} />
+          <img src={photo} alt={name} loading="lazy" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center", display: "block" }} />
         ) : (
           <div style={{
             width: "100%", height: "100%",
@@ -94,7 +94,7 @@ function TeamCard({
         </p>
         <div className="team-emoji-tag" style={{
           display: "inline-block",
-          background: color === "#F08700" ? "#FFE4C2" : "#E8EBF8",
+          background: color === "#A94700" ? "#FFE4C2" : "#E8EBF8",
           borderRadius: 20, padding: "3px 10px", fontSize: 14,
         }}>
           {emoji}
@@ -152,7 +152,7 @@ export default function TeamPage() {
   return (
     <>
       <Header />
-      <main>
+      <main id="main-content" tabIndex={-1}>
 
         {/* Hero */}
         <section
@@ -166,7 +166,7 @@ export default function TeamPage() {
           <div style={{ maxWidth: 700, margin: "0 auto" }}>
             <span
               style={{
-                background: "#F08700",
+                background: "#A94700",
                 color: "white",
                 fontSize: 11,
                 fontWeight: 800,
@@ -223,7 +223,7 @@ export default function TeamPage() {
                     style={{
                       fontSize: 36,
                       fontWeight: 900,
-                      color: "#F08700",
+                      color: "#A94700",
                       lineHeight: 1,
                     }}
                   >

@@ -14,9 +14,9 @@ import Footer from "@/components/Footer";
 import { faqs } from "@/lib/faq";
 import { SITE_URL } from "@/lib/site";
 
-const title = "מערכת LMS לארגונים וחברות | ניהול ידע והדרכות עם AI";
-const description = "מערכת LMS לארגונים וחברות לניהול ידע, הכשרות והדרכות. צרו תוכן עם AI, עקבו אחר ביצועים ונהלו למידה ארגונית במקום אחד.";
-const shareImage = `${SITE_URL}/feature-analytics.png`;
+const title = "מערכת LMS | מערכת ניהול למידה לארגונים עם AI";
+const description = "מערכת LMS לניהול למידה, ידע והדרכות בארגונים וחברות. צרו תוכן עם AI, עקבו אחר ביצועים ונהלו את כל ההכשרות במקום אחד.";
+const shareImage = `${SITE_URL}/og-home.png`;
 
 export const metadata: Metadata = {
   title,
@@ -29,13 +29,13 @@ export const metadata: Metadata = {
     siteName: "Yeda",
     title,
     description,
-    images: [shareImage],
+    images: [{ url: shareImage, width: 1200, height: 630, alt: "Yeda - מערכת LMS וניהול למידה לארגונים" }],
   },
   twitter: {
     card: "summary_large_image",
     title,
     description,
-    images: [shareImage],
+    images: [{ url: shareImage, alt: "Yeda - מערכת LMS וניהול למידה לארגונים" }],
   },
 };
 
@@ -75,7 +75,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd).replace(/</g, "\\u003c") }}
       />
       <Header />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <HeroNew />
         <VideoSection />
         <ClientLogos />

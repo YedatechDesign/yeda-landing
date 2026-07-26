@@ -76,7 +76,7 @@ function LogoCard({ client }: { client: typeof companies[0] }) {
 
 export default function ClientLogos() {
   return (
-    <section style={{ background: "#F7F9FF", padding: "64px 24px", borderBottom: "1px solid #EEF1F8" }}>
+    <section id="clients" style={{ background: "#F7F9FF", padding: "64px 24px", borderBottom: "1px solid #EEF1F8" }}>
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
 
         {/* Label */}

@@ -29,7 +29,7 @@ export default function Header() {
         right: 0,
         left: 0,
         zIndex: 50,
-        background: "#F08700",
+        background: "#A94700",
         borderBottom: scrolled ? "1px solid rgba(255,255,255,0.25)" : "1px solid transparent",
         boxShadow: scrolled ? "0 2px 16px rgba(163,92,0,0.25)" : "none",
         transition: "box-shadow 0.3s, border-color 0.3s",
@@ -47,8 +47,8 @@ export default function Header() {
         }}
       >
         {/* Logo */}
-        <Link href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
-          <YedaLogo color="white" height={44} />
+        <Link href="/" aria-label="Yeda - דף הבית" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
+          <YedaLogo height={44} priority />
         </Link>
 
         {/* Desktop Nav */}
@@ -58,14 +58,14 @@ export default function Header() {
               key={link.href}
               href={link.href}
               style={{
-                color: "rgba(255,255,255,0.75)",
+                color: "white",
                 fontSize: 15,
                 fontWeight: 500,
                 textDecoration: "none",
                 transition: "color 0.2s",
               }}
               onMouseEnter={(e) => (e.currentTarget.style.color = "white")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.75)")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "white")}
             >
               {link.label}
             </a>
@@ -77,7 +77,7 @@ export default function Header() {
           <a
             href="#contact"
             style={{
-              background: "white", color: "#F08700", fontWeight: 700,
+              background: "white", color: "#9A3F00", fontWeight: 700,
               padding: "10px 22px", fontSize: 14, borderRadius: 999,
               textDecoration: "none", display: "inline-block",
               transition: "transform 0.15s, box-shadow 0.2s",
@@ -92,6 +92,9 @@ export default function Header() {
         {/* Mobile toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
+          aria-label={mobileOpen ? "סגירת תפריט הניווט" : "פתיחת תפריט הניווט"}
+          aria-expanded={mobileOpen}
+          aria-controls="mobile-navigation"
           style={{
             display: "none",
             color: "white",
@@ -109,8 +112,9 @@ export default function Header() {
       {/* Mobile menu */}
       {mobileOpen && (
         <div
+          id="mobile-navigation"
           style={{
-            background: "#F08700",
+            background: "#A94700",
             borderTop: "1px solid rgba(255,255,255,0.2)",
             padding: "16px 24px 24px",
           }}
@@ -122,7 +126,7 @@ export default function Header() {
               onClick={() => setMobileOpen(false)}
               style={{
                 display: "block",
-                color: "rgba(255,255,255,0.8)",
+                color: "white",
                 padding: "13px 0",
                 fontSize: 16,
                 textDecoration: "none",
@@ -136,7 +140,7 @@ export default function Header() {
             href="#contact"
             style={{
               marginTop: 16, display: "block", textAlign: "center",
-              background: "white", color: "#F08700", fontWeight: 700,
+              background: "white", color: "#9A3F00", fontWeight: 700,
               padding: "13px", fontSize: 15, borderRadius: 999, textDecoration: "none",
             }}
           >
