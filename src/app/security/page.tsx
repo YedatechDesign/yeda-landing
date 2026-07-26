@@ -1,5 +1,33 @@
+import type { Metadata } from "next";
+import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { SITE_URL } from "@/lib/site";
+
+const title = "אבטחת מערכת LMS לארגונים וחברות | Yeda";
+const description = "מערכת LMS מאובטחת לארגונים: הרשאות לפי תפקיד, הגנת תוכן, בקרת גישה, תיעוד פעילות ותמיכה בדרישות ציות ורגולציה.";
+const shareImage = `${SITE_URL}/feature-drm.png`;
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: { canonical: "/security" },
+  openGraph: {
+    type: "website",
+    locale: "he_IL",
+    url: `${SITE_URL}/security`,
+    siteName: "Yeda",
+    title,
+    description,
+    images: [shareImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: [shareImage],
+  },
+};
 
 const badges = ["Hetzner SOC2", "GDPR", "SSL/TLS", "ISO 27001", "2FA & MFA", "WAF & DDoS"];
 
@@ -121,7 +149,7 @@ export default function SecurityPage() {
                 </div>
 
                 <h1 style={{ fontSize: "clamp(32px, 4vw, 54px)", fontWeight: 900, color: "white", lineHeight: 1.1, marginBottom: 24 }}>
-                  האבטחה שהארגון שלכם מחייב
+                  אבטחת מערכת LMS ברמה שהארגון שלכם מחייב
                 </h1>
                 <p style={{ fontSize: 18, color: "rgba(255,255,255,0.72)", lineHeight: 1.8, marginBottom: 36 }}>
                   18 שכבות אבטחה — מהצפנת SSL/TLS ועד הסמכת SOC2. הנתונים הארגוניים שלכם מוגנים בכל שלב.
@@ -336,16 +364,16 @@ export default function SecurityPage() {
                 נציג לכם את המערכת, נענה על כל שאלה ונתאים פתרון לצרכי הארגון שלכם.
               </p>
               <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
-                <a href="/#contact" className="btn-primary" style={{ fontSize: 15, padding: "14px 36px" }}>
+                <Link href="/#contact" className="btn-primary" style={{ fontSize: 15, padding: "14px 36px" }}>
                   קבעו הדגמה חינם ←
-                </a>
-                <a href="/" style={{
+                </Link>
+                <Link href="/" style={{
                   display: "inline-block", padding: "14px 30px",
                   border: "2px solid rgba(255,255,255,0.25)", borderRadius: 10,
                   color: "rgba(255,255,255,0.85)", fontWeight: 700, fontSize: 15, textDecoration: "none",
                 }}>
                   חזרה לדף הבית
-                </a>
+                </Link>
               </div>
             </div>
           </div>

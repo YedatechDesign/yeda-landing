@@ -1,5 +1,44 @@
+import type { Metadata } from "next";
+import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { SITE_URL } from "@/lib/site";
+
+const title = "יצירת לומדות עם AI לארגונים | Yeda Labs";
+const description = "צרו לומדות מקצועיות עם AI בתוך דקות: תסריט, מצגת, קריינות ותוכן אינטראקטיבי לעובדים, הכשרות וידע ארגוני.";
+const shareImage = `${SITE_URL}/labs-import.png`;
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: { canonical: "/labs" },
+  openGraph: {
+    type: "website",
+    locale: "he_IL",
+    url: `${SITE_URL}/labs`,
+    siteName: "Yeda",
+    title,
+    description,
+    images: [shareImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: [shareImage],
+  },
+};
+
+const softwareApplicationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Yeda Labs",
+  url: `${SITE_URL}/labs`,
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Web",
+  description,
+  inLanguage: "he-IL",
+};
 
 const stats = [
   { num: "75%", label: "קיצור בזמן יצירת תוכן" },
@@ -81,6 +120,10 @@ function CheckMark() {
 export default function LabsPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationJsonLd).replace(/</g, "\\u003c") }}
+      />
       <Header />
       <main style={{ paddingTop: 72 }}>
 
@@ -114,9 +157,9 @@ export default function LabsPage() {
             </p>
 
             <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
-              <a href="/#contact" className="btn-primary" style={{ fontSize: 16, padding: "14px 36px" }}>
+              <Link href="/#contact" className="btn-primary" style={{ fontSize: 16, padding: "14px 36px" }}>
                 בקשו הדגמה חינם ←
-              </a>
+              </Link>
               <a href="#features" style={{
                 fontSize: 16, padding: "14px 36px", borderRadius: 999,
                 border: "1.5px solid rgba(255,255,255,0.35)", color: "white",
@@ -339,9 +382,9 @@ export default function LabsPage() {
                 </p>
               </div>
 
-              <a href="/#contact" className="btn-primary" style={{ fontSize: 15, marginTop: 4 }}>
+              <Link href="/#contact" className="btn-primary" style={{ fontSize: 15, marginTop: 4 }}>
                 רוצים לראות את זה? ←
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -505,9 +548,9 @@ export default function LabsPage() {
             </div>
 
             <div style={{ textAlign: "center", marginTop: 40 }}>
-              <a href="/#contact" className="btn-primary" style={{ fontSize: 15 }}>
+              <Link href="/#contact" className="btn-primary" style={{ fontSize: 15 }}>
                 קבעו דמו וראו איך זה עובד ←
-              </a>
+              </Link>
             </div>
           </div>
         </section>
@@ -620,16 +663,16 @@ export default function LabsPage() {
             </p>
 
             <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap", marginBottom: 28 }}>
-              <a href="/#contact" className="btn-primary" style={{ fontSize: 16, padding: "14px 36px" }}>
+              <Link href="/#contact" className="btn-primary" style={{ fontSize: 16, padding: "14px 36px" }}>
                 קבעו דמו חינם ←
-              </a>
-              <a href="/" style={{
+              </Link>
+              <Link href="/" style={{
                 fontSize: 16, padding: "14px 36px", borderRadius: 999,
                 border: "1.5px solid #FFD9A8", color: "#000F61",
                 textDecoration: "none", fontWeight: 600, fontFamily: "inherit",
               }}>
                 בחזרה לדף הבית
-              </a>
+              </Link>
             </div>
 
             <div style={{ display: "flex", flexWrap: "wrap", gap: 20, justifyContent: "center" }}>
