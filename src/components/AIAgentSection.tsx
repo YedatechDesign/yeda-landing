@@ -70,8 +70,6 @@ export default function AIAgentSection() {
           <ClickToLoadVideo
             src={VIDEO_SRC}
             title="סוכן ה-AI של Yeda - הדרכה חיה על המסך"
-            posterSrc="/assistant-knowledge.png"
-            posterAlt="תצוגה מקדימה של סוכן ה-AI של Yeda"
           />
         </div>
 

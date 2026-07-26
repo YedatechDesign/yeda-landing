@@ -41,8 +41,6 @@ export default function VideoSection() {
           <ClickToLoadVideo
             src={VIDEO_SRC}
             title="Yeda LMS - סקירה מלאה של הפלטפורמה"
-            posterSrc="/feature-analytics.png"
-            posterAlt="תצוגה מקדימה של הדאשבורד במערכת Yeda"
           />
         </div>
 
