@@ -70,9 +70,9 @@ export default function HeroNew() {
             lineHeight: 1.15, marginBottom: 22, maxWidth: 820, marginInline: "auto",
           }}
         >
-          הפסיקו לאבד ידע ארגוני.
+          מערכת LMS לארגונים וחברות:
           <br />
-          <span style={{ color: "#FFC170" }}>התחילו לנהל אותו.</span>
+          <span style={{ color: "#FFC170" }}>מפסיקים לאבד ידע ארגוני</span>
         </h1>
 
         <p

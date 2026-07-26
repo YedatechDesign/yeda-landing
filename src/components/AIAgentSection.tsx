@@ -1,3 +1,5 @@
+import ClickToLoadVideo from "@/components/ClickToLoadVideo";
+
 function SvgIcon({ d, size = 18, color = "white" }: { d: string; size?: number; color?: string }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none"
@@ -65,13 +67,11 @@ export default function AIAgentSection() {
             background: "#000", aspectRatio: "16/9", maxWidth: 900, margin: "0 auto",
           }}
         >
-          <iframe
+          <ClickToLoadVideo
             src={VIDEO_SRC}
-            title="סוכן ה-AI של Yeda — הדרכה חיה על המסך"
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-            allowFullScreen
-            style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: "none" }}
+            title="סוכן ה-AI של Yeda - הדרכה חיה על המסך"
+            posterSrc="/assistant-knowledge.png"
+            posterAlt="תצוגה מקדימה של סוכן ה-AI של Yeda"
           />
         </div>
 

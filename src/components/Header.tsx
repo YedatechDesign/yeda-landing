@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import YedaLogo from "./YedaLogo";
 
 export default function Header() {
@@ -46,9 +47,9 @@ export default function Header() {
         }}
       >
         {/* Logo */}
-        <a href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
+        <Link href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
           <YedaLogo color="white" height={44} />
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <nav style={{ display: "flex", alignItems: "center", gap: 32 }} className="desktop-nav">

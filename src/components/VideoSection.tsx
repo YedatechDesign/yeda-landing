@@ -1,3 +1,5 @@
+import ClickToLoadVideo from "@/components/ClickToLoadVideo";
+
 const VIDEO_SRC = "https://iframe.yedatech.io/embed/vz-ac26fd16-36a/4cf217df-8fc6-405d-a114-d410ac5b8181";
 
 function SvgIcon({ d, size = 16, color = "white" }: { d: string; size?: number; color?: string }) {
@@ -36,13 +38,11 @@ export default function VideoSection() {
           boxShadow: "0 32px 80px rgba(0,0,0,0.5)",
           background: "#000", aspectRatio: "16/9",
         }}>
-          <iframe
+          <ClickToLoadVideo
             src={VIDEO_SRC}
-            title="Yeda LMS — סקירה מלאה של הפלטפורמה"
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-            allowFullScreen
-            style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: "none" }}
+            title="Yeda LMS - סקירה מלאה של הפלטפורמה"
+            posterSrc="/feature-analytics.png"
+            posterAlt="תצוגה מקדימה של הדאשבורד במערכת Yeda"
           />
         </div>
 

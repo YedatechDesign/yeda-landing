@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -518,9 +519,9 @@ export default function AboutPage() {
               הארגון שלכם — ללא התחייבות.
             </p>
             <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
-              <a href="/#contact" className="btn-primary" style={{ fontSize: 15, padding: "13px 32px" }}>
+              <Link href="/#contact" className="btn-primary" style={{ fontSize: 15, padding: "13px 32px" }}>
                 קבעו דמו חינם ←
-              </a>
+              </Link>
             </div>
           </div>
         </section>

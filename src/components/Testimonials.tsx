@@ -28,12 +28,6 @@ const namedTestimonials = [
   },
 ];
 
-const anonTestimonials = [
-  "עברנו מ-Excel ומיילים לפלטפורמה מנוהלת תוך שלושה ימים. היום המנהלים שלנו רואים בזמן אמת מי עומד בדרישות הרגולציה ומי לא — משהו שלא היה לנו בכלל קודם.",
-  "הדבר שהכי הפתיע אותנו הוא כמה מהר ה-AI יוצר תוכן. מצגת שלקח לנו חודש לבנות לקורס — הפכה ללומדה מלאה תוך שעה. הצוות שלי פשוט לא האמין.",
-  "ניסינו שני מוצרים זרים לפני Yeda. שניהם נכשלו על הממשק בעברית וחוסר תמיכה מקומית. עם Yeda קיבלנו פתרון שעובד, בעברית, עם אנשים שמבינים את הצרכים שלנו.",
-];
-
 export default function Testimonials() {
   const gridRef = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
@@ -77,7 +71,7 @@ export default function Testimonials() {
               animation: visible ? `fadeInUp 0.5s ease ${i * 0.1}s both` : "none",
             }}>
               <div>
-                <div style={{ fontSize: 36, color: "#F08700", fontWeight: 900, lineHeight: 1, marginBottom: 14, fontFamily: "Georgia, serif" }}>"</div>
+                <div style={{ fontSize: 36, color: "#F08700", fontWeight: 900, lineHeight: 1, marginBottom: 14, fontFamily: "Georgia, serif" }}>&quot;</div>
                 <p style={{ fontSize: 16, color: "#2D3142", lineHeight: 1.85, marginBottom: 24 }}>
                   {t.quote}
                 </p>
