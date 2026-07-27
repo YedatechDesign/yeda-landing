@@ -129,9 +129,9 @@ export default function Footer() {
       </div>
       <style>{`
         .footer-social-link:hover {
-          background: #A94700 !important;
-          color: white !important;
-          border-color: #A94700 !important;
+          background: #F08700 !important;
+          color: #000F61 !important;
+          border-color: #F08700 !important;
         }
         .footer-nav-link:hover { color: white !important; }
         @media (max-width: 768px) {

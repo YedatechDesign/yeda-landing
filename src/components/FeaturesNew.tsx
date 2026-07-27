@@ -126,7 +126,7 @@ function AccordionItem({ feature, open, onToggle }: { feature: FeatureItem; open
     <div
       style={{
         background: "white",
-        border: open ? "1px solid #A94700" : "1px solid #E3E7F2",
+        border: open ? "1px solid #F08700" : "1px solid #E3E7F2",
         borderRadius: 16,
         overflow: "hidden",
         transition: "border-color 0.25s, box-shadow 0.25s",
@@ -171,11 +171,11 @@ function AccordionItem({ feature, open, onToggle }: { feature: FeatureItem; open
           {/* Icon */}
           <div style={{
             width: 48, height: 48, borderRadius: 12, flexShrink: 0,
-            background: open ? "#A94700" : "#FFE4C2",
+            background: open ? "#F08700" : "#FFE4C2",
             display: "flex", alignItems: "center", justifyContent: "center",
             transition: "background 0.25s",
           }}>
-            <Icon d={ICONS[feature.icon]} size={22} color={open ? "white" : "#A94700"} />
+            <Icon d={ICONS[feature.icon]} size={22} color={open ? "#000F61" : "#9A3F00"} />
           </div>
 
           {/* Title block */}
@@ -190,8 +190,8 @@ function AccordionItem({ feature, open, onToggle }: { feature: FeatureItem; open
         <div className="acc-right" style={{ display: "flex", alignItems: "center", gap: 10, flexShrink: 0 }}>
           {feature.ai && (
             <span style={{
-              background: "#A94700",
-              color: "white",
+              background: "#F08700",
+              color: "#000F61",
               fontSize: 12,
               fontWeight: 700,
               padding: "4px 12px",
@@ -200,8 +200,8 @@ function AccordionItem({ feature, open, onToggle }: { feature: FeatureItem; open
             }}>AI</span>
           )}
           <span style={{
-            background: open ? "#A94700" : "#EEF1F8",
-            color: open ? "white" : "#36405E",
+            background: open ? "#F08700" : "#EEF1F8",
+            color: open ? "#000F61" : "#36405E",
             fontSize: 12,
             fontWeight: 700,
             padding: "4px 12px",
@@ -214,12 +214,12 @@ function AccordionItem({ feature, open, onToggle }: { feature: FeatureItem; open
           {/* Toggle chevron */}
           <div style={{
             width: 34, height: 34, borderRadius: 10, flexShrink: 0,
-            background: open ? "#A94700" : "#EEF1F8",
+            background: open ? "#F08700" : "#EEF1F8",
             display: "flex", alignItems: "center", justifyContent: "center",
             transform: open ? "rotate(180deg)" : "rotate(0)",
             transition: "all 0.25s",
           }}>
-            <Icon d={ICONS.chevron} size={16} color={open ? "white" : "#36405E"} />
+            <Icon d={ICONS.chevron} size={16} color={open ? "#000F61" : "#36405E"} />
           </div>
         </div>
       </button>

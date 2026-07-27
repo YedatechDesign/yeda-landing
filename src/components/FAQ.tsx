@@ -16,7 +16,7 @@ export default function FAQ() {
           </h2>
           <p style={{ fontSize: 16, color: "#36405E", maxWidth: 500, margin: "0 auto", lineHeight: 1.75 }}>
             יש שאלה שלא ענינו עליה?{" "}
-            <a href="#contact" style={{ color: "#A94700", fontWeight: 700, textDecoration: "underline", textUnderlineOffset: 3 }}>דברו איתנו</a>.
+            <a href="#contact" style={{ color: "#9A3F00", fontWeight: 700, textDecoration: "underline", textUnderlineOffset: 3 }}>דברו איתנו</a>.
           </p>
         </div>
 
@@ -26,7 +26,7 @@ export default function FAQ() {
             return (
               <div key={i} style={{
                 background: "white", borderRadius: 16,
-                border: isOpen ? "1px solid #A94700" : "1px solid #E3E7F2",
+                border: isOpen ? "1px solid #F08700" : "1px solid #E3E7F2",
                 boxShadow: isOpen ? "0 4px 20px rgba(240,135,0,0.1)" : "0 1px 4px rgba(0,15,97,0.05)",
                 overflow: "hidden", transition: "border-color 0.25s, box-shadow 0.25s",
                 position: "relative",
@@ -56,7 +56,7 @@ export default function FAQ() {
                   </span>
                   <div style={{
                     width: 32, height: 32, borderRadius: 9, flexShrink: 0,
-                    background: isOpen ? "#A94700" : "#EEF1F8",
+                    background: isOpen ? "#F08700" : "#EEF1F8",
                     display: "flex", alignItems: "center", justifyContent: "center",
                     transition: "all 0.25s",
                   }}>

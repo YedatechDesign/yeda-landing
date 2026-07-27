@@ -102,12 +102,12 @@ export default function Contact() {
                   <div
                     style={{
                       width: 26, height: 26, borderRadius: "50%",
-                      background: "#A94700",
+                      background: "#F08700",
                       display: "flex", alignItems: "center", justifyContent: "center",
                       flexShrink: 0, boxShadow: "none",
                     }}
                   >
-                    <IconCheck size={13} color="white" />
+                    <IconCheck size={13} color="#000F61" />
                   </div>
                   <span style={{ color: "rgba(255,255,255,0.95)", fontSize: 15, fontWeight: 500 }}>{item}</span>
                 </div>

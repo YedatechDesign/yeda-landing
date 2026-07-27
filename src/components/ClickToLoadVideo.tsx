@@ -33,9 +33,9 @@ export default function ClickToLoadVideo({ src, title }: ClickToLoadVideoProps) 
           }}
         >
           <span style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 14, padding: 24 }}>
-            <span style={{ width: 64, height: 64, borderRadius: "50%", background: "#A94700", display: "grid", placeItems: "center", boxShadow: "0 8px 28px rgba(0,0,0,0.35)" }}>
+            <span style={{ width: 64, height: 64, borderRadius: "50%", background: "#F08700", display: "grid", placeItems: "center", boxShadow: "0 8px 28px rgba(0,0,0,0.35)" }}>
               <svg width="25" height="25" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M8 5v14l11-7z" fill="white" />
+                <path d="M8 5v14l11-7z" fill="#000F61" />
               </svg>
             </span>
             <span style={{ fontSize: "clamp(15px, 2vw, 20px)", fontWeight: 700, textShadow: "0 2px 12px rgba(0,0,0,0.65)" }}>לחצו לצפייה בסרטון</span>
