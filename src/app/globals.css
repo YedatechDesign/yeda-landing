@@ -3,11 +3,12 @@
 :root {
   --navy:       #000F61;
   --navy-800:   #0A1575;
-  --blue:       #A94700;
-  --blue-500:   #8C3900;
+  --blue:       #F08700;
+  --blue-500:   #FF9E1F;
   --blue-400:   #FFC170;
   --blue-100:   #FFE4C2;
   --blue-50:    #FFF3E6;
+  --orange-text:#9A3F00;
   --bg:         #F5F7FD;
   --white:      #FFFFFF;
   --dark-text:  #1A1F36;
@@ -64,7 +65,7 @@ h1, h2, h3, h4, h5, h6 {
 /* ── Buttons ────────────────────────────────── */
 .btn-primary {
   background: var(--blue);
-  color: white;
+  color: var(--navy);
   font-weight: 700;
   padding: 14px 36px;
   border-radius: 999px;
@@ -83,7 +84,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-white {
   background: white;
-  color: #A94700;
+  color: var(--orange-text);
   font-weight: 700;
   padding: 14px 36px;
   border-radius: 999px;
@@ -184,7 +185,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .tab-btn:hover:not(.active) {
   border-color: var(--blue);
-  color: var(--blue);
+  color: var(--orange-text);
 }
 
 /* ── Stat box ───────────────────────────────── */
@@ -384,7 +385,7 @@ h1, h2, h3, h4, h5, h6 {
 .a11y-trigger:focus-visible,
 .a11y-panel :focus-visible,
 .skip-link:focus-visible {
-  outline: 3px solid #a94700;
+  outline: 3px solid #000F61;
   outline-offset: 3px;
 }
 

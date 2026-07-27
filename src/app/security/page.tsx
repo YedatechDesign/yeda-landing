@@ -245,7 +245,7 @@ export default function SecurityPage() {
                 <div style={{ direction: "rtl" }}>
                   <span style={{
                     display: "inline-block",
-                    background: "#FFF3E6", color: "#A94700",
+                    background: "#FFF3E6", color: "#9A3F00",
                     fontSize: 14, fontWeight: 800,
                     padding: "5px 14px", borderRadius: 100, marginBottom: 20,
                     letterSpacing: "0.05em", textTransform: "uppercase" as const,
@@ -294,7 +294,7 @@ export default function SecurityPage() {
                   background: "rgba(255,255,255,0.05)",
                   border: "1px solid rgba(255,255,255,0.1)",
                   borderRadius: 20, padding: "32px 28px",
-                  borderTop: "3px solid #A94700",
+                  borderTop: "3px solid #F08700",
                 }}>
                   {/* Icon */}
                   <div style={{
@@ -349,7 +349,7 @@ export default function SecurityPage() {
             }}>
               <div style={{
                 width: 68, height: 68, borderRadius: 18,
-                background: "#A94700",
+                background: "#F08700",
                 border: "2px solid rgba(255,255,255,0.2)",
                 margin: "0 auto 28px",
                 display: "flex", alignItems: "center", justifyContent: "center",

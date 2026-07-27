@@ -109,7 +109,7 @@ export default function Clients() {
               }}
             >
               {/* Stars */}
-              <div style={{ color: "#A94700", fontSize: 15, marginBottom: 16, letterSpacing: 2 }}>
+              <div style={{ color: "#F08700", fontSize: 15, marginBottom: 16, letterSpacing: 2 }}>
                 ★★★★★
               </div>
               <p

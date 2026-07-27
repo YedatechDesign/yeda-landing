@@ -103,9 +103,9 @@ export default function Dashboard() {
                       <div style={{ fontSize: 10, fontWeight: 700, color: "#6B7280", marginBottom: 8 }}>השלמת הכשרות לפי מחלקה</div>
                       {[
                         { dept: "מכירות",   pct: 94, c: "#000F61" },
-                        { dept: "טכנולוגיה",pct: 88, c: "#A94700" },
+                        { dept: "טכנולוגיה",pct: 88, c: "#F08700" },
                         { dept: "שיווק",    pct: 76, c: "#000F61" },
-                        { dept: "תפעול",    pct: 82, c: "#A94700" },
+                        { dept: "תפעול",    pct: 82, c: "#F08700" },
                         { dept: "כספים",    pct: 91, c: "#000F61" },
                       ].map(r => (
                         <div key={r.dept} style={{ marginBottom: 7 }}>
@@ -128,7 +128,7 @@ export default function Dashboard() {
                     </div>
                     {[
                       { name: "ישראל כהן",   course: "אבטחת מידע",       status: "הושלם",     score: 95, sc: "#10B981" },
-                      { name: "מיכל לוי",    course: "ניהול לקוחות",     status: "בתהליך",    score: 67, sc: "#A94700" },
+                      { name: "מיכל לוי",    course: "ניהול לקוחות",     status: "בתהליך",    score: 67, sc: "#F08700" },
                       { name: "יוסי אברהם",  course: "עמידה ברגולציה",   status: "הושלם",     score: 88, sc: "#10B981" },
                       { name: "רחל גרין",    course: "תהליכי עבודה",     status: "טרם התחיל", score: 0,  sc: "#EF4444" },
                       { name: "דוד שפירא",   course: "שיפור שירות",      status: "הושלם",     score: 91, sc: "#10B981" },

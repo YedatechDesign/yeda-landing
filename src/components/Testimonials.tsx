@@ -54,7 +54,7 @@ export default function Testimonials() {
               justifyContent: "space-between",
             }}>
               <div>
-                <div style={{ fontSize: 36, color: "#A94700", fontWeight: 900, lineHeight: 1, marginBottom: 14, fontFamily: "Georgia, serif" }}>&quot;</div>
+                <div style={{ fontSize: 36, color: "#F08700", fontWeight: 900, lineHeight: 1, marginBottom: 14, fontFamily: "Georgia, serif" }}>&quot;</div>
                 <p style={{ fontSize: 16, color: "#2D3142", lineHeight: 1.85, marginBottom: 24 }}>
                   {t.quote}
                 </p>
@@ -81,7 +81,7 @@ export default function Testimonials() {
                   </div>
                 </div>
                 <div style={{ background: "#FFF3E6", borderRadius: 8, padding: "5px 12px", display: "inline-flex", alignItems: "center", gap: 6 }}>
-                  <span style={{ fontSize: 13, fontWeight: 700, color: "#A94700" }}>{t.source}</span>
+                  <span style={{ fontSize: 13, fontWeight: 700, color: "#9A3F00" }}>{t.source}</span>
                 </div>
               </div>
             </div>

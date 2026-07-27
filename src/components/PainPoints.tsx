@@ -48,7 +48,7 @@ export default function PainPoints() {
                 borderRadius: 10,
                 padding: "28px 24px",
                 border: "1.5px solid #E0E4F0",
-                borderInlineStart: "4px solid #A94700",
+                borderInlineStart: "4px solid #F08700",
                 transition: "box-shadow 0.2s",
               }}
               onMouseEnter={e => (e.currentTarget.style.boxShadow = "0 6px 24px rgba(0,15,97,0.09)")}

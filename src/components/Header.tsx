@@ -29,7 +29,7 @@ export default function Header() {
         right: 0,
         left: 0,
         zIndex: 50,
-        background: "#A94700",
+        background: "#F08700",
         borderBottom: scrolled ? "1px solid rgba(255,255,255,0.25)" : "1px solid transparent",
         boxShadow: scrolled ? "0 2px 16px rgba(163,92,0,0.25)" : "none",
         transition: "box-shadow 0.3s, border-color 0.3s",
@@ -58,14 +58,14 @@ export default function Header() {
               key={link.href}
               href={link.href}
               style={{
-                color: "white",
+                color: "#000F61",
                 fontSize: 15,
                 fontWeight: 500,
                 textDecoration: "none",
                 transition: "color 0.2s",
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "white")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "white")}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#0A1575")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#000F61")}
             >
               {link.label}
             </a>
@@ -97,7 +97,7 @@ export default function Header() {
           aria-controls="mobile-navigation"
           style={{
             display: "none",
-            color: "white",
+            color: "#000F61",
             background: "none",
             border: "none",
             cursor: "pointer",
@@ -114,7 +114,7 @@ export default function Header() {
         <div
           id="mobile-navigation"
           style={{
-            background: "#A94700",
+            background: "#F08700",
             borderTop: "1px solid rgba(255,255,255,0.2)",
             padding: "16px 24px 24px",
           }}
@@ -126,7 +126,7 @@ export default function Header() {
               onClick={() => setMobileOpen(false)}
               style={{
                 display: "block",
-                color: "white",
+                color: "#000F61",
                 padding: "13px 0",
                 fontSize: 16,
                 textDecoration: "none",

@@ -43,7 +43,7 @@ export default function AIAgentSection() {
               marginBottom: 18, letterSpacing: "0.02em",
             }}
           >
-            <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#A94700", display: "inline-block" }} />
+            <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#F08700", display: "inline-block" }} />
             חדש · סוכן AI חי
           </span>
 
@@ -94,7 +94,7 @@ export default function AIAgentSection() {
                   display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14,
                 }}
               >
-                <SvgIcon d={cap.icon} size={20} color="#A94700" />
+                <SvgIcon d={cap.icon} size={20} color="#F08700" />
               </div>
               <div style={{ fontSize: 16, fontWeight: 700, color: "white", marginBottom: 6, lineHeight: 1.3 }}>{cap.title}</div>
               <div style={{ fontSize: 14, color: "rgba(255,255,255,0.65)", lineHeight: 1.6 }}>{cap.desc}</div>
