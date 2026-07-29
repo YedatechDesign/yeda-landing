@@ -58,14 +58,14 @@ export default function Header() {
               key={link.href}
               href={link.href}
               style={{
-                color: "#000F61",
+                color: "#FFFFFF",
                 fontSize: 15,
-                fontWeight: 500,
+                fontWeight: 700,
                 textDecoration: "none",
                 transition: "color 0.2s",
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#0A1575")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "#000F61")}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.82)")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#FFFFFF")}
             >
               {link.label}
             </a>
@@ -97,7 +97,7 @@ export default function Header() {
           aria-controls="mobile-navigation"
           style={{
             display: "none",
-            color: "#000F61",
+            color: "#FFFFFF",
             background: "none",
             border: "none",
             cursor: "pointer",
@@ -126,7 +126,8 @@ export default function Header() {
               onClick={() => setMobileOpen(false)}
               style={{
                 display: "block",
-                color: "#000F61",
+                color: "#FFFFFF",
+                fontWeight: 700,
                 padding: "13px 0",
                 fontSize: 16,
                 textDecoration: "none",
