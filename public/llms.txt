@@ -1,0 +1,18 @@
+# Yeda LMS for Organizations
+
+מערכת LMS לארגונים לניהול למידה ארגונית, הדרכות עובדים, תוכן, מדידה, אבטחה וסוכני AI ללמידה.
+
+## Main pages
+- https://www.orglms.co.il/
+- https://www.orglms.co.il/about
+- https://www.orglms.co.il/security
+- https://www.orglms.co.il/labs
+- https://www.orglms.co.il/team
+- https://www.orglms.co.il/sitemap.xml
+
+## Core topics
+- מערכת LMS לארגונים
+- מערכת ניהול למידה לארגונים
+- למידה ארגונית
+- הדרכות עובדים
+- סוכני AI ללמידה

@@ -43,12 +43,42 @@ export default function Home() {
   const softwareApplicationJsonLd = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
+    "@id": `${SITE_URL}/#software`,
     name: "Yeda",
     url: SITE_URL,
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
     description,
     inLanguage: "he-IL",
+    provider: { "@id": `${SITE_URL}/#organization` },
+    audience: {
+      "@type": "Audience",
+      audienceType: "ארגונים וחברות",
+    },
+    featureList: [
+      "ניהול למידה והדרכות עובדים",
+      "ניהול ידע ארגוני",
+      "יצירת תוכן עם AI",
+      "מעקב ביצועים ודוחות",
+    ],
+  };
+
+  const webPageJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${SITE_URL}/#webpage`,
+    url: SITE_URL,
+    name: title,
+    description,
+    inLanguage: "he-IL",
+    isPartOf: { "@id": `${SITE_URL}/#website` },
+    about: { "@id": `${SITE_URL}/#software` },
+    primaryImageOfPage: {
+      "@type": "ImageObject",
+      url: shareImage,
+      width: 1200,
+      height: 630,
+    },
   };
 
   const faqJsonLd = {
@@ -73,6 +103,10 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd).replace(/</g, "\\u003c") }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd).replace(/</g, "\\u003c") }}
       />
       <Header />
       <main id="main-content" tabIndex={-1}>
