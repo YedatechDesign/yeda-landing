@@ -1,0 +1,9 @@
+.git
+.next
+.vercel
+node_modules
+.claude
+AGENTS.md
+CLAUDE.md
+GEMINI.md
+*.tsbuildinfo
