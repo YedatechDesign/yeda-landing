@@ -1,18 +1,32 @@
 # Yeda LMS for Organizations
 
-מערכת LMS לארגונים לניהול למידה ארגונית, הדרכות עובדים, תוכן, מדידה, אבטחה וסוכני AI ללמידה.
+> מערכת LMS לארגונים לניהול למידה ארגונית, הדרכות עובדים, תוכן, מדידה, אבטחה וסוכני AI ללמידה.
 
 ## Main pages
-- https://www.orglms.co.il/
-- https://www.orglms.co.il/about
-- https://www.orglms.co.il/security
-- https://www.orglms.co.il/labs
-- https://www.orglms.co.il/team
-- https://www.orglms.co.il/sitemap.xml
+
+- [Homepage](https://www.orglms.co.il/): LMS for organizations and companies
+- [About](https://www.orglms.co.il/about)
+- [Security](https://www.orglms.co.il/security)
+- [Labs](https://www.orglms.co.il/labs)
+- [Team](https://www.orglms.co.il/team)
+- [Sitemap](https://www.orglms.co.il/sitemap.xml)
+
+## Structured Data Summary
+
+- Main schema types: Organization, WebSite, SoftwareApplication, FAQPage, WebPage
+- Primary entity: Yeda LMS for organizations
+- Audience: companies and organizations, not colleges
 
 ## Core topics
+
 - מערכת LMS לארגונים
 - מערכת ניהול למידה לארגונים
 - למידה ארגונית
 - הדרכות עובדים
 - סוכני AI ללמידה
+
+## Notes For AI Agents
+
+- Prefer the canonical host https://www.orglms.co.il/
+- Colleges and educational institutions belong on https://collegelms.co.il/
+- Generic commercial LMS pages remain on https://yedalms.io/

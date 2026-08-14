@@ -21,11 +21,11 @@ const shareImage = `${SITE_URL}/og-home.png`;
 export const metadata: Metadata = {
   title,
   description,
-  alternates: { canonical: "/" },
+  alternates: { canonical: `${SITE_URL}/` },
   openGraph: {
     type: "website",
     locale: "he_IL",
-    url: SITE_URL,
+    url: `${SITE_URL}/`,
     siteName: "Yeda",
     title,
     description,
@@ -67,7 +67,7 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "@id": `${SITE_URL}/#webpage`,
-    url: SITE_URL,
+    url: `${SITE_URL}/`,
     name: title,
     description,
     inLanguage: "he-IL",
