@@ -9,7 +9,6 @@ import { ORGANIZATION_JSON_LD, SITE_URL, WEBSITE_JSON_LD } from "@/lib/site";
 const GOOGLE_MEASUREMENT_ID = "G-SEPCTJ9Q1S";
 const META_PIXEL_ID = "966471677122465";
 const GTM_ID = "GTM-K6R73W47";
-const ADS_TAG_ID = "AW-18389460084";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -76,7 +75,6 @@ export default function RootLayout({
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', '${GOOGLE_MEASUREMENT_ID}');
-            gtag('config', '${ADS_TAG_ID}');
           `}
         </Script>
         <Script id="meta-pixel" strategy="lazyOnload">

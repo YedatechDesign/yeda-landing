@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Script from "next/script";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -14,13 +13,6 @@ export const metadata: Metadata = {
 export default function TodahPage() {
   return (
     <>
-      <Script id="ads-thankyou-conversion" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('event', 'conversion', { send_to: 'AW-18389460084/SRJJCLvuy-EcEPTI48BE' });
-        `}
-      </Script>
       <Header />
       <main id="main-content" style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", padding: "96px 24px" }}>
         <div style={{ maxWidth: 560, textAlign: "center" }}>
