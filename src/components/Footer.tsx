@@ -77,6 +77,8 @@ export default function Footer() {
             { title: "חברה", links: [
               { label: "לקוחות", href: "/#clients" },
               { label: "יצירת קשר", href: "/#contact" },
+              { label: "מדיניות פרטיות", href: "/privacy" },
+              { label: "תנאי שימוש", href: "/privacy#terms" },
             ] },
             { title: "תמיכה", links: [
               { label: "שאלות נפוצות", href: "/#faq" },
