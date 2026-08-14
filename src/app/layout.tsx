@@ -8,6 +8,8 @@ import { ORGANIZATION_JSON_LD, SITE_URL, WEBSITE_JSON_LD } from "@/lib/site";
 
 const GOOGLE_MEASUREMENT_ID = "G-SEPCTJ9Q1S";
 const META_PIXEL_ID = "966471677122465";
+const GTM_ID = "GTM-K6R73W47";
+const ADS_TAG_ID = "AW-18389460084";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -41,6 +43,11 @@ export default function RootLayout({
     <html lang="he" dir="rtl">
       <head>
         <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM_ID}');`,
+          }}
+        />
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(ORGANIZATION_JSON_LD).replace(/</g, "\\u003c") }}
         />
@@ -50,6 +57,15 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col">
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+            title="Google Tag Manager"
+          />
+        </noscript>
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_MEASUREMENT_ID}`}
           strategy="lazyOnload"
@@ -60,6 +76,7 @@ export default function RootLayout({
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', '${GOOGLE_MEASUREMENT_ID}');
+            gtag('config', '${ADS_TAG_ID}');
           `}
         </Script>
         <Script id="meta-pixel" strategy="lazyOnload">

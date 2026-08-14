@@ -18,6 +18,11 @@ export default function TargetBobLoader() {
     observer.observe(document.body, { childList: true, subtree: true });
     titleTargetBobFrames();
 
+    if (window.location.pathname.replace(/\/+$/, "") === "/todah") {
+      observer.disconnect();
+      return;
+    }
+
     let loaded = Boolean(document.getElementById(SCRIPT_ID));
     const load = () => {
       if (loaded) return;
@@ -35,10 +40,16 @@ export default function TargetBobLoader() {
 
     const events: Array<keyof WindowEventMap> = ["scroll", "pointerdown", "touchstart", "keydown"];
     events.forEach((eventName) => window.addEventListener(eventName, load, { once: true, passive: eventName !== "keydown" }));
+    const idleId =
+      "requestIdleCallback" in window
+        ? window.requestIdleCallback(load, { timeout: 2500 })
+        : window.setTimeout(load, 2500);
 
     return () => {
       observer.disconnect();
       events.forEach((eventName) => window.removeEventListener(eventName, load));
+      if ("requestIdleCallback" in window) window.cancelIdleCallback(idleId as number);
+      else window.clearTimeout(idleId as number);
     };
   }, []);
 
