@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     siteName: "Yeda",
     title,
     description,
-    images: [{ url: shareImage, width: 1200, height: 630, alt: "Yeda - מערכת LMS וניהול למידה לארגונים" }],
+    images: [{ url: shareImage, width: 1200, height: 630, type: "image/png", alt: "Yeda - מערכת LMS וניהול למידה לארגונים" }],
   },
   twitter: {
     card: "summary_large_image",

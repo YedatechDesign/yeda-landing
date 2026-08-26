@@ -1,9 +1,4 @@
-.git
-.next
-.vercel
-node_modules
-.claude
+.claude/
 AGENTS.md
-CLAUDE.md
 GEMINI.md
 *.tsbuildinfo
