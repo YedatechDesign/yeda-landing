@@ -1,6 +1,7 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IconCheck } from "./Icons";
+import { captureLandingAttribution, getLeadAttribution } from "@/lib/leadAttribution";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", phone: "", email: "" });
@@ -8,18 +9,16 @@ export default function Contact() {
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
 
+  useEffect(() => {
+    captureLandingAttribution(window.location.href, window.sessionStorage);
+  }, []);
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
     setSubmitError("");
 
     const pageUrl = window.location.href;
-    const query = new URL(pageUrl).searchParams;
-    const attribution = Object.fromEntries(
-      ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "gclid", "gbraid", "wbraid"]
-        .map((key) => [key, query.get(key) || ""])
-        .filter(([, value]) => value)
-    );
+    const attribution = getLeadAttribution(pageUrl, window.sessionStorage);
 
     try {
       const response = await fetch("https://yedauto.com/webhook/contact-orglms", {
