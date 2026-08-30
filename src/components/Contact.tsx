@@ -1,26 +1,57 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IconCheck } from "./Icons";
+import { captureLandingAttribution, getLeadAttribution } from "@/lib/leadAttribution";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", phone: "", email: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  useEffect(() => {
+    captureLandingAttribution(window.location.href, window.sessionStorage);
+  }, []);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    fetch("https://yedauto.com/webhook/contact-orglms", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams({
-        name: form.name,
-        email: form.email,
-        phone: form.phone,
-        source: "orglms.co.il",
-        form: "בקשת דמו - Yeda",
-        to: "coo@yedalms.io",
-      }).toString(),
-    }).catch(() => {});
-    setSubmitted(true);
+    setSubmitting(true);
+    setSubmitError("");
+
+    const pageUrl = window.location.href;
+    const attribution = getLeadAttribution(pageUrl, window.sessionStorage);
+
+    try {
+      const response = await fetch("https://yedauto.com/webhook/contact-orglms", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          source: "orglms.co.il",
+          form: "בקשת דמו - Yeda",
+          to: "coo@yedalms.io",
+          page_url: pageUrl,
+          referrer: document.referrer,
+          ...attribution,
+        }).toString(),
+      });
+      if (!response.ok) throw new Error(`lead_webhook_${response.status}`);
+
+      const trackingWindow = window as Window & { dataLayer?: Array<Record<string, unknown>> };
+      trackingWindow.dataLayer = trackingWindow.dataLayer || [];
+      trackingWindow.dataLayer.push({
+        event: "generate_lead",
+        method: "native_form",
+        form_source: "ORGLMS native form",
+      });
+      setSubmitted(true);
+    } catch {
+      setSubmitError("אירעה תקלה בשליחה. נסו שוב או התקשרו 072-338-5091.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const inputStyle: React.CSSProperties = {
@@ -238,11 +269,18 @@ export default function Contact() {
 
                     <button
                       type="submit"
+                      disabled={submitting}
                       className="btn-primary"
                       style={{ width: "100%", textAlign: "center", fontSize: 16, padding: "14px" }}
                     >
-                      קבעו דמו חינם ←
+                      {submitting ? "שולח..." : "קבעו דמו חינם ←"}
                     </button>
+
+                    {submitError ? (
+                      <p role="alert" style={{ fontSize: 13, color: "#B42318", textAlign: "center", marginTop: 12 }}>
+                        {submitError}
+                      </p>
+                    ) : null}
 
                     <p style={{ fontSize: 13, color: "#4B5472", textAlign: "center", marginTop: 12 }}>
                       ללא עלות, ללא התחייבות. המידע לא יועבר לצד שלישי.
