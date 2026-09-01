@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@theme {
+  --font-sans: var(--font-heebo), Heebo, "Segoe UI", Arial, sans-serif;
+}
+
 :root {
   --navy:       #000F61;
   --navy-800:   #0A1575;
@@ -27,10 +31,11 @@ html {
   direction: rtl;
   scroll-behavior: smooth;
   overflow-x: hidden;
+  font-family: var(--font-heebo), Heebo, "Segoe UI", Arial, sans-serif;
 }
 
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family: var(--font-heebo), Heebo, "Segoe UI", Arial, sans-serif;
   background: var(--bg);
   color: var(--dark-text);
   direction: rtl;
@@ -44,7 +49,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   letter-spacing: normal;
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family: var(--font-heebo), Heebo, "Segoe UI", Arial, sans-serif;
 }
 
 .skip-link {
@@ -277,7 +282,7 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 16px;
   left: 16px;
   z-index: 2147483644;
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family: inherit;
 }
 .a11y-trigger {
   display: grid;

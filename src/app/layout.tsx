@@ -1,10 +1,18 @@
 import type { Metadata } from "next";
 import type { Viewport } from "next";
+import { Heebo } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import AccessibilityWidget from "@/components/AccessibilityWidget";
 import TargetBobLoader from "@/components/TargetBobLoader";
 import { ORGANIZATION_JSON_LD, SITE_URL, WEBSITE_JSON_LD } from "@/lib/site";
+
+const heebo = Heebo({
+  subsets: ["hebrew", "latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  display: "swap",
+  variable: "--font-heebo",
+});
 
 const GOOGLE_MEASUREMENT_ID = "G-SEPCTJ9Q1S";
 const META_PIXEL_ID = "966471677122465";
@@ -40,7 +48,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="he" dir="rtl">
+    <html lang="he" dir="rtl" className={heebo.variable}>
       <head>
         <script
           dangerouslySetInnerHTML={{
@@ -56,7 +64,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(WEBSITE_JSON_LD).replace(/</g, "\\u003c") }}
         />
       </head>
-      <body className="min-h-full flex flex-col">
+      <body className={`${heebo.className} min-h-full flex flex-col`}>
         <noscript>
           <iframe
             src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
