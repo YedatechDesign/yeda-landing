@@ -5,6 +5,7 @@ import Script from "next/script";
 import "./globals.css";
 import AccessibilityWidget from "@/components/AccessibilityWidget";
 import TargetBobLoader from "@/components/TargetBobLoader";
+import OrgLMSWebMCP from "@/components/OrgLMSWebMCP";
 import { ORGANIZATION_JSON_LD, SITE_URL, WEBSITE_JSON_LD } from "@/lib/site";
 
 const heebo = Heebo({
@@ -106,6 +107,7 @@ export default function RootLayout({
         {children}
         <AccessibilityWidget />
         <TargetBobLoader />
+        <OrgLMSWebMCP />
       </body>
     </html>
   );
